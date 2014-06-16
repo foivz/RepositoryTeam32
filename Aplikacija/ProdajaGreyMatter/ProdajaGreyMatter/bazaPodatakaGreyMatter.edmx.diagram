@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="3cd9f00faba345a5be3ba18839790337" Name="Diagram1">
+        <EntityTypeShape EntityType="greymatterpiModel.jedinicnamjera" Width="1.5" PointX="0.75" PointY="8.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="greymatterpiModel.klijent" Width="1.5" PointX="0.75" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="greymatterpiModel.lijek" Width="1.5" PointX="3" PointY="8.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="greymatterpiModel.narudzbenica" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="greymatterpiModel.stavkenarudzbenice" Width="1.5" PointX="5.25" PointY="1.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="greymatterpiModel.tiplijeka" Width="1.5" PointX="0.75" PointY="11.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="greymatterpiModel.zaposlenik" Width="1.5" PointX="0.75" PointY="5" IsExpanded="true" />
+        <AssociationConnector Association="greymatterpiModel.fk_lijek_jedinicnaMjera1" ManuallyRouted="false" />
+        <AssociationConnector Association="greymatterpiModel.fk_racun_klijent1" ManuallyRouted="false" />
+        <AssociationConnector Association="greymatterpiModel.fk_lijek_tipLijeka1" ManuallyRouted="false" />
+        <AssociationConnector Association="greymatterpiModel.fk_stavkeRacuna_lijek" ManuallyRouted="false" />
+        <AssociationConnector Association="greymatterpiModel.fk_racun_zaposlenik1" ManuallyRouted="false" />
+        <AssociationConnector Association="greymatterpiModel.fk_stavkeRacuna_racun1" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

@@ -1,0 +1,23 @@
+C:\PI projekt\ProdajaGreyMatter\ProdajaGreyMatter\bin\Debug\ProdajaGreyMatter.exe.config
+E:\Google disk\PI\PI projekt\ProdajaGreyMatter\ProdajaGreyMatter\bin\Debug\ProdajaGreyMatter.exe.config
+C:\Users\Andrija\Desktop\PI projekt\ProdajaGreyMatter\ProdajaGreyMatter\bin\Debug\ProdajaGreyMatter.exe.config
+C:\Users\Andrija\Desktop\PI projekt\ProdajaGreyMatter\ProdajaGreyMatter\bin\Debug\ProdajaGreyMatter.exe
+C:\Users\Andrija\Desktop\PI projekt\ProdajaGreyMatter\ProdajaGreyMatter\bin\Debug\ProdajaGreyMatter.pdb
+C:\Users\Andrija\Desktop\PI projekt\ProdajaGreyMatter\ProdajaGreyMatter\bin\Debug\EntityFramework.dll
+C:\Users\Andrija\Desktop\PI projekt\ProdajaGreyMatter\ProdajaGreyMatter\bin\Debug\EntityFramework.xml
+C:\Users\Andrija\Desktop\PI projekt\ProdajaGreyMatter\ProdajaGreyMatter\obj\Debug\ProdajaGreyMatter.csprojResolveAssemblyReference.cache
+C:\Users\Andrija\Desktop\PI projekt\ProdajaGreyMatter\ProdajaGreyMatter\obj\Debug\ProdajaGreyMatter.frmIzbornik.resources
+C:\Users\Andrija\Desktop\PI projekt\ProdajaGreyMatter\ProdajaGreyMatter\obj\Debug\ProdajaGreyMatter.frmKlijent.resources
+C:\Users\Andrija\Desktop\PI projekt\ProdajaGreyMatter\ProdajaGreyMatter\obj\Debug\ProdajaGreyMatter.frmLijekovi.resources
+C:\Users\Andrija\Desktop\PI projekt\ProdajaGreyMatter\ProdajaGreyMatter\obj\Debug\ProdajaGreyMatter.frmNarudzbenica.resources
+C:\Users\Andrija\Desktop\PI projekt\ProdajaGreyMatter\ProdajaGreyMatter\obj\Debug\ProdajaGreyMatter.frmNarudzbenicaReport.resources
+C:\Users\Andrija\Desktop\PI projekt\ProdajaGreyMatter\ProdajaGreyMatter\obj\Debug\ProdajaGreyMatter.frmPrijava.resources
+C:\Users\Andrija\Desktop\PI projekt\ProdajaGreyMatter\ProdajaGreyMatter\obj\Debug\ProdajaGreyMatter.frmStatistika.resources
+C:\Users\Andrija\Desktop\PI projekt\ProdajaGreyMatter\ProdajaGreyMatter\obj\Debug\ProdajaGreyMatter.frmUnosKlijenta.resources
+C:\Users\Andrija\Desktop\PI projekt\ProdajaGreyMatter\ProdajaGreyMatter\obj\Debug\ProdajaGreyMatter.frmUnosNarudzbenice.resources
+C:\Users\Andrija\Desktop\PI projekt\ProdajaGreyMatter\ProdajaGreyMatter\obj\Debug\ProdajaGreyMatter.frmUnosStavke.resources
+C:\Users\Andrija\Desktop\PI projekt\ProdajaGreyMatter\ProdajaGreyMatter\obj\Debug\ProdajaGreyMatter.Properties.Resources.resources
+C:\Users\Andrija\Desktop\PI projekt\ProdajaGreyMatter\ProdajaGreyMatter\obj\Debug\ProdajaGreyMatter.csproj.GenerateResource.Cache
+C:\Users\Andrija\Desktop\PI projekt\ProdajaGreyMatter\ProdajaGreyMatter\obj\Debug\ProdajaGreyMatter.exe
+C:\Users\Andrija\Desktop\PI projekt\ProdajaGreyMatter\ProdajaGreyMatter\obj\Debug\ProdajaGreyMatter.pdb
+C:\Users\Andrija\Desktop\PI projekt\ProdajaGreyMatter\ProdajaGreyMatter\obj\Debug\ProdajaGreyMatter.frmDodajLijek.resources

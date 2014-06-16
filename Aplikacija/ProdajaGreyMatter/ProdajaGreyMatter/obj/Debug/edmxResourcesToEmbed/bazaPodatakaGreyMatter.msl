@@ -1,0 +1,84 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="greymatterpiModelStoreContainer" CdmEntityContainer="greymatterpiEntities">
+    <EntitySetMapping Name="jedinicnamjera">
+      <EntityTypeMapping TypeName="greymatterpiModel.jedinicnamjera">
+        <MappingFragment StoreEntitySet="jedinicnamjera">
+          <ScalarProperty Name="idJedinicnaMjera" ColumnName="idJedinicnaMjera" />
+          <ScalarProperty Name="naziv" ColumnName="naziv" />
+          <ScalarProperty Name="kratica" ColumnName="kratica" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="klijent">
+      <EntityTypeMapping TypeName="greymatterpiModel.klijent">
+        <MappingFragment StoreEntitySet="klijent">
+          <ScalarProperty Name="oib" ColumnName="oib" />
+          <ScalarProperty Name="naziv" ColumnName="naziv" />
+          <ScalarProperty Name="telefon" ColumnName="telefon" />
+          <ScalarProperty Name="e_mail" ColumnName="e-mail" />
+          <ScalarProperty Name="adresa" ColumnName="adresa" />
+          <ScalarProperty Name="ziroRacun" ColumnName="ziroRacun" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="lijek">
+      <EntityTypeMapping TypeName="greymatterpiModel.lijek">
+        <MappingFragment StoreEntitySet="lijek">
+          <ScalarProperty Name="idLijek" ColumnName="idLijek" />
+          <ScalarProperty Name="naziv" ColumnName="naziv" />
+          <ScalarProperty Name="upute" ColumnName="upute" />
+          <ScalarProperty Name="datumProizvodnje" ColumnName="datumProizvodnje" />
+          <ScalarProperty Name="rokUpotrebe" ColumnName="rokUpotrebe" />
+          <ScalarProperty Name="cijena" ColumnName="cijena" />
+          <ScalarProperty Name="pakiranje" ColumnName="pakiranje" />
+          <ScalarProperty Name="doza" ColumnName="doza" />
+          <ScalarProperty Name="idJedinicnaMjera" ColumnName="idJedinicnaMjera" />
+          <ScalarProperty Name="idTipLijeka" ColumnName="idTipLijeka" />
+          <ScalarProperty Name="kolicina" ColumnName="kolicina" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="narudzbenica">
+      <EntityTypeMapping TypeName="greymatterpiModel.narudzbenica">
+        <MappingFragment StoreEntitySet="narudzbenica">
+          <ScalarProperty Name="idNarudzbenice" ColumnName="idNarudzbenice" />
+          <ScalarProperty Name="oibKlijenta" ColumnName="oibKlijenta" />
+          <ScalarProperty Name="datumIzdavanja" ColumnName="datumIzdavanja" />
+          <ScalarProperty Name="oibZaposlenika" ColumnName="oibZaposlenika" />
+          <ScalarProperty Name="rokPlacanja" ColumnName="rokPlacanja" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="stavkenarudzbenice">
+      <EntityTypeMapping TypeName="greymatterpiModel.stavkenarudzbenice">
+        <MappingFragment StoreEntitySet="stavkenarudzbenice">
+          <ScalarProperty Name="idLijek" ColumnName="idLijek" />
+          <ScalarProperty Name="idNarudzbenice" ColumnName="idNarudzbenice" />
+          <ScalarProperty Name="kolicina" ColumnName="kolicina" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tiplijeka">
+      <EntityTypeMapping TypeName="greymatterpiModel.tiplijeka">
+        <MappingFragment StoreEntitySet="tiplijeka">
+          <ScalarProperty Name="idTipLijeka" ColumnName="idTipLijeka" />
+          <ScalarProperty Name="naziv" ColumnName="naziv" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="zaposlenik">
+      <EntityTypeMapping TypeName="greymatterpiModel.zaposlenik">
+        <MappingFragment StoreEntitySet="zaposlenik">
+          <ScalarProperty Name="oib" ColumnName="oib" />
+          <ScalarProperty Name="ime" ColumnName="ime" />
+          <ScalarProperty Name="prezime" ColumnName="prezime" />
+          <ScalarProperty Name="adresa" ColumnName="adresa" />
+          <ScalarProperty Name="brojTelefona" ColumnName="brojTelefona" />
+          <ScalarProperty Name="korisnickoIme" ColumnName="korisnickoIme" />
+          <ScalarProperty Name="lozinka" ColumnName="lozinka" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

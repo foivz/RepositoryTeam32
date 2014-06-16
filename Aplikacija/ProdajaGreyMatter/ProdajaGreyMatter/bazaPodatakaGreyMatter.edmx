@@ -1,0 +1,489 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="greymatterpiModel.Store" Provider="MySql.Data.MySqlClient" ProviderManifestToken="5.6" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="jedinicnamjera">
+          <Key>
+            <PropertyRef Name="idJedinicnaMjera" />
+          </Key>
+          <Property Name="idJedinicnaMjera" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="naziv" Type="varchar" MaxLength="45" Nullable="false" />
+          <Property Name="kratica" Type="varchar" MaxLength="45" Nullable="false" />
+        </EntityType>
+        <EntityType Name="klijent">
+          <Key>
+            <PropertyRef Name="oib" />
+          </Key>
+          <Property Name="oib" Type="char" MaxLength="11" Nullable="false" />
+          <Property Name="naziv" Type="varchar" MaxLength="45" Nullable="false" />
+          <Property Name="telefon" Type="varchar" MaxLength="45" Nullable="false" />
+          <Property Name="e-mail" Type="varchar" MaxLength="45" />
+          <Property Name="adresa" Type="varchar" MaxLength="45" Nullable="false" />
+          <Property Name="ziroRacun" Type="varchar" MaxLength="45" Nullable="false" />
+        </EntityType>
+        <EntityType Name="lijek">
+          <Key>
+            <PropertyRef Name="idLijek" />
+          </Key>
+          <Property Name="idLijek" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="naziv" Type="varchar" MaxLength="45" Nullable="false" />
+          <Property Name="upute" Type="text" Nullable="false" />
+          <Property Name="datumProizvodnje" Type="date" Nullable="false" />
+          <Property Name="rokUpotrebe" Type="date" Nullable="false" />
+          <Property Name="cijena" Type="float" Nullable="false" />
+          <Property Name="pakiranje" Type="float" Nullable="false" />
+          <Property Name="doza" Type="float" Nullable="false" />
+          <Property Name="idJedinicnaMjera" Type="int" Nullable="false" />
+          <Property Name="idTipLijeka" Type="int" Nullable="false" />
+          <Property Name="kolicina" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="narudzbenica">
+          <Key>
+            <PropertyRef Name="idNarudzbenice" />
+          </Key>
+          <Property Name="idNarudzbenice" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="oibKlijenta" Type="char" MaxLength="11" Nullable="false" />
+          <Property Name="datumIzdavanja" Type="timestamp" Precision="0" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="oibZaposlenika" Type="char" MaxLength="11" Nullable="false" />
+          <Property Name="rokPlacanja" Type="date" Nullable="false" />
+        </EntityType>
+        <EntityType Name="stavkenarudzbenice">
+          <Key>
+            <PropertyRef Name="idLijek" />
+            <PropertyRef Name="idNarudzbenice" />
+          </Key>
+          <Property Name="idLijek" Type="int" Nullable="false" />
+          <Property Name="idNarudzbenice" Type="int" Nullable="false" />
+          <Property Name="kolicina" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tiplijeka">
+          <Key>
+            <PropertyRef Name="idTipLijeka" />
+          </Key>
+          <Property Name="idTipLijeka" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="naziv" Type="varchar" MaxLength="45" Nullable="false" />
+        </EntityType>
+        <EntityType Name="zaposlenik">
+          <Key>
+            <PropertyRef Name="oib" />
+          </Key>
+          <Property Name="oib" Type="char" MaxLength="11" Nullable="false" />
+          <Property Name="ime" Type="varchar" MaxLength="45" Nullable="false" />
+          <Property Name="prezime" Type="varchar" MaxLength="45" Nullable="false" />
+          <Property Name="adresa" Type="varchar" MaxLength="45" Nullable="false" />
+          <Property Name="brojTelefona" Type="varchar" MaxLength="45" Nullable="false" />
+          <Property Name="korisnickoIme" Type="varchar" MaxLength="45" Nullable="false" />
+          <Property Name="lozinka" Type="varchar" MaxLength="45" Nullable="false" />
+        </EntityType>
+        <Association Name="fk_lijek_jedinicnaMjera1">
+          <End Role="jedinicnamjera" Type="Self.jedinicnamjera" Multiplicity="1" />
+          <End Role="lijek" Type="Self.lijek" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="jedinicnamjera">
+              <PropertyRef Name="idJedinicnaMjera" />
+            </Principal>
+            <Dependent Role="lijek">
+              <PropertyRef Name="idJedinicnaMjera" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_lijek_tipLijeka1">
+          <End Role="tiplijeka" Type="Self.tiplijeka" Multiplicity="1" />
+          <End Role="lijek" Type="Self.lijek" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tiplijeka">
+              <PropertyRef Name="idTipLijeka" />
+            </Principal>
+            <Dependent Role="lijek">
+              <PropertyRef Name="idTipLijeka" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_racun_klijent1">
+          <End Role="klijent" Type="Self.klijent" Multiplicity="1" />
+          <End Role="narudzbenica" Type="Self.narudzbenica" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="klijent">
+              <PropertyRef Name="oib" />
+            </Principal>
+            <Dependent Role="narudzbenica">
+              <PropertyRef Name="oibKlijenta" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_racun_zaposlenik1">
+          <End Role="zaposlenik" Type="Self.zaposlenik" Multiplicity="1" />
+          <End Role="narudzbenica" Type="Self.narudzbenica" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="zaposlenik">
+              <PropertyRef Name="oib" />
+            </Principal>
+            <Dependent Role="narudzbenica">
+              <PropertyRef Name="oibZaposlenika" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_stavkeRacuna_lijek">
+          <End Role="lijek" Type="Self.lijek" Multiplicity="1" />
+          <End Role="stavkenarudzbenice" Type="Self.stavkenarudzbenice" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="lijek">
+              <PropertyRef Name="idLijek" />
+            </Principal>
+            <Dependent Role="stavkenarudzbenice">
+              <PropertyRef Name="idLijek" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_stavkeRacuna_racun1">
+          <End Role="narudzbenica" Type="Self.narudzbenica" Multiplicity="1" />
+          <End Role="stavkenarudzbenice" Type="Self.stavkenarudzbenice" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="narudzbenica">
+              <PropertyRef Name="idNarudzbenice" />
+            </Principal>
+            <Dependent Role="stavkenarudzbenice">
+              <PropertyRef Name="idNarudzbenice" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="greymatterpiModelStoreContainer">
+          <EntitySet Name="jedinicnamjera" EntityType="Self.jedinicnamjera" Schema="greymatterpi" store:Type="Tables" />
+          <EntitySet Name="klijent" EntityType="Self.klijent" Schema="greymatterpi" store:Type="Tables" />
+          <EntitySet Name="lijek" EntityType="Self.lijek" Schema="greymatterpi" store:Type="Tables" />
+          <EntitySet Name="narudzbenica" EntityType="Self.narudzbenica" Schema="greymatterpi" store:Type="Tables" />
+          <EntitySet Name="stavkenarudzbenice" EntityType="Self.stavkenarudzbenice" Schema="greymatterpi" store:Type="Tables" />
+          <EntitySet Name="tiplijeka" EntityType="Self.tiplijeka" Schema="greymatterpi" store:Type="Tables" />
+          <EntitySet Name="zaposlenik" EntityType="Self.zaposlenik" Schema="greymatterpi" store:Type="Tables" />
+          <AssociationSet Name="fk_lijek_jedinicnaMjera1" Association="Self.fk_lijek_jedinicnaMjera1">
+            <End Role="jedinicnamjera" EntitySet="jedinicnamjera" />
+            <End Role="lijek" EntitySet="lijek" />
+          </AssociationSet>
+          <AssociationSet Name="fk_lijek_tipLijeka1" Association="Self.fk_lijek_tipLijeka1">
+            <End Role="tiplijeka" EntitySet="tiplijeka" />
+            <End Role="lijek" EntitySet="lijek" />
+          </AssociationSet>
+          <AssociationSet Name="fk_racun_klijent1" Association="Self.fk_racun_klijent1">
+            <End Role="klijent" EntitySet="klijent" />
+            <End Role="narudzbenica" EntitySet="narudzbenica" />
+          </AssociationSet>
+          <AssociationSet Name="fk_racun_zaposlenik1" Association="Self.fk_racun_zaposlenik1">
+            <End Role="zaposlenik" EntitySet="zaposlenik" />
+            <End Role="narudzbenica" EntitySet="narudzbenica" />
+          </AssociationSet>
+          <AssociationSet Name="fk_stavkeRacuna_lijek" Association="Self.fk_stavkeRacuna_lijek">
+            <End Role="lijek" EntitySet="lijek" />
+            <End Role="stavkenarudzbenice" EntitySet="stavkenarudzbenice" />
+          </AssociationSet>
+          <AssociationSet Name="fk_stavkeRacuna_racun1" Association="Self.fk_stavkeRacuna_racun1">
+            <End Role="narudzbenica" EntitySet="narudzbenica" />
+            <End Role="stavkenarudzbenice" EntitySet="stavkenarudzbenice" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="greymatterpiModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="jedinicnamjera">
+          <Key>
+            <PropertyRef Name="idJedinicnaMjera" />
+          </Key>
+          <Property Name="idJedinicnaMjera" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="naziv" Type="String" MaxLength="45" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="kratica" Type="String" MaxLength="45" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="lijek" Relationship="Self.fk_lijek_jedinicnaMjera1" FromRole="jedinicnamjera" ToRole="lijek" />
+        </EntityType>
+        <EntityType Name="klijent">
+          <Key>
+            <PropertyRef Name="oib" />
+          </Key>
+          <Property Name="oib" Type="String" MaxLength="11" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="naziv" Type="String" MaxLength="45" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="telefon" Type="String" MaxLength="45" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="e_mail" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
+          <Property Name="adresa" Type="String" MaxLength="45" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="ziroRacun" Type="String" MaxLength="45" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="narudzbenica" Relationship="Self.fk_racun_klijent1" FromRole="klijent" ToRole="narudzbenica" />
+        </EntityType>
+        <EntityType Name="lijek">
+          <Key>
+            <PropertyRef Name="idLijek" />
+          </Key>
+          <Property Name="idLijek" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="naziv" Type="String" MaxLength="45" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="upute" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="datumProizvodnje" Type="DateTime" Nullable="false" />
+          <Property Name="rokUpotrebe" Type="DateTime" Nullable="false" />
+          <Property Name="cijena" Type="Single" Nullable="false" />
+          <Property Name="pakiranje" Type="Single" Nullable="false" />
+          <Property Name="doza" Type="Single" Nullable="false" />
+          <Property Name="idJedinicnaMjera" Type="Int32" Nullable="false" />
+          <Property Name="idTipLijeka" Type="Int32" Nullable="false" />
+          <Property Name="kolicina" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="jedinicnamjera" Relationship="Self.fk_lijek_jedinicnaMjera1" FromRole="lijek" ToRole="jedinicnamjera" />
+          <NavigationProperty Name="tiplijeka" Relationship="Self.fk_lijek_tipLijeka1" FromRole="lijek" ToRole="tiplijeka" />
+          <NavigationProperty Name="stavkenarudzbenice" Relationship="Self.fk_stavkeRacuna_lijek" FromRole="lijek" ToRole="stavkenarudzbenice" />
+        </EntityType>
+        <EntityType Name="narudzbenica">
+          <Key>
+            <PropertyRef Name="idNarudzbenice" />
+          </Key>
+          <Property Name="idNarudzbenice" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="oibKlijenta" Type="String" MaxLength="11" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="datumIzdavanja" Type="DateTime" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="oibZaposlenika" Type="String" MaxLength="11" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="rokPlacanja" Type="DateTime" Nullable="false" />
+          <NavigationProperty Name="klijent" Relationship="Self.fk_racun_klijent1" FromRole="narudzbenica" ToRole="klijent" />
+          <NavigationProperty Name="zaposlenik" Relationship="Self.fk_racun_zaposlenik1" FromRole="narudzbenica" ToRole="zaposlenik" />
+          <NavigationProperty Name="stavkenarudzbenice" Relationship="Self.fk_stavkeRacuna_racun1" FromRole="narudzbenica" ToRole="stavkenarudzbenice" />
+        </EntityType>
+        <EntityType Name="stavkenarudzbenice">
+          <Key>
+            <PropertyRef Name="idLijek" />
+            <PropertyRef Name="idNarudzbenice" />
+          </Key>
+          <Property Name="idLijek" Type="Int32" Nullable="false" />
+          <Property Name="idNarudzbenice" Type="Int32" Nullable="false" />
+          <Property Name="kolicina" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="lijek" Relationship="Self.fk_stavkeRacuna_lijek" FromRole="stavkenarudzbenice" ToRole="lijek" />
+          <NavigationProperty Name="narudzbenica" Relationship="Self.fk_stavkeRacuna_racun1" FromRole="stavkenarudzbenice" ToRole="narudzbenica" />
+        </EntityType>
+        <EntityType Name="tiplijeka">
+          <Key>
+            <PropertyRef Name="idTipLijeka" />
+          </Key>
+          <Property Name="idTipLijeka" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="naziv" Type="String" MaxLength="45" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="lijek" Relationship="Self.fk_lijek_tipLijeka1" FromRole="tiplijeka" ToRole="lijek" />
+        </EntityType>
+        <EntityType Name="zaposlenik">
+          <Key>
+            <PropertyRef Name="oib" />
+          </Key>
+          <Property Name="oib" Type="String" MaxLength="11" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="ime" Type="String" MaxLength="45" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="prezime" Type="String" MaxLength="45" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="adresa" Type="String" MaxLength="45" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="brojTelefona" Type="String" MaxLength="45" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="korisnickoIme" Type="String" MaxLength="45" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="lozinka" Type="String" MaxLength="45" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="narudzbenica" Relationship="Self.fk_racun_zaposlenik1" FromRole="zaposlenik" ToRole="narudzbenica" />
+        </EntityType>
+        <Association Name="fk_lijek_jedinicnaMjera1">
+          <End Role="jedinicnamjera" Type="Self.jedinicnamjera" Multiplicity="1" />
+          <End Role="lijek" Type="Self.lijek" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="jedinicnamjera">
+              <PropertyRef Name="idJedinicnaMjera" />
+            </Principal>
+            <Dependent Role="lijek">
+              <PropertyRef Name="idJedinicnaMjera" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_racun_klijent1">
+          <End Role="klijent" Type="Self.klijent" Multiplicity="1" />
+          <End Role="narudzbenica" Type="Self.narudzbenica" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="klijent">
+              <PropertyRef Name="oib" />
+            </Principal>
+            <Dependent Role="narudzbenica">
+              <PropertyRef Name="oibKlijenta" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_lijek_tipLijeka1">
+          <End Role="tiplijeka" Type="Self.tiplijeka" Multiplicity="1" />
+          <End Role="lijek" Type="Self.lijek" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tiplijeka">
+              <PropertyRef Name="idTipLijeka" />
+            </Principal>
+            <Dependent Role="lijek">
+              <PropertyRef Name="idTipLijeka" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_stavkeRacuna_lijek">
+          <End Role="lijek" Type="Self.lijek" Multiplicity="1" />
+          <End Role="stavkenarudzbenice" Type="Self.stavkenarudzbenice" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="lijek">
+              <PropertyRef Name="idLijek" />
+            </Principal>
+            <Dependent Role="stavkenarudzbenice">
+              <PropertyRef Name="idLijek" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_racun_zaposlenik1">
+          <End Role="zaposlenik" Type="Self.zaposlenik" Multiplicity="1" />
+          <End Role="narudzbenica" Type="Self.narudzbenica" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="zaposlenik">
+              <PropertyRef Name="oib" />
+            </Principal>
+            <Dependent Role="narudzbenica">
+              <PropertyRef Name="oibZaposlenika" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_stavkeRacuna_racun1">
+          <End Role="narudzbenica" Type="Self.narudzbenica" Multiplicity="1" />
+          <End Role="stavkenarudzbenice" Type="Self.stavkenarudzbenice" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="narudzbenica">
+              <PropertyRef Name="idNarudzbenice" />
+            </Principal>
+            <Dependent Role="stavkenarudzbenice">
+              <PropertyRef Name="idNarudzbenice" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="greymatterpiEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="jedinicnamjera" EntityType="Self.jedinicnamjera" />
+          <EntitySet Name="klijent" EntityType="Self.klijent" />
+          <EntitySet Name="lijek" EntityType="Self.lijek" />
+          <EntitySet Name="narudzbenica" EntityType="Self.narudzbenica" />
+          <EntitySet Name="stavkenarudzbenice" EntityType="Self.stavkenarudzbenice" />
+          <EntitySet Name="tiplijeka" EntityType="Self.tiplijeka" />
+          <EntitySet Name="zaposlenik" EntityType="Self.zaposlenik" />
+          <AssociationSet Name="fk_lijek_jedinicnaMjera1" Association="Self.fk_lijek_jedinicnaMjera1">
+            <End Role="jedinicnamjera" EntitySet="jedinicnamjera" />
+            <End Role="lijek" EntitySet="lijek" />
+          </AssociationSet>
+          <AssociationSet Name="fk_racun_klijent1" Association="Self.fk_racun_klijent1">
+            <End Role="klijent" EntitySet="klijent" />
+            <End Role="narudzbenica" EntitySet="narudzbenica" />
+          </AssociationSet>
+          <AssociationSet Name="fk_lijek_tipLijeka1" Association="Self.fk_lijek_tipLijeka1">
+            <End Role="tiplijeka" EntitySet="tiplijeka" />
+            <End Role="lijek" EntitySet="lijek" />
+          </AssociationSet>
+          <AssociationSet Name="fk_stavkeRacuna_lijek" Association="Self.fk_stavkeRacuna_lijek">
+            <End Role="lijek" EntitySet="lijek" />
+            <End Role="stavkenarudzbenice" EntitySet="stavkenarudzbenice" />
+          </AssociationSet>
+          <AssociationSet Name="fk_racun_zaposlenik1" Association="Self.fk_racun_zaposlenik1">
+            <End Role="zaposlenik" EntitySet="zaposlenik" />
+            <End Role="narudzbenica" EntitySet="narudzbenica" />
+          </AssociationSet>
+          <AssociationSet Name="fk_stavkeRacuna_racun1" Association="Self.fk_stavkeRacuna_racun1">
+            <End Role="narudzbenica" EntitySet="narudzbenica" />
+            <End Role="stavkenarudzbenice" EntitySet="stavkenarudzbenice" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="greymatterpiModelStoreContainer" CdmEntityContainer="greymatterpiEntities">
+          <EntitySetMapping Name="jedinicnamjera">
+            <EntityTypeMapping TypeName="greymatterpiModel.jedinicnamjera">
+              <MappingFragment StoreEntitySet="jedinicnamjera">
+                <ScalarProperty Name="idJedinicnaMjera" ColumnName="idJedinicnaMjera" />
+                <ScalarProperty Name="naziv" ColumnName="naziv" />
+                <ScalarProperty Name="kratica" ColumnName="kratica" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="klijent">
+            <EntityTypeMapping TypeName="greymatterpiModel.klijent">
+              <MappingFragment StoreEntitySet="klijent">
+                <ScalarProperty Name="oib" ColumnName="oib" />
+                <ScalarProperty Name="naziv" ColumnName="naziv" />
+                <ScalarProperty Name="telefon" ColumnName="telefon" />
+                <ScalarProperty Name="e_mail" ColumnName="e-mail" />
+                <ScalarProperty Name="adresa" ColumnName="adresa" />
+                <ScalarProperty Name="ziroRacun" ColumnName="ziroRacun" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="lijek">
+            <EntityTypeMapping TypeName="greymatterpiModel.lijek">
+              <MappingFragment StoreEntitySet="lijek">
+                <ScalarProperty Name="idLijek" ColumnName="idLijek" />
+                <ScalarProperty Name="naziv" ColumnName="naziv" />
+                <ScalarProperty Name="upute" ColumnName="upute" />
+                <ScalarProperty Name="datumProizvodnje" ColumnName="datumProizvodnje" />
+                <ScalarProperty Name="rokUpotrebe" ColumnName="rokUpotrebe" />
+                <ScalarProperty Name="cijena" ColumnName="cijena" />
+                <ScalarProperty Name="pakiranje" ColumnName="pakiranje" />
+                <ScalarProperty Name="doza" ColumnName="doza" />
+                <ScalarProperty Name="idJedinicnaMjera" ColumnName="idJedinicnaMjera" />
+                <ScalarProperty Name="idTipLijeka" ColumnName="idTipLijeka" />
+                <ScalarProperty Name="kolicina" ColumnName="kolicina" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="narudzbenica">
+            <EntityTypeMapping TypeName="greymatterpiModel.narudzbenica">
+              <MappingFragment StoreEntitySet="narudzbenica">
+                <ScalarProperty Name="idNarudzbenice" ColumnName="idNarudzbenice" />
+                <ScalarProperty Name="oibKlijenta" ColumnName="oibKlijenta" />
+                <ScalarProperty Name="datumIzdavanja" ColumnName="datumIzdavanja" />
+                <ScalarProperty Name="oibZaposlenika" ColumnName="oibZaposlenika" />
+                <ScalarProperty Name="rokPlacanja" ColumnName="rokPlacanja" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="stavkenarudzbenice">
+            <EntityTypeMapping TypeName="greymatterpiModel.stavkenarudzbenice">
+              <MappingFragment StoreEntitySet="stavkenarudzbenice">
+                <ScalarProperty Name="idLijek" ColumnName="idLijek" />
+                <ScalarProperty Name="idNarudzbenice" ColumnName="idNarudzbenice" />
+                <ScalarProperty Name="kolicina" ColumnName="kolicina" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tiplijeka">
+            <EntityTypeMapping TypeName="greymatterpiModel.tiplijeka">
+              <MappingFragment StoreEntitySet="tiplijeka">
+                <ScalarProperty Name="idTipLijeka" ColumnName="idTipLijeka" />
+                <ScalarProperty Name="naziv" ColumnName="naziv" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="zaposlenik">
+            <EntityTypeMapping TypeName="greymatterpiModel.zaposlenik">
+              <MappingFragment StoreEntitySet="zaposlenik">
+                <ScalarProperty Name="oib" ColumnName="oib" />
+                <ScalarProperty Name="ime" ColumnName="ime" />
+                <ScalarProperty Name="prezime" ColumnName="prezime" />
+                <ScalarProperty Name="adresa" ColumnName="adresa" />
+                <ScalarProperty Name="brojTelefona" ColumnName="brojTelefona" />
+                <ScalarProperty Name="korisnickoIme" ColumnName="korisnickoIme" />
+                <ScalarProperty Name="lozinka" ColumnName="lozinka" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="true" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

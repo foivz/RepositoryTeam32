@@ -1,0 +1,193 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="greymatterpiModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="jedinicnamjera">
+    <Key>
+      <PropertyRef Name="idJedinicnaMjera" />
+    </Key>
+    <Property Name="idJedinicnaMjera" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="naziv" Type="String" MaxLength="45" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="kratica" Type="String" MaxLength="45" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="lijek" Relationship="Self.fk_lijek_jedinicnaMjera1" FromRole="jedinicnamjera" ToRole="lijek" />
+  </EntityType>
+  <EntityType Name="klijent">
+    <Key>
+      <PropertyRef Name="oib" />
+    </Key>
+    <Property Name="oib" Type="String" MaxLength="11" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="naziv" Type="String" MaxLength="45" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="telefon" Type="String" MaxLength="45" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="e_mail" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
+    <Property Name="adresa" Type="String" MaxLength="45" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="ziroRacun" Type="String" MaxLength="45" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="narudzbenica" Relationship="Self.fk_racun_klijent1" FromRole="klijent" ToRole="narudzbenica" />
+  </EntityType>
+  <EntityType Name="lijek">
+    <Key>
+      <PropertyRef Name="idLijek" />
+    </Key>
+    <Property Name="idLijek" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="naziv" Type="String" MaxLength="45" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="upute" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="datumProizvodnje" Type="DateTime" Nullable="false" />
+    <Property Name="rokUpotrebe" Type="DateTime" Nullable="false" />
+    <Property Name="cijena" Type="Single" Nullable="false" />
+    <Property Name="pakiranje" Type="Single" Nullable="false" />
+    <Property Name="doza" Type="Single" Nullable="false" />
+    <Property Name="idJedinicnaMjera" Type="Int32" Nullable="false" />
+    <Property Name="idTipLijeka" Type="Int32" Nullable="false" />
+    <Property Name="kolicina" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="jedinicnamjera" Relationship="Self.fk_lijek_jedinicnaMjera1" FromRole="lijek" ToRole="jedinicnamjera" />
+    <NavigationProperty Name="tiplijeka" Relationship="Self.fk_lijek_tipLijeka1" FromRole="lijek" ToRole="tiplijeka" />
+    <NavigationProperty Name="stavkenarudzbenice" Relationship="Self.fk_stavkeRacuna_lijek" FromRole="lijek" ToRole="stavkenarudzbenice" />
+  </EntityType>
+  <EntityType Name="narudzbenica">
+    <Key>
+      <PropertyRef Name="idNarudzbenice" />
+    </Key>
+    <Property Name="idNarudzbenice" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="oibKlijenta" Type="String" MaxLength="11" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="datumIzdavanja" Type="DateTime" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="oibZaposlenika" Type="String" MaxLength="11" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="rokPlacanja" Type="DateTime" Nullable="false" />
+    <NavigationProperty Name="klijent" Relationship="Self.fk_racun_klijent1" FromRole="narudzbenica" ToRole="klijent" />
+    <NavigationProperty Name="zaposlenik" Relationship="Self.fk_racun_zaposlenik1" FromRole="narudzbenica" ToRole="zaposlenik" />
+    <NavigationProperty Name="stavkenarudzbenice" Relationship="Self.fk_stavkeRacuna_racun1" FromRole="narudzbenica" ToRole="stavkenarudzbenice" />
+  </EntityType>
+  <EntityType Name="stavkenarudzbenice">
+    <Key>
+      <PropertyRef Name="idLijek" />
+      <PropertyRef Name="idNarudzbenice" />
+    </Key>
+    <Property Name="idLijek" Type="Int32" Nullable="false" />
+    <Property Name="idNarudzbenice" Type="Int32" Nullable="false" />
+    <Property Name="kolicina" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="lijek" Relationship="Self.fk_stavkeRacuna_lijek" FromRole="stavkenarudzbenice" ToRole="lijek" />
+    <NavigationProperty Name="narudzbenica" Relationship="Self.fk_stavkeRacuna_racun1" FromRole="stavkenarudzbenice" ToRole="narudzbenica" />
+  </EntityType>
+  <EntityType Name="tiplijeka">
+    <Key>
+      <PropertyRef Name="idTipLijeka" />
+    </Key>
+    <Property Name="idTipLijeka" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="naziv" Type="String" MaxLength="45" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="lijek" Relationship="Self.fk_lijek_tipLijeka1" FromRole="tiplijeka" ToRole="lijek" />
+  </EntityType>
+  <EntityType Name="zaposlenik">
+    <Key>
+      <PropertyRef Name="oib" />
+    </Key>
+    <Property Name="oib" Type="String" MaxLength="11" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="ime" Type="String" MaxLength="45" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="prezime" Type="String" MaxLength="45" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="adresa" Type="String" MaxLength="45" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="brojTelefona" Type="String" MaxLength="45" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="korisnickoIme" Type="String" MaxLength="45" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="lozinka" Type="String" MaxLength="45" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="narudzbenica" Relationship="Self.fk_racun_zaposlenik1" FromRole="zaposlenik" ToRole="narudzbenica" />
+  </EntityType>
+  <Association Name="fk_lijek_jedinicnaMjera1">
+    <End Role="jedinicnamjera" Type="Self.jedinicnamjera" Multiplicity="1" />
+    <End Role="lijek" Type="Self.lijek" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="jedinicnamjera">
+        <PropertyRef Name="idJedinicnaMjera" />
+      </Principal>
+      <Dependent Role="lijek">
+        <PropertyRef Name="idJedinicnaMjera" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_racun_klijent1">
+    <End Role="klijent" Type="Self.klijent" Multiplicity="1" />
+    <End Role="narudzbenica" Type="Self.narudzbenica" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="klijent">
+        <PropertyRef Name="oib" />
+      </Principal>
+      <Dependent Role="narudzbenica">
+        <PropertyRef Name="oibKlijenta" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_lijek_tipLijeka1">
+    <End Role="tiplijeka" Type="Self.tiplijeka" Multiplicity="1" />
+    <End Role="lijek" Type="Self.lijek" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tiplijeka">
+        <PropertyRef Name="idTipLijeka" />
+      </Principal>
+      <Dependent Role="lijek">
+        <PropertyRef Name="idTipLijeka" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_stavkeRacuna_lijek">
+    <End Role="lijek" Type="Self.lijek" Multiplicity="1" />
+    <End Role="stavkenarudzbenice" Type="Self.stavkenarudzbenice" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="lijek">
+        <PropertyRef Name="idLijek" />
+      </Principal>
+      <Dependent Role="stavkenarudzbenice">
+        <PropertyRef Name="idLijek" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_racun_zaposlenik1">
+    <End Role="zaposlenik" Type="Self.zaposlenik" Multiplicity="1" />
+    <End Role="narudzbenica" Type="Self.narudzbenica" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="zaposlenik">
+        <PropertyRef Name="oib" />
+      </Principal>
+      <Dependent Role="narudzbenica">
+        <PropertyRef Name="oibZaposlenika" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_stavkeRacuna_racun1">
+    <End Role="narudzbenica" Type="Self.narudzbenica" Multiplicity="1" />
+    <End Role="stavkenarudzbenice" Type="Self.stavkenarudzbenice" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="narudzbenica">
+        <PropertyRef Name="idNarudzbenice" />
+      </Principal>
+      <Dependent Role="stavkenarudzbenice">
+        <PropertyRef Name="idNarudzbenice" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="greymatterpiEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="jedinicnamjera" EntityType="Self.jedinicnamjera" />
+    <EntitySet Name="klijent" EntityType="Self.klijent" />
+    <EntitySet Name="lijek" EntityType="Self.lijek" />
+    <EntitySet Name="narudzbenica" EntityType="Self.narudzbenica" />
+    <EntitySet Name="stavkenarudzbenice" EntityType="Self.stavkenarudzbenice" />
+    <EntitySet Name="tiplijeka" EntityType="Self.tiplijeka" />
+    <EntitySet Name="zaposlenik" EntityType="Self.zaposlenik" />
+    <AssociationSet Name="fk_lijek_jedinicnaMjera1" Association="Self.fk_lijek_jedinicnaMjera1">
+      <End Role="jedinicnamjera" EntitySet="jedinicnamjera" />
+      <End Role="lijek" EntitySet="lijek" />
+    </AssociationSet>
+    <AssociationSet Name="fk_racun_klijent1" Association="Self.fk_racun_klijent1">
+      <End Role="klijent" EntitySet="klijent" />
+      <End Role="narudzbenica" EntitySet="narudzbenica" />
+    </AssociationSet>
+    <AssociationSet Name="fk_lijek_tipLijeka1" Association="Self.fk_lijek_tipLijeka1">
+      <End Role="tiplijeka" EntitySet="tiplijeka" />
+      <End Role="lijek" EntitySet="lijek" />
+    </AssociationSet>
+    <AssociationSet Name="fk_stavkeRacuna_lijek" Association="Self.fk_stavkeRacuna_lijek">
+      <End Role="lijek" EntitySet="lijek" />
+      <End Role="stavkenarudzbenice" EntitySet="stavkenarudzbenice" />
+    </AssociationSet>
+    <AssociationSet Name="fk_racun_zaposlenik1" Association="Self.fk_racun_zaposlenik1">
+      <End Role="zaposlenik" EntitySet="zaposlenik" />
+      <End Role="narudzbenica" EntitySet="narudzbenica" />
+    </AssociationSet>
+    <AssociationSet Name="fk_stavkeRacuna_racun1" Association="Self.fk_stavkeRacuna_racun1">
+      <End Role="narudzbenica" EntitySet="narudzbenica" />
+      <End Role="stavkenarudzbenice" EntitySet="stavkenarudzbenice" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>
