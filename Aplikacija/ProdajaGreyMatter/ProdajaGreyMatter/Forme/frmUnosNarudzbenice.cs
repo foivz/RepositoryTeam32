@@ -13,6 +13,7 @@ namespace ProdajaGreyMatter
     public partial class frmUnosNarudzbenice : Form
     {
         private zaposlenik referent;
+        private BindingList<stavkenarudzbenice> stavkeNar = new BindingList<stavkenarudzbenice>();
         public frmUnosNarudzbenice(zaposlenik zaposlenik)
         {
             InitializeComponent();
@@ -25,8 +26,7 @@ namespace ProdajaGreyMatter
             this.Close();
         }
         private void frmUnosNarudzbenice_Load(object sender, EventArgs e)
-            {
-           
+        {
                 zaposlenikBindingSource.DataSource = referent;
                 BindingList<klijent> listaKlijenata = null;
                 using (var db = new greymatterpiEntities())
@@ -38,7 +38,7 @@ namespace ProdajaGreyMatter
                     cmbNazivKlijenta.Items.Add(klijent.naziv);
                 }
           
-             }
+        }
     
         private void btnSpremi_Click(object sender, EventArgs e)
         {
@@ -58,6 +58,20 @@ namespace ProdajaGreyMatter
                 };
                 db.narudzbenica.Add(narudzba);
                 db.SaveChanges();
+                var b = from n in db.narudzbenica orderby n.idNarudzbenice descending select n.idNarudzbenice;
+                int id = b.First();
+                foreach(var a in stavkeNar)
+                {
+                    stavkenarudzbenice stavke = new stavkenarudzbenice()
+                    {
+                        idLijek = a.idLijek,
+                        kolicina = a.kolicina,
+                        idNarudzbenice = id
+                    };
+                    db.stavkenarudzbenice.Add(stavke);
+                    db.SaveChanges();
+                }
+               
             }
             this.Close();
         }
@@ -72,20 +86,45 @@ namespace ProdajaGreyMatter
                 ID = ideviNarudzbenica.Last();
 
             }
-            frmUnosStavke unosStavke = new frmUnosStavke();
+            frmUnosStavke unosStavke = new frmUnosStavke(stavkeNar);
             unosStavke.ShowDialog();
-            BindingList<stavkenarudzbenice> listaStavaka = new BindingList<stavkenarudzbenice>();
-            BindingList<lijek> popisLijekova = null;
+
             if (unosStavke.odustani != true)
             {
-                using (var db = new greymatterpiEntities())
-                {
-                    popisLijekova = new BindingList<lijek>(db.lijek.ToList());
-                }
                 stavkenarudzbeniceBindingSource.Add(unosStavke.stavkaNarudzbenice);
-                lijekBindingSource.DataSource = popisLijekova;
+
+                stavkeNar.Add(unosStavke.stavkaNarudzbenice);
             }
        
+        }
+
+        private void btnIzmjeni_Click(object sender, EventArgs e)
+        {
+            stavkenarudzbenice selektiranaStavka = stavkenarudzbeniceBindingSource.Current as stavkenarudzbenice;
+            if (selektiranaStavka != null)
+            {
+                frmUnosStavke unosStavke = new frmUnosStavke(selektiranaStavka);
+                unosStavke.ShowDialog();
+
+                if (unosStavke.odustani != true)
+                {
+
+                    stavkenarudzbeniceBindingSource.RemoveCurrent();
+                    stavkenarudzbeniceBindingSource.Add(unosStavke.stavkaNarudzbenice);
+
+                    stavkeNar.Remove(selektiranaStavka);
+                    stavkeNar.Add(unosStavke.stavkaNarudzbenice);
+                }
+            }
+
+        }
+
+        private void btnIzbrisi_Click(object sender, EventArgs e)
+        {
+            stavkenarudzbenice selektiranaStavka = stavkenarudzbeniceBindingSource.Current as stavkenarudzbenice;
+            
+            stavkenarudzbeniceBindingSource.RemoveCurrent();
+            stavkeNar.Remove(selektiranaStavka);
         }
     }
 }
