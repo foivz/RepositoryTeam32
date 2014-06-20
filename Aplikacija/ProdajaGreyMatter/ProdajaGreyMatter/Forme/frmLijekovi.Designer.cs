@@ -31,9 +31,6 @@
             this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dgPopisLijekova = new System.Windows.Forms.DataGridView();
-            this.jedinicnamjeraBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.tiplijekaBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.lijekBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.btnNatrag = new System.Windows.Forms.Button();
             this.lblPretraga = new System.Windows.Forms.Label();
             this.txtPretragaLijekova = new System.Windows.Forms.TextBox();
@@ -46,11 +43,14 @@
             this.pakiranjeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dozaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.idJedinicnaMjeraDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.jedinicnamjeraBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.idTipLijekaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.tiplijekaBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.kolicinaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.jedinicnamjeraDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tiplijekaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.stavkenarudzbeniceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.lijekBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dgPopisLijekova)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.jedinicnamjeraBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tiplijekaBindingSource)).BeginInit();
@@ -59,6 +59,8 @@
             // 
             // dgPopisLijekova
             // 
+            this.dgPopisLijekova.AllowUserToAddRows = false;
+            this.dgPopisLijekova.AllowUserToDeleteRows = false;
             this.dgPopisLijekova.AutoGenerateColumns = false;
             this.dgPopisLijekova.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgPopisLijekova.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -84,18 +86,6 @@
             this.dgPopisLijekova.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgPopisLijekova.Size = new System.Drawing.Size(883, 201);
             this.dgPopisLijekova.TabIndex = 0;
-            // 
-            // jedinicnamjeraBindingSource
-            // 
-            this.jedinicnamjeraBindingSource.DataSource = typeof(ProdajaGreyMatter.jedinicnamjera);
-            // 
-            // tiplijekaBindingSource
-            // 
-            this.tiplijekaBindingSource.DataSource = typeof(ProdajaGreyMatter.tiplijeka);
-            // 
-            // lijekBindingSource
-            // 
-            this.lijekBindingSource.DataSource = typeof(ProdajaGreyMatter.lijek);
             // 
             // btnNatrag
             // 
@@ -197,6 +187,10 @@
             this.idJedinicnaMjeraDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             this.idJedinicnaMjeraDataGridViewTextBoxColumn.ValueMember = "idJedinicnaMjera";
             // 
+            // jedinicnamjeraBindingSource
+            // 
+            this.jedinicnamjeraBindingSource.DataSource = typeof(ProdajaGreyMatter.jedinicnamjera);
+            // 
             // idTipLijekaDataGridViewTextBoxColumn
             // 
             this.idTipLijekaDataGridViewTextBoxColumn.DataPropertyName = "idTipLijeka";
@@ -209,6 +203,10 @@
             this.idTipLijekaDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.idTipLijekaDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             this.idTipLijekaDataGridViewTextBoxColumn.ValueMember = "idTipLijeka";
+            // 
+            // tiplijekaBindingSource
+            // 
+            this.tiplijekaBindingSource.DataSource = typeof(ProdajaGreyMatter.tiplijeka);
             // 
             // kolicinaDataGridViewTextBoxColumn
             // 
@@ -240,6 +238,10 @@
             this.stavkenarudzbeniceDataGridViewTextBoxColumn.Name = "stavkenarudzbeniceDataGridViewTextBoxColumn";
             this.stavkenarudzbeniceDataGridViewTextBoxColumn.ReadOnly = true;
             this.stavkenarudzbeniceDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // lijekBindingSource
+            // 
+            this.lijekBindingSource.DataSource = typeof(ProdajaGreyMatter.lijek);
             // 
             // frmLijekovi
             // 

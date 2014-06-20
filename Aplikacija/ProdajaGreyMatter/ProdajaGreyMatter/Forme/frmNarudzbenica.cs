@@ -34,8 +34,10 @@ namespace ProdajaGreyMatter
             narudzbenicaBindingSource.DataSource = listaNarudzbenica;
             zaposlenikBindingSource.DataSource = listaZaposlenika;
             klijentBindingSource.DataSource = listaKlijenata;
+            
             int broj = dgPopisNarudžbenica.Rows.Count;
-            for (int i = 0; i < broj -1 ; i++)
+
+            for (int i = 0; i < broj; i++)
 			{
 			  if (Convert.ToInt32(dgPopisNarudžbenica.Rows[i].Cells[1].Value) == 0)
                 {

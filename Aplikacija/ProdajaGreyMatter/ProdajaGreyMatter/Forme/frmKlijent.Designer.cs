@@ -30,6 +30,13 @@
         {
             this.components = new System.ComponentModel.Container();
             this.dgPopisKlijenata = new System.Windows.Forms.DataGridView();
+            this.oibDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nazivDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.telefonDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.emailDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.adresaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ziroRacunDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.narudzbenicaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.klijentBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.btnUnosKlijenta = new System.Windows.Forms.Button();
             this.btnNatrag = new System.Windows.Forms.Button();
@@ -38,19 +45,14 @@
             this.label2 = new System.Windows.Forms.Label();
             this.txtPretragaOib = new System.Windows.Forms.TextBox();
             this.txtPretragaNaziv = new System.Windows.Forms.TextBox();
-            this.oibDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nazivDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.telefonDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.emailDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.adresaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ziroRacunDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.narudzbenicaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgPopisKlijenata)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.klijentBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // dgPopisKlijenata
             // 
+            this.dgPopisKlijenata.AllowUserToAddRows = false;
+            this.dgPopisKlijenata.AllowUserToDeleteRows = false;
             this.dgPopisKlijenata.AutoGenerateColumns = false;
             this.dgPopisKlijenata.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgPopisKlijenata.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -69,6 +71,56 @@
             this.dgPopisKlijenata.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgPopisKlijenata.Size = new System.Drawing.Size(641, 244);
             this.dgPopisKlijenata.TabIndex = 0;
+            // 
+            // oibDataGridViewTextBoxColumn
+            // 
+            this.oibDataGridViewTextBoxColumn.DataPropertyName = "oib";
+            this.oibDataGridViewTextBoxColumn.HeaderText = "OIB klijenta";
+            this.oibDataGridViewTextBoxColumn.Name = "oibDataGridViewTextBoxColumn";
+            this.oibDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // nazivDataGridViewTextBoxColumn
+            // 
+            this.nazivDataGridViewTextBoxColumn.DataPropertyName = "naziv";
+            this.nazivDataGridViewTextBoxColumn.HeaderText = "Naziv";
+            this.nazivDataGridViewTextBoxColumn.Name = "nazivDataGridViewTextBoxColumn";
+            this.nazivDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // telefonDataGridViewTextBoxColumn
+            // 
+            this.telefonDataGridViewTextBoxColumn.DataPropertyName = "telefon";
+            this.telefonDataGridViewTextBoxColumn.HeaderText = "Telefon";
+            this.telefonDataGridViewTextBoxColumn.Name = "telefonDataGridViewTextBoxColumn";
+            this.telefonDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // emailDataGridViewTextBoxColumn
+            // 
+            this.emailDataGridViewTextBoxColumn.DataPropertyName = "e_mail";
+            this.emailDataGridViewTextBoxColumn.HeaderText = "E mail";
+            this.emailDataGridViewTextBoxColumn.Name = "emailDataGridViewTextBoxColumn";
+            this.emailDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // adresaDataGridViewTextBoxColumn
+            // 
+            this.adresaDataGridViewTextBoxColumn.DataPropertyName = "adresa";
+            this.adresaDataGridViewTextBoxColumn.HeaderText = "Adresa";
+            this.adresaDataGridViewTextBoxColumn.Name = "adresaDataGridViewTextBoxColumn";
+            this.adresaDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // ziroRacunDataGridViewTextBoxColumn
+            // 
+            this.ziroRacunDataGridViewTextBoxColumn.DataPropertyName = "ziroRacun";
+            this.ziroRacunDataGridViewTextBoxColumn.HeaderText = "Žiro račun";
+            this.ziroRacunDataGridViewTextBoxColumn.Name = "ziroRacunDataGridViewTextBoxColumn";
+            this.ziroRacunDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // narudzbenicaDataGridViewTextBoxColumn
+            // 
+            this.narudzbenicaDataGridViewTextBoxColumn.DataPropertyName = "narudzbenica";
+            this.narudzbenicaDataGridViewTextBoxColumn.HeaderText = "Narudžbenica";
+            this.narudzbenicaDataGridViewTextBoxColumn.Name = "narudzbenicaDataGridViewTextBoxColumn";
+            this.narudzbenicaDataGridViewTextBoxColumn.ReadOnly = true;
+            this.narudzbenicaDataGridViewTextBoxColumn.Visible = false;
             // 
             // klijentBindingSource
             // 
@@ -137,56 +189,6 @@
             this.txtPretragaNaziv.Size = new System.Drawing.Size(100, 20);
             this.txtPretragaNaziv.TabIndex = 7;
             this.txtPretragaNaziv.TextChanged += new System.EventHandler(this.txtPretragaNaziv_TextChanged);
-            // 
-            // oibDataGridViewTextBoxColumn
-            // 
-            this.oibDataGridViewTextBoxColumn.DataPropertyName = "oib";
-            this.oibDataGridViewTextBoxColumn.HeaderText = "OIB klijenta";
-            this.oibDataGridViewTextBoxColumn.Name = "oibDataGridViewTextBoxColumn";
-            this.oibDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // nazivDataGridViewTextBoxColumn
-            // 
-            this.nazivDataGridViewTextBoxColumn.DataPropertyName = "naziv";
-            this.nazivDataGridViewTextBoxColumn.HeaderText = "Naziv";
-            this.nazivDataGridViewTextBoxColumn.Name = "nazivDataGridViewTextBoxColumn";
-            this.nazivDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // telefonDataGridViewTextBoxColumn
-            // 
-            this.telefonDataGridViewTextBoxColumn.DataPropertyName = "telefon";
-            this.telefonDataGridViewTextBoxColumn.HeaderText = "Telefon";
-            this.telefonDataGridViewTextBoxColumn.Name = "telefonDataGridViewTextBoxColumn";
-            this.telefonDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // emailDataGridViewTextBoxColumn
-            // 
-            this.emailDataGridViewTextBoxColumn.DataPropertyName = "e_mail";
-            this.emailDataGridViewTextBoxColumn.HeaderText = "E mail";
-            this.emailDataGridViewTextBoxColumn.Name = "emailDataGridViewTextBoxColumn";
-            this.emailDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // adresaDataGridViewTextBoxColumn
-            // 
-            this.adresaDataGridViewTextBoxColumn.DataPropertyName = "adresa";
-            this.adresaDataGridViewTextBoxColumn.HeaderText = "Adresa";
-            this.adresaDataGridViewTextBoxColumn.Name = "adresaDataGridViewTextBoxColumn";
-            this.adresaDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // ziroRacunDataGridViewTextBoxColumn
-            // 
-            this.ziroRacunDataGridViewTextBoxColumn.DataPropertyName = "ziroRacun";
-            this.ziroRacunDataGridViewTextBoxColumn.HeaderText = "Žiro račun";
-            this.ziroRacunDataGridViewTextBoxColumn.Name = "ziroRacunDataGridViewTextBoxColumn";
-            this.ziroRacunDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // narudzbenicaDataGridViewTextBoxColumn
-            // 
-            this.narudzbenicaDataGridViewTextBoxColumn.DataPropertyName = "narudzbenica";
-            this.narudzbenicaDataGridViewTextBoxColumn.HeaderText = "Narudžbenica";
-            this.narudzbenicaDataGridViewTextBoxColumn.Name = "narudzbenicaDataGridViewTextBoxColumn";
-            this.narudzbenicaDataGridViewTextBoxColumn.ReadOnly = true;
-            this.narudzbenicaDataGridViewTextBoxColumn.Visible = false;
             // 
             // frmKlijent
             // 
