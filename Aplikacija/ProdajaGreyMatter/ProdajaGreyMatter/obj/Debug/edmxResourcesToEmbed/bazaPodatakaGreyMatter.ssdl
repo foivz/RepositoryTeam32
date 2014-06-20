@@ -44,6 +44,7 @@
     <Property Name="datumIzdavanja" Type="timestamp" Precision="0" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="oibZaposlenika" Type="char" MaxLength="11" Nullable="false" />
     <Property Name="rokPlacanja" Type="date" Nullable="false" />
+    <Property Name="status" Type="int" Nullable="false" />
   </EntityType>
   <EntityType Name="stavkenarudzbenice">
     <Key>

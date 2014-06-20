@@ -30,6 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             this.dgPopisKlijenata = new System.Windows.Forms.DataGridView();
+            this.klijentBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.btnUnosKlijenta = new System.Windows.Forms.Button();
             this.btnNatrag = new System.Windows.Forms.Button();
             this.btnAzuriranjeKlijenta = new System.Windows.Forms.Button();
@@ -44,7 +45,6 @@
             this.adresaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ziroRacunDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.narudzbenicaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.klijentBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dgPopisKlijenata)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.klijentBindingSource)).BeginInit();
             this.SuspendLayout();
@@ -69,6 +69,10 @@
             this.dgPopisKlijenata.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgPopisKlijenata.Size = new System.Drawing.Size(641, 244);
             this.dgPopisKlijenata.TabIndex = 0;
+            // 
+            // klijentBindingSource
+            // 
+            this.klijentBindingSource.DataSource = typeof(ProdajaGreyMatter.klijent);
             // 
             // btnUnosKlijenta
             // 
@@ -137,56 +141,52 @@
             // oibDataGridViewTextBoxColumn
             // 
             this.oibDataGridViewTextBoxColumn.DataPropertyName = "oib";
-            this.oibDataGridViewTextBoxColumn.HeaderText = "oib";
+            this.oibDataGridViewTextBoxColumn.HeaderText = "OIB klijenta";
             this.oibDataGridViewTextBoxColumn.Name = "oibDataGridViewTextBoxColumn";
             this.oibDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // nazivDataGridViewTextBoxColumn
             // 
             this.nazivDataGridViewTextBoxColumn.DataPropertyName = "naziv";
-            this.nazivDataGridViewTextBoxColumn.HeaderText = "naziv";
+            this.nazivDataGridViewTextBoxColumn.HeaderText = "Naziv";
             this.nazivDataGridViewTextBoxColumn.Name = "nazivDataGridViewTextBoxColumn";
             this.nazivDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // telefonDataGridViewTextBoxColumn
             // 
             this.telefonDataGridViewTextBoxColumn.DataPropertyName = "telefon";
-            this.telefonDataGridViewTextBoxColumn.HeaderText = "telefon";
+            this.telefonDataGridViewTextBoxColumn.HeaderText = "Telefon";
             this.telefonDataGridViewTextBoxColumn.Name = "telefonDataGridViewTextBoxColumn";
             this.telefonDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // emailDataGridViewTextBoxColumn
             // 
             this.emailDataGridViewTextBoxColumn.DataPropertyName = "e_mail";
-            this.emailDataGridViewTextBoxColumn.HeaderText = "e_mail";
+            this.emailDataGridViewTextBoxColumn.HeaderText = "E mail";
             this.emailDataGridViewTextBoxColumn.Name = "emailDataGridViewTextBoxColumn";
             this.emailDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // adresaDataGridViewTextBoxColumn
             // 
             this.adresaDataGridViewTextBoxColumn.DataPropertyName = "adresa";
-            this.adresaDataGridViewTextBoxColumn.HeaderText = "adresa";
+            this.adresaDataGridViewTextBoxColumn.HeaderText = "Adresa";
             this.adresaDataGridViewTextBoxColumn.Name = "adresaDataGridViewTextBoxColumn";
             this.adresaDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // ziroRacunDataGridViewTextBoxColumn
             // 
             this.ziroRacunDataGridViewTextBoxColumn.DataPropertyName = "ziroRacun";
-            this.ziroRacunDataGridViewTextBoxColumn.HeaderText = "ziroRacun";
+            this.ziroRacunDataGridViewTextBoxColumn.HeaderText = "Žiro račun";
             this.ziroRacunDataGridViewTextBoxColumn.Name = "ziroRacunDataGridViewTextBoxColumn";
             this.ziroRacunDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // narudzbenicaDataGridViewTextBoxColumn
             // 
             this.narudzbenicaDataGridViewTextBoxColumn.DataPropertyName = "narudzbenica";
-            this.narudzbenicaDataGridViewTextBoxColumn.HeaderText = "narudzbenica";
+            this.narudzbenicaDataGridViewTextBoxColumn.HeaderText = "Narudžbenica";
             this.narudzbenicaDataGridViewTextBoxColumn.Name = "narudzbenicaDataGridViewTextBoxColumn";
             this.narudzbenicaDataGridViewTextBoxColumn.ReadOnly = true;
             this.narudzbenicaDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // klijentBindingSource
-            // 
-            this.klijentBindingSource.DataSource = typeof(ProdajaGreyMatter.klijent);
             // 
             // frmKlijent
             // 
@@ -217,6 +217,11 @@
         private System.Windows.Forms.Button btnUnosKlijenta;
         private System.Windows.Forms.Button btnNatrag;
         private System.Windows.Forms.Button btnAzuriranjeKlijenta;
+        private System.Windows.Forms.BindingSource klijentBindingSource;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TextBox txtPretragaOib;
+        private System.Windows.Forms.TextBox txtPretragaNaziv;
         private System.Windows.Forms.DataGridViewTextBoxColumn oibDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn nazivDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn telefonDataGridViewTextBoxColumn;
@@ -224,10 +229,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn adresaDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn ziroRacunDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn narudzbenicaDataGridViewTextBoxColumn;
-        private System.Windows.Forms.BindingSource klijentBindingSource;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox txtPretragaOib;
-        private System.Windows.Forms.TextBox txtPretragaNaziv;
     }
 }

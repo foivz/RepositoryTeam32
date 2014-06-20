@@ -16,5 +16,22 @@ namespace ProdajaGreyMatter
         {
             InitializeComponent();
         }
+
+        private void btnNajboljiKupci_Click(object sender, EventArgs e)
+        {
+            frmNajboljiKupci najboljiKupci = new frmNajboljiKupci();
+            najboljiKupci.ShowDialog();
+        }
+
+        private void btnNajprodavanijiLIjekovi_Click(object sender, EventArgs e)
+        {
+            frmNajprodavanijiLijekovi najprodavanijiLijekovi = new frmNajprodavanijiLijekovi();
+            najprodavanijiLijekovi.ShowDialog();
+        }
+
+        private void btnNatrag_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

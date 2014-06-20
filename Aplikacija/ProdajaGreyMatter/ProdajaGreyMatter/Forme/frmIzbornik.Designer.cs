@@ -74,6 +74,7 @@
             this.btnStatistika.TabIndex = 3;
             this.btnStatistika.Text = "Statistika";
             this.btnStatistika.UseVisualStyleBackColor = true;
+            this.btnStatistika.Click += new System.EventHandler(this.btnStatistika_Click);
             // 
             // btnOdjava
             // 

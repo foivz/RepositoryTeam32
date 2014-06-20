@@ -24,6 +24,7 @@ namespace ProdajaGreyMatter
         public System.DateTime datumIzdavanja { get; set; }
         public string oibZaposlenika { get; set; }
         public System.DateTime rokPlacanja { get; set; }
+        public int status { get; set; }
     
         public virtual klijent klijent { get; set; }
         public virtual zaposlenik zaposlenik { get; set; }

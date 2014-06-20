@@ -56,7 +56,10 @@ namespace ProdajaGreyMatter
 
                     txtIdLijeka.Text = trazeniLijek.idLijek.ToString();
                     txtNazivLijeka.Text = trazeniLijek.naziv;
-                    txtTipLijeka.Text = trazeniLijek.tiplijeka.ToString();
+                    IEnumerable<string> tipLijeka = from p in db.tiplijeka
+                                                    where p.idTipLijeka == trazeniLijek.idTipLijeka
+                                                    select p.naziv;
+                    txtTipLijeka.Text = tipLijeka.First();
                     txtDozaLijeka.Text = trazeniLijek.doza.ToString();
                     txtPakiranjeLijeka.Text = trazeniLijek.pakiranje.ToString();
                     txtCijenaLijeka.Text = trazeniLijek.cijena.ToString();

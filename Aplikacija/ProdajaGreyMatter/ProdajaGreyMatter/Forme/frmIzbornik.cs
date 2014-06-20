@@ -45,5 +45,11 @@ namespace ProdajaGreyMatter
             frmNarudzbenica narudzbenica = new frmNarudzbenica(referent);
             narudzbenica.ShowDialog();
         }
+
+        private void btnStatistika_Click(object sender, EventArgs e)
+        {
+            frmStatistika statistika = new frmStatistika();
+            statistika.ShowDialog();
+        }
     }
 }

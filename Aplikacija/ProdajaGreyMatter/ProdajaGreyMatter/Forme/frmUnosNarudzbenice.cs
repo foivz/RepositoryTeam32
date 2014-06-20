@@ -54,7 +54,8 @@ namespace ProdajaGreyMatter
                     oibKlijenta = oib,
                     oibZaposlenika = referent.oib,
                     datumIzdavanja = dtpDatumIzdavanjaNarudzbenice.Value,
-                    rokPlacanja = dtpRokPlacanja.Value
+                    rokPlacanja = dtpRokPlacanja.Value,
+                    status = 1
                 };
                 db.narudzbenica.Add(narudzba);
                 db.SaveChanges();

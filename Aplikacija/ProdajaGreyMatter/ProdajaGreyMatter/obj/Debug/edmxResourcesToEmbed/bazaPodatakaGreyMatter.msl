@@ -42,6 +42,7 @@
     <EntitySetMapping Name="narudzbenica">
       <EntityTypeMapping TypeName="greymatterpiModel.narudzbenica">
         <MappingFragment StoreEntitySet="narudzbenica">
+          <ScalarProperty Name="status" ColumnName="status" />
           <ScalarProperty Name="idNarudzbenice" ColumnName="idNarudzbenice" />
           <ScalarProperty Name="oibKlijenta" ColumnName="oibKlijenta" />
           <ScalarProperty Name="datumIzdavanja" ColumnName="datumIzdavanja" />

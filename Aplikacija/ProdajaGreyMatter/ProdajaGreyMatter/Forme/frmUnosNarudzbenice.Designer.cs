@@ -30,11 +30,6 @@
         {
             this.components = new System.ComponentModel.Container();
             this.dgStavkeNarudzbenice = new System.Windows.Forms.DataGridView();
-            this.idLijekDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.idNarudzbeniceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.kolicinaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.lijekDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.narudzbenicaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.stavkenarudzbeniceBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.lijekBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.txtIdNarudzbenice = new System.Windows.Forms.TextBox();
@@ -52,6 +47,11 @@
             this.zaposlenikBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.btnIzmjeni = new System.Windows.Forms.Button();
             this.btnIzbrisi = new System.Windows.Forms.Button();
+            this.idLijekDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.idNarudzbeniceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.kolicinaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.lijekDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.narudzbenicaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgStavkeNarudzbenice)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.stavkenarudzbeniceBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lijekBindingSource)).BeginInit();
@@ -76,44 +76,6 @@
             this.dgStavkeNarudzbenice.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgStavkeNarudzbenice.Size = new System.Drawing.Size(511, 180);
             this.dgStavkeNarudzbenice.TabIndex = 0;
-            // 
-            // idLijekDataGridViewTextBoxColumn
-            // 
-            this.idLijekDataGridViewTextBoxColumn.DataPropertyName = "idLijek";
-            this.idLijekDataGridViewTextBoxColumn.HeaderText = "idLijek";
-            this.idLijekDataGridViewTextBoxColumn.Name = "idLijekDataGridViewTextBoxColumn";
-            this.idLijekDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // idNarudzbeniceDataGridViewTextBoxColumn
-            // 
-            this.idNarudzbeniceDataGridViewTextBoxColumn.DataPropertyName = "idNarudzbenice";
-            this.idNarudzbeniceDataGridViewTextBoxColumn.HeaderText = "idNarudzbenice";
-            this.idNarudzbeniceDataGridViewTextBoxColumn.Name = "idNarudzbeniceDataGridViewTextBoxColumn";
-            this.idNarudzbeniceDataGridViewTextBoxColumn.ReadOnly = true;
-            this.idNarudzbeniceDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // kolicinaDataGridViewTextBoxColumn
-            // 
-            this.kolicinaDataGridViewTextBoxColumn.DataPropertyName = "kolicina";
-            this.kolicinaDataGridViewTextBoxColumn.HeaderText = "kolicina";
-            this.kolicinaDataGridViewTextBoxColumn.Name = "kolicinaDataGridViewTextBoxColumn";
-            this.kolicinaDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // lijekDataGridViewTextBoxColumn
-            // 
-            this.lijekDataGridViewTextBoxColumn.DataPropertyName = "lijek";
-            this.lijekDataGridViewTextBoxColumn.HeaderText = "lijek";
-            this.lijekDataGridViewTextBoxColumn.Name = "lijekDataGridViewTextBoxColumn";
-            this.lijekDataGridViewTextBoxColumn.ReadOnly = true;
-            this.lijekDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // narudzbenicaDataGridViewTextBoxColumn
-            // 
-            this.narudzbenicaDataGridViewTextBoxColumn.DataPropertyName = "narudzbenica";
-            this.narudzbenicaDataGridViewTextBoxColumn.HeaderText = "narudzbenica";
-            this.narudzbenicaDataGridViewTextBoxColumn.Name = "narudzbenicaDataGridViewTextBoxColumn";
-            this.narudzbenicaDataGridViewTextBoxColumn.ReadOnly = true;
-            this.narudzbenicaDataGridViewTextBoxColumn.Visible = false;
             // 
             // stavkenarudzbeniceBindingSource
             // 
@@ -255,6 +217,44 @@
             this.btnIzbrisi.UseVisualStyleBackColor = true;
             this.btnIzbrisi.Click += new System.EventHandler(this.btnIzbrisi_Click);
             // 
+            // idLijekDataGridViewTextBoxColumn
+            // 
+            this.idLijekDataGridViewTextBoxColumn.DataPropertyName = "idLijek";
+            this.idLijekDataGridViewTextBoxColumn.HeaderText = "ID lijeka";
+            this.idLijekDataGridViewTextBoxColumn.Name = "idLijekDataGridViewTextBoxColumn";
+            this.idLijekDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // idNarudzbeniceDataGridViewTextBoxColumn
+            // 
+            this.idNarudzbeniceDataGridViewTextBoxColumn.DataPropertyName = "idNarudzbenice";
+            this.idNarudzbeniceDataGridViewTextBoxColumn.HeaderText = "ID narudžbenice";
+            this.idNarudzbeniceDataGridViewTextBoxColumn.Name = "idNarudzbeniceDataGridViewTextBoxColumn";
+            this.idNarudzbeniceDataGridViewTextBoxColumn.ReadOnly = true;
+            this.idNarudzbeniceDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // kolicinaDataGridViewTextBoxColumn
+            // 
+            this.kolicinaDataGridViewTextBoxColumn.DataPropertyName = "kolicina";
+            this.kolicinaDataGridViewTextBoxColumn.HeaderText = "Količina";
+            this.kolicinaDataGridViewTextBoxColumn.Name = "kolicinaDataGridViewTextBoxColumn";
+            this.kolicinaDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // lijekDataGridViewTextBoxColumn
+            // 
+            this.lijekDataGridViewTextBoxColumn.DataPropertyName = "lijek";
+            this.lijekDataGridViewTextBoxColumn.HeaderText = "Lijek";
+            this.lijekDataGridViewTextBoxColumn.Name = "lijekDataGridViewTextBoxColumn";
+            this.lijekDataGridViewTextBoxColumn.ReadOnly = true;
+            this.lijekDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // narudzbenicaDataGridViewTextBoxColumn
+            // 
+            this.narudzbenicaDataGridViewTextBoxColumn.DataPropertyName = "narudzbenica";
+            this.narudzbenicaDataGridViewTextBoxColumn.HeaderText = "Narudžbenica";
+            this.narudzbenicaDataGridViewTextBoxColumn.Name = "narudzbenicaDataGridViewTextBoxColumn";
+            this.narudzbenicaDataGridViewTextBoxColumn.ReadOnly = true;
+            this.narudzbenicaDataGridViewTextBoxColumn.Visible = false;
+            // 
             // frmUnosNarudzbenice
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -305,12 +305,12 @@
         private System.Windows.Forms.BindingSource zaposlenikBindingSource;
         private System.Windows.Forms.BindingSource lijekBindingSource;
         private System.Windows.Forms.BindingSource stavkenarudzbeniceBindingSource;
+        private System.Windows.Forms.Button btnIzmjeni;
+        private System.Windows.Forms.Button btnIzbrisi;
         private System.Windows.Forms.DataGridViewTextBoxColumn idLijekDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn idNarudzbeniceDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn kolicinaDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn lijekDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn narudzbenicaDataGridViewTextBoxColumn;
-        private System.Windows.Forms.Button btnIzmjeni;
-        private System.Windows.Forms.Button btnIzbrisi;
     }
 }

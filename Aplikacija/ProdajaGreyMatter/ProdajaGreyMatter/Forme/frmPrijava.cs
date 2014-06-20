@@ -21,6 +21,8 @@ namespace ProdajaGreyMatter
 
         private void btnPrijava_Click(object sender, EventArgs e)
         {
+            //Provjerava da li postoji zaposlenik u bazi podataka koji ima unešeno korisničko ime i lozinku
+            //Ako je prijava uspješna podaci o zaposleniku se spremaju u objekt zaposlenik koji se proslijeđuje u glavnu formu
             using (var db = new greymatterpiEntities())
             {
                 foreach (var zapos in db.zaposlenik)
@@ -34,7 +36,6 @@ namespace ProdajaGreyMatter
             }
             if (zaposlenik != null)
             {
-                MessageBox.Show("Uspješna prijava");
                 this.Hide();
                 frmIzbornik izbornik = new frmIzbornik(zaposlenik);
                 izbornik.ShowDialog();

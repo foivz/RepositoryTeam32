@@ -52,6 +52,7 @@
     <NavigationProperty Name="klijent" Relationship="Self.fk_racun_klijent1" FromRole="narudzbenica" ToRole="klijent" />
     <NavigationProperty Name="zaposlenik" Relationship="Self.fk_racun_zaposlenik1" FromRole="narudzbenica" ToRole="zaposlenik" />
     <NavigationProperty Name="stavkenarudzbenice" Relationship="Self.fk_stavkeRacuna_racun1" FromRole="narudzbenica" ToRole="stavkenarudzbenice" />
+    <Property Name="status" Type="Int32" Nullable="false" />
   </EntityType>
   <EntityType Name="stavkenarudzbenice">
     <Key>
