@@ -330,6 +330,7 @@
             this.Name = "frmUnosNarudzbenice";
             this.Text = "Unos Narudžbenice";
             this.Load += new System.EventHandler(this.frmUnosNarudzbenice_Load);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.hlpPokazi);
             ((System.ComponentModel.ISupportInitialize)(this.dtvStavkeNarudzbenice)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.lijekBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.stavkenarudzbeniceBindingSource)).EndInit();

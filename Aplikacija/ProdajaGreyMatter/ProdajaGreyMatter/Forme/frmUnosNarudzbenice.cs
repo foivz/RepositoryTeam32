@@ -18,6 +18,7 @@ namespace ProdajaGreyMatter
         {
             InitializeComponent();
             this.CenterToParent();
+            this.KeyPreview = true;
             referent = zaposlenik;
         }
 
@@ -190,6 +191,23 @@ namespace ProdajaGreyMatter
                 ukupno += ukupniIznosStavke;
             }
             txtUkupniIznosNarudzbe.Text = ukupno.ToString("C");
+        }
+
+        private void hlpPokazi(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.F1)
+            {
+                string naslov = "POMOĆ UNOS NARUDŽBENICE";
+                string poruka = " Na formi Unos narudžbenice možete upisati novu narudžbu. Kako bi se u tablici prikazali lijekovi koje ";
+                poruka += "klijent naručuje, količina pojedinog lijeka itd. potrebno je kliknuti na tipku Dodaj stavku (za svaki lijek ";
+                poruka += "koji želite u narudžbenici).\n\n Klikom na tipku izbriši možete izbrisati pojedinu stavku iz narudžbenice, a ";
+                poruka += "klikom na tipku Izmjeni možete izmijeniti pojedinu stavku narudžbenice. \n\n Na ovoj formi nalaze se još ";
+                poruka += "dvije opcije. Ukoliko ne želite spremiti narudžbenicu dovoljno je da kliknete na tipku Odustani.\n\n Želite ";
+                poruka += "li spremiti narudžbenicu sa svim unesenim stavkama kliknite na tipku Spremi. ";
+                
+                frmHelp formaHelp = new frmHelp(naslov, poruka);
+                formaHelp.ShowDialog();
+            }
         }
     }
 }

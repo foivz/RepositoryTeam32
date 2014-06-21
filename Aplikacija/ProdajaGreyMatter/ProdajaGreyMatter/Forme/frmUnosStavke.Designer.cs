@@ -220,6 +220,7 @@
             this.Name = "frmUnosStavke";
             this.Text = " ";
             this.Load += new System.EventHandler(this.frmUnosStavke_Load);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.hlpPokazi);
             this.ResumeLayout(false);
             this.PerformLayout();
 

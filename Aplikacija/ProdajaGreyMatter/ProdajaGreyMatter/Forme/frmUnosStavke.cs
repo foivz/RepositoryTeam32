@@ -23,6 +23,7 @@ namespace ProdajaGreyMatter
         {
             InitializeComponent();
             this.CenterToParent();
+            this.KeyPreview = true;
 
             trenutniPopisStavki = stavke;
         }
@@ -31,6 +32,7 @@ namespace ProdajaGreyMatter
         {
             InitializeComponent();
             this.CenterToParent();
+            this.KeyPreview = true;
 
             selektiranaStavka = stavka;
         }
@@ -176,6 +178,21 @@ namespace ProdajaGreyMatter
                         MessageBox.Show("Količina je krivo unesena", "Greška");
                     }
                 }
+            }
+        }
+
+        private void hlpPokazi(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.F1)
+            {
+                string naslov = "POMOĆ UNOS STAVKE";
+                string poruka = " Na formi Unos stavke potrebno je da unesete lijek koji želite unijeti u narudžbenicu te ostale atribute";
+                poruka += "tog lijeka. ID lijeka nije potrebno ručno unositi. Dovoljno je kliknuti na tipku (...) te odabrati željeni ";
+                poruka += "lijek. \n\n Ukoliko ne želite spremiti stavku dovoljno je da kliknete na tipku Odustani. \n\n Želite li spremiti ";
+                poruka += "stavku sa svim unesenim atributima kliknite na tipku Spremi.";
+               
+                frmHelp formaHelp = new frmHelp(naslov, poruka);
+                formaHelp.ShowDialog();
             }
         }
     }
