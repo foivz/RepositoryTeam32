@@ -15,6 +15,7 @@ namespace ProdajaGreyMatter
         public frmKlijent()
         {
             InitializeComponent();
+            this.KeyPreview = true;
             this.CenterToParent();
         }
 
@@ -93,6 +94,22 @@ namespace ProdajaGreyMatter
                 frmUnosKlijenta azuriranjeKlijenta = new frmUnosKlijenta(selektiraniKlijent);
                 azuriranjeKlijenta.ShowDialog();
                 prikaziKlijente();
+            }
+        }
+
+        private void hlpPokazi(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.F1)
+            {
+                string naslov = "POMOĆ KLIJENTI";
+                string poruka = " U glavnom izborniku odabirom Klijenti prikazuje Vam se forma na kojoj se nalazi popis svih klijenata";
+                poruka += "sa kojima poduzeće trenutno posluje. Kako bi brže i jednostavnije pronašli željenog klijenta možete ";
+                poruka += "unijeti OIB klijenta ili naslov (naziv tvrtke).\n\n Možete ažurirati podatke o postojećem klijentu pritiskom ";
+                poruka += "na tipku Ažuriranje Klijenta. \n\n Zaprimamo li narudžbu od poduzeća sa kojim nismo ranije poslovali ";
+                poruka += "potrebno ga je unijeti u sustav,a to činimo pritiskom na tipku Unos novog klijenta. \n\n Možete kliknuti na ";
+                poruka += "tipku Natrag sa kojom ćete se vratiti na glavni izbornik.";
+                frmHelp formaHelp = new frmHelp(naslov, poruka);
+                formaHelp.ShowDialog();
             }
         }
     }

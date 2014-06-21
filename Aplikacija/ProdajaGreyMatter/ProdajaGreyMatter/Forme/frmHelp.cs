@@ -20,13 +20,13 @@ namespace ProdajaGreyMatter
             txtOpis.Text = opis;
 
             BackColor = Color.FromArgb(204, 229, 255);
-            txtNaslov.ForeColor = Color.FromArgb(0, 25, 51);
+
             txtNaslov.TextAlign = HorizontalAlignment.Center;
-            txtNaslov.Font = new Font("Arial Black", 16);
+            txtNaslov.Font = new Font("Arial", 14);
+            txtNaslov.Font = new Font(txtNaslov.Font, FontStyle.Bold);
 
             txtOpis.Font = new Font("Arial", 12);
-            txtOpis.ForeColor = Color.FromArgb(0, 25, 51);
-            txtOpis.SelectionAlignment = HorizontalAlignment.Center;
+            txtOpis.ForeColor = Color.FromArgb(0, 51, 102);
         }
     }
 }

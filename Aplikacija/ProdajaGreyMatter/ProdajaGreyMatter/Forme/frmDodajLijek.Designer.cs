@@ -262,6 +262,7 @@
             this.Name = "frmDodajLijek";
             this.Text = "frmDodajLijek";
             this.Load += new System.EventHandler(this.frmDodajLijek_Load);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.hlpPokazi);
             ((System.ComponentModel.ISupportInitialize)(this.dgvPopisLijekova)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.jedinicnamjeraBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tiplijekaBindingSource)).EndInit();

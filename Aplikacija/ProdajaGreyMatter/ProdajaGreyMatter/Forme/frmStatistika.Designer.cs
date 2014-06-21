@@ -73,6 +73,7 @@
             this.Controls.Add(this.btnNajboljiKupci);
             this.Name = "frmStatistika";
             this.Text = "Statistika";
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.hlpPokazi);
             this.ResumeLayout(false);
 
         }

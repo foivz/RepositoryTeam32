@@ -16,6 +16,7 @@ namespace ProdajaGreyMatter
         public frmNarudzbenica(zaposlenik zaposlenik)
         {
             InitializeComponent();
+            this.KeyPreview = true;
             this.CenterToParent();
             referent = zaposlenik;
         }
@@ -178,6 +179,22 @@ namespace ProdajaGreyMatter
             }
             else { MessageBox.Show("Ova narudžbenica je već stornirana!","Upozorenje"); }
 
+        }
+
+        private void hlpPokazi(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.F1)
+            {
+                string naslov = "POMOĆ NARUDŽBENICE";
+                string poruka = " Odabirom Narudžbenice u glavnom izborniku otvara se forma na kojoj možemo vidjeti popis svih";
+                poruka += " narudžba.\n\n Isto tako prikazani je obrazac narudžbenice koji će se popuniti nakon što unesemo novu";
+                poruka += " narudžbu te će se ispod tog obrasca  prikazati ukupan iznos narudžbe.\n\n Novu narudžbu unosimo ";
+                poruka += " popunjavanjem narudžbenice klikom na tipku Unos nove narudžbenice.\n\n Ukoliko unesete narudžbu i ";
+                poruka += " spremite je, a klijent odustane od narudžbe ili ste unesli krivu narudžbu možete je stonirati klikom na ";
+                poruka += " tipku Storno. Na glavnu formu vraćate se tipkom Natrag.";
+                frmHelp formaHelp = new frmHelp(naslov, poruka);
+                formaHelp.ShowDialog();
+            }
         }
     }
 }

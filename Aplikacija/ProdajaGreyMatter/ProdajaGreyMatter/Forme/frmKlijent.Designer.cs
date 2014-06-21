@@ -206,6 +206,7 @@
             this.Name = "frmKlijent";
             this.Text = "Klijenti";
             this.Load += new System.EventHandler(this.frmKlijent_Load);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.hlpPokazi);
             ((System.ComponentModel.ISupportInitialize)(this.dgPopisKlijenata)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.klijentBindingSource)).EndInit();
             this.ResumeLayout(false);

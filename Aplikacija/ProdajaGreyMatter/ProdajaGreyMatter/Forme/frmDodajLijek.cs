@@ -21,6 +21,7 @@ namespace ProdajaGreyMatter
         public frmDodajLijek()
         {
             InitializeComponent();
+            this.KeyPreview = true;
         }
         private void pregledLijekova()
         {
@@ -80,6 +81,19 @@ namespace ProdajaGreyMatter
             pakiranje = selektiraniLijek.pakiranje;
             idTipLijeka = selektiraniLijek.idTipLijeka;
             this.Close();
+        }
+
+        private void hlpPokazi(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.F1)
+            {
+                string naslov = "POMOĆ DODAJ LIJEK";
+                string poruka = "Na formi Dodaj Lijek nalazi se popis svih lijekova sa njihovim atributima. Kako bi lakše pronašli željeni ";
+                poruka += "lijek možete pretražiti popis lijekova prema nazivu lijeka. \n\n Ukoliko želite dodatni neki lijek sa popisa ";
+                poruka += "lijekova kliknite na tipku Dodaj. \n\n Na prethodnu formu vraćate se tipkom Natrag.";
+                frmHelp formaHelp = new frmHelp(naslov, poruka);
+                formaHelp.ShowDialog();
+            }
         }
     }
 }

@@ -28,11 +28,11 @@ namespace ProdajaGreyMatter
         {
             if (e.KeyCode == Keys.F1)
             {
-                string naslov = "GLAVNI IZBORNIK";
-                string poruka = "Kada ste uspješno ulogirani može odabrati pet opcija.\nUkoliko pritisnete tipku Lijekovi prikazati će Vam se popis svih lijekova koje poduzeće";
-                poruka += "Gray Matter d.o.o.\nPritiskom na tipku Kijenti dobiti ćete popis svih klijenata sa kojima poduzeće trenutno posluje.\nAko zaprimate narudžbu klijenta ";
-                poruka += "tada je potrebno da kliknete na tipku Narudzbenica u kojoj ćete moći izraditi novu narudžbenicu.\nŽelite li vidjeti koji je trenutno najprodavaniji";
-                poruka += "lijek ili koji klijent najviše kupuje kod Vas odaberite Statistika.";
+                string naslov = "POMOĆ IZBORNIK";
+                string poruka = "  Kada ste uspješno ulogirani može odabrati pet opcija.\n\n Ukoliko pritisnete tipku Lijekovi prikazati će Vam se popis svih lijekova koje poduzeće";
+                poruka += "Gray Matter d.o.o.\n\n  Pritiskom na tipku Kijenti dobiti ćete popis svih klijenata sa kojima poduzeće trenutno posluje.\n\n  Ako zaprimate narudžbu klijenta ";
+                poruka += "tada je potrebno da kliknete na tipku Narudzbenica u kojoj ćete moći izraditi novu narudžbenicu.\n\n  Želite li vidjeti koji je trenutno najprodavaniji";
+                poruka += "lijek ili koji klijent najviše kupuje kod Vas odaberite Statistika.\n\n Zadnja opcija je da se odjavite klikom na tipku Odjava. ";
                 frmHelp formaHelp = new frmHelp(naslov, poruka);
                 formaHelp.ShowDialog();
             }

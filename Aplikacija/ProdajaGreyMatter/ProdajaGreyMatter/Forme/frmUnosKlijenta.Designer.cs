@@ -184,6 +184,7 @@
             this.Name = "frmUnosKlijenta";
             this.Text = "Unos klijenta";
             this.Load += new System.EventHandler(this.frmUnosKlijenta_Load);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.hlpPokazi);
             this.ResumeLayout(false);
             this.PerformLayout();
 

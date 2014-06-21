@@ -31,9 +31,6 @@
             this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dgPopisLijekova = new System.Windows.Forms.DataGridView();
-            this.btnNatrag = new System.Windows.Forms.Button();
-            this.lblPretraga = new System.Windows.Forms.Label();
-            this.txtPretragaLijekova = new System.Windows.Forms.TextBox();
             this.idLijekDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nazivDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.uputeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -51,6 +48,9 @@
             this.tiplijekaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.stavkenarudzbeniceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lijekBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.btnNatrag = new System.Windows.Forms.Button();
+            this.lblPretraga = new System.Windows.Forms.Label();
+            this.txtPretragaLijekova = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgPopisLijekova)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.jedinicnamjeraBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tiplijekaBindingSource)).BeginInit();
@@ -86,33 +86,6 @@
             this.dgPopisLijekova.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgPopisLijekova.Size = new System.Drawing.Size(883, 201);
             this.dgPopisLijekova.TabIndex = 0;
-            // 
-            // btnNatrag
-            // 
-            this.btnNatrag.Location = new System.Drawing.Point(636, 272);
-            this.btnNatrag.Name = "btnNatrag";
-            this.btnNatrag.Size = new System.Drawing.Size(106, 39);
-            this.btnNatrag.TabIndex = 1;
-            this.btnNatrag.Text = "Natrag";
-            this.btnNatrag.UseVisualStyleBackColor = true;
-            this.btnNatrag.Click += new System.EventHandler(this.btnNatrag_Click);
-            // 
-            // lblPretraga
-            // 
-            this.lblPretraga.AutoSize = true;
-            this.lblPretraga.Location = new System.Drawing.Point(46, 15);
-            this.lblPretraga.Name = "lblPretraga";
-            this.lblPretraga.Size = new System.Drawing.Size(143, 13);
-            this.lblPretraga.TabIndex = 2;
-            this.lblPretraga.Text = "Pretraga prema nazivu lijeka:";
-            // 
-            // txtPretragaLijekova
-            // 
-            this.txtPretragaLijekova.Location = new System.Drawing.Point(195, 12);
-            this.txtPretragaLijekova.Name = "txtPretragaLijekova";
-            this.txtPretragaLijekova.Size = new System.Drawing.Size(122, 20);
-            this.txtPretragaLijekova.TabIndex = 3;
-            this.txtPretragaLijekova.TextChanged += new System.EventHandler(this.txtPretragaLijekova_TextChanged);
             // 
             // idLijekDataGridViewTextBoxColumn
             // 
@@ -243,6 +216,33 @@
             // 
             this.lijekBindingSource.DataSource = typeof(ProdajaGreyMatter.lijek);
             // 
+            // btnNatrag
+            // 
+            this.btnNatrag.Location = new System.Drawing.Point(636, 272);
+            this.btnNatrag.Name = "btnNatrag";
+            this.btnNatrag.Size = new System.Drawing.Size(106, 39);
+            this.btnNatrag.TabIndex = 1;
+            this.btnNatrag.Text = "Natrag";
+            this.btnNatrag.UseVisualStyleBackColor = true;
+            this.btnNatrag.Click += new System.EventHandler(this.btnNatrag_Click);
+            // 
+            // lblPretraga
+            // 
+            this.lblPretraga.AutoSize = true;
+            this.lblPretraga.Location = new System.Drawing.Point(46, 15);
+            this.lblPretraga.Name = "lblPretraga";
+            this.lblPretraga.Size = new System.Drawing.Size(143, 13);
+            this.lblPretraga.TabIndex = 2;
+            this.lblPretraga.Text = "Pretraga prema nazivu lijeka:";
+            // 
+            // txtPretragaLijekova
+            // 
+            this.txtPretragaLijekova.Location = new System.Drawing.Point(195, 12);
+            this.txtPretragaLijekova.Name = "txtPretragaLijekova";
+            this.txtPretragaLijekova.Size = new System.Drawing.Size(122, 20);
+            this.txtPretragaLijekova.TabIndex = 3;
+            this.txtPretragaLijekova.TextChanged += new System.EventHandler(this.txtPretragaLijekova_TextChanged);
+            // 
             // frmLijekovi
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -255,6 +255,7 @@
             this.Name = "frmLijekovi";
             this.Text = "Lijekovi";
             this.Load += new System.EventHandler(this.frmLijekovi_Load);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.hlpPokazi);
             ((System.ComponentModel.ISupportInitialize)(this.dgPopisLijekova)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.jedinicnamjeraBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tiplijekaBindingSource)).EndInit();

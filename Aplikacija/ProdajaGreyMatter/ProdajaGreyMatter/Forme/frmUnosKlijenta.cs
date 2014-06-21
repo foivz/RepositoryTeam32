@@ -16,11 +16,13 @@ namespace ProdajaGreyMatter
         public frmUnosKlijenta()
         {
             InitializeComponent();
+            this.KeyPreview = true;
         }
         public frmUnosKlijenta(klijent klijent)
         {
             InitializeComponent();
             klijentZaIzmjenu = klijent;
+            this.KeyPreview = true;
         }
 
         private void btnOdustani_Click(object sender, EventArgs e)
@@ -162,6 +164,22 @@ namespace ProdajaGreyMatter
                 txtEmail.Text = klijentZaIzmjenu.e_mail;
                 txtTelefon.Text = klijentZaIzmjenu.telefon;
                 txtZiroRacun.Text = klijentZaIzmjenu.ziroRacun;
+            }
+        }
+
+        private void hlpPokazi(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.F1)
+            {
+                string naslov = "POMOĆ AŽURIRANJE/UNOS KLIJENATA";
+                string poruka = " Na formi Unos klijenta unosite novo poduzeće sa kojim još poduzeće nije poslovalo. Potrebno je ";
+                poruka += "unijeti podatke o klijentu te možete odabrati dvije opcije. \n\n Klikom na tipku Spremi unijeti ćete novog ";
+                poruka += "klijenta u bazu. \n\n U slučaju da ne želite spremiti unijete podatke to ćete učiniti pritiskom na tipku ";
+                poruka += "Odustani.\n\n Na formi Ažuriranje klijenta unose se podaci o klijentu koji su se promijenili (npr. novi broj telefona klijenta).";
+                poruka += "\n\n Klikom na tipku Spremi unijeti ćete izmijenjene podatke o klijentu. \n\n Ukoliko ne želite spremiti izmijenjene podatke kliknite";
+                poruka += "na tipku Odustani.";
+                frmHelp formaHelp = new frmHelp(naslov, poruka);
+                formaHelp.ShowDialog();
             }
         }
 

@@ -15,6 +15,7 @@ namespace ProdajaGreyMatter
         public frmLijekovi()
         {
             InitializeComponent();
+            this.KeyPreview = true;
         }
         private void pregledLijekova()
         {
@@ -71,6 +72,20 @@ namespace ProdajaGreyMatter
         private void btnNatrag_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void hlpPokazi(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.F1)
+            {
+                string naslov = "POMOĆ LIJEKOVI";
+                string poruka = "U glavnom izborniku odabirom Lijekovi prikazuje se forma na kojoj se nalazi popis svih lijekova sa ";
+                poruka += "njihovim atributima.\n\n Kako bi lakše pronašli željeni lijek možete pretražiti popis lijekova prema nazivu ";
+                poruka += "lijeka.\n\n Na glavnu formu vraćate se tipkom Natrag.";
+                
+                frmHelp formaHelp = new frmHelp(naslov, poruka);
+                formaHelp.ShowDialog();
+            }
         }
     }
 }
