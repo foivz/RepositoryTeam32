@@ -81,5 +81,14 @@ namespace ProdajaGreyMatter
             idTipLijeka = selektiraniLijek.idTipLijeka;
             this.Close();
         }
+
+        private void pomoc_Load(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode==Keys.F1)
+            {
+                frmHelpDodajLijek pomoc = new frmHelpDodajLijek();
+                pomoc.Show();
+            }
+        }
     }
 }
