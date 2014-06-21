@@ -1,0 +1,11 @@
+D:\FOI\8. semestar\PI\Vježba\reportRadi\reportRadi\bin\Debug\reportRadi.exe.config
+D:\FOI\8. semestar\PI\Vježba\reportRadi\reportRadi\bin\Debug\reportRadi.exe
+D:\FOI\8. semestar\PI\Vježba\reportRadi\reportRadi\bin\Debug\reportRadi.pdb
+D:\FOI\8. semestar\PI\Vježba\reportRadi\reportRadi\obj\Debug\reportRadi.csprojResolveAssemblyReference.cache
+D:\FOI\8. semestar\PI\Vježba\reportRadi\reportRadi\obj\Debug\reportRadi.Form1.resources
+D:\FOI\8. semestar\PI\Vježba\reportRadi\reportRadi\obj\Debug\reportRadi.Properties.Resources.resources
+D:\FOI\8. semestar\PI\Vježba\reportRadi\reportRadi\obj\Debug\reportRadi.csproj.GenerateResource.Cache
+D:\FOI\8. semestar\PI\Vježba\reportRadi\reportRadi\obj\Debug\RdlCompile.cache
+D:\FOI\8. semestar\PI\Vježba\reportRadi\reportRadi\obj\Debug\RdlCompile.compiled
+D:\FOI\8. semestar\PI\Vježba\reportRadi\reportRadi\obj\Debug\reportRadi.exe
+D:\FOI\8. semestar\PI\Vježba\reportRadi\reportRadi\obj\Debug\reportRadi.pdb
