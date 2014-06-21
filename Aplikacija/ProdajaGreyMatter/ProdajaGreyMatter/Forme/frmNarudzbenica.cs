@@ -77,6 +77,14 @@ namespace ProdajaGreyMatter
                    
                 }
             }
+            if (narudzbenica.status == 0)
+            {
+                int broj = dtvStavkeNarudzbenice.Rows.Count;
+                for (int i = 0; i < broj; i++)
+                {
+                        dtvStavkeNarudzbenice.Rows[i].DefaultCellStyle.BackColor = Color.Red;
+                }
+            }
         }
 
         private void frmNarudzbenica_Load(object sender, EventArgs e)
@@ -113,6 +121,15 @@ namespace ProdajaGreyMatter
                     listaNarudzbenica = new BindingList<narudzbenica>(narudzbenice.ToList());
                 }
                 narudzbenicaBindingSource.DataSource = listaNarudzbenica;
+                int broj = dgPopisNarudžbenica.Rows.Count;
+
+                for (int i = 0; i < broj; i++)
+                {
+                    if (Convert.ToInt32(dgPopisNarudžbenica.Rows[i].Cells[1].Value) == 0)
+                    {
+                        dgPopisNarudžbenica.Rows[i].DefaultCellStyle.BackColor = Color.Red;
+                    }
+                }
             }
             else if (txtPretragaKlijenta.Text == "")
             {
@@ -133,23 +150,33 @@ namespace ProdajaGreyMatter
                     double ukupniIznosStavke = double.Parse(dtvStavkeNarudzbenice.Rows[j].Cells["Ukupno"].Value.ToString());
                     ukupno += ukupniIznosStavke;
                 }
+                Color boja = txtUkupniIznosNarudžbe.BackColor;
+                if (selektiranaNarudzbenica.status == 0)
+                {
+                    txtUkupniIznosNarudžbe.BackColor = Color.Red;
+                }
+                else txtUkupniIznosNarudžbe.BackColor = DefaultBackColor;
                 txtUkupniIznosNarudžbe.Text = ukupno.ToString("C");
             }
         }
 
         private void btnStorno_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show("Da li ste sigurni?", "Upozorenje!", MessageBoxButtons.YesNo) == System.Windows.Forms.DialogResult.Yes)
+            narudzbenica oznacenaNarudzbenica = narudzbenicaBindingSource.Current as narudzbenica;
+            if (oznacenaNarudzbenica.status == 1)
             {
-                narudzbenica oznacenaNarudzbenica = narudzbenicaBindingSource.Current as narudzbenica;
-                using (var db = new greymatterpiEntities())
+                if (MessageBox.Show("Da li ste sigurni?", "Upozorenje!", MessageBoxButtons.YesNo) == System.Windows.Forms.DialogResult.Yes)
                 {
-                    db.narudzbenica.Attach(oznacenaNarudzbenica);
-                    oznacenaNarudzbenica.status = 0;
-                    db.SaveChanges();
+                    using (var db = new greymatterpiEntities())
+                    {
+                        db.narudzbenica.Attach(oznacenaNarudzbenica);
+                        oznacenaNarudzbenica.status = 0;
+                        db.SaveChanges();
+                    }
+                    prikaziNarudzbe();
                 }
-                prikaziNarudzbe();
             }
+            else { MessageBox.Show("Ova narudžbenica je već stornirana!","Upozorenje"); }
 
         }
     }

@@ -83,18 +83,22 @@ namespace ProdajaGreyMatter
                     txtTipLijeka.Text = tipLijeka.First();
                 }
             }
-            else txtIdLijeka.Text = "";
-            txtNazivLijeka.Text = popisLijekova.nazivLijeka;
+            
+            if (popisLijekova.nazivLijeka != null)
+            {
+                 txtNazivLijeka.Text = popisLijekova.nazivLijeka;
+            }
+           
             if (popisLijekova.cijenaLijeka != 0)
             {
                 txtCijenaLijeka.Text = popisLijekova.cijenaLijeka.ToString();
             }
-            else txtCijenaLijeka.Text = "";
+            
             if (popisLijekova.pakiranje != 0)
             {
                 txtPakiranjeLijeka.Text = popisLijekova.pakiranje.ToString();
             }
-            else txtPakiranjeLijeka.Text = "";
+            
             if (popisLijekova.doza != 0)
             {
                 txtDozaLijeka.Text = popisLijekova.doza.ToString();
@@ -131,16 +135,31 @@ namespace ProdajaGreyMatter
             {
                 try
                 {
-                    using (var db = new greymatterpiEntities())
+                    int idLijeka = int.Parse(txtIdLijeka.Text);
+                    int kolicinaLijeka;
+                    using(var db = new greymatterpiEntities())
                     {
-
-                        stavkaNarudzbenice = new stavkenarudzbenice()
-                        {
-                            idLijek = int.Parse(txtIdLijeka.Text),
-                            kolicina = int.Parse(txtKolicina.Text)
-                        };
+                        kolicinaLijeka = (from p in db.lijek
+                                          where p.idLijek == idLijeka
+                                          select p.kolicina).First();
                     }
-                    this.Close();
+                    if (int.Parse(txtKolicina.Text) <= kolicinaLijeka)
+                    {
+                        using (var db = new greymatterpiEntities())
+                        {
+
+                            stavkaNarudzbenice = new stavkenarudzbenice()
+                            {
+                                idLijek = int.Parse(txtIdLijeka.Text),
+                                kolicina = int.Parse(txtKolicina.Text)
+                            };
+                        }
+                        this.Close();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Unijeli ste previše lijekova! Na skladištu još ima "+kolicinaLijeka.ToString()+" lijekova.","Upozorenje");
+                    }
                 }
                 catch (FormatException)
                 {
