@@ -101,6 +101,7 @@
             // txtOib
             // 
             this.txtOib.Location = new System.Drawing.Point(153, 49);
+            this.txtOib.MaxLength = 11;
             this.txtOib.Name = "txtOib";
             this.txtOib.Size = new System.Drawing.Size(128, 20);
             this.txtOib.TabIndex = 6;
@@ -136,6 +137,7 @@
             // txtTelefon
             // 
             this.txtTelefon.Location = new System.Drawing.Point(153, 183);
+            this.txtTelefon.MaxLength = 30;
             this.txtTelefon.Name = "txtTelefon";
             this.txtTelefon.Size = new System.Drawing.Size(128, 20);
             this.txtTelefon.TabIndex = 11;

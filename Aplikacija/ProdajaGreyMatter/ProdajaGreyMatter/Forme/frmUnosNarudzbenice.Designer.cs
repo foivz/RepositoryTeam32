@@ -226,6 +226,7 @@
             // 
             this.cmbReferent.DataSource = this.zaposlenikBindingSource;
             this.cmbReferent.DisplayMember = "prezime";
+            this.cmbReferent.Enabled = false;
             this.cmbReferent.FormattingEnabled = true;
             this.cmbReferent.Location = new System.Drawing.Point(392, 54);
             this.cmbReferent.Name = "cmbReferent";

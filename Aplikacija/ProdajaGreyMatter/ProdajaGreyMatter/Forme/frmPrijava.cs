@@ -44,7 +44,7 @@ namespace ProdajaGreyMatter
             }
             else
             {
-                MessageBox.Show("Neuspješna prijava!");
+                MessageBox.Show("Neuspješna prijava!", "Greška");
             }
         }
 

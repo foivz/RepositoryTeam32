@@ -37,11 +37,22 @@ namespace ProdajaGreyMatter
                 {
                     cmbNazivKlijenta.Items.Add(klijent.naziv);
                 }
+
+                dtpRokPlacanja.MinDate = DateTime.Now;
           
         }
     
         private void btnSpremi_Click(object sender, EventArgs e)
         {
+            if (cmbNazivKlijenta.Text == "")
+            {
+                MessageBox.Show("Klijent nije odabran!", "Greška");
+            }
+            else if (stavkeNar.Count == 0)
+            {
+                MessageBox.Show("Nije dodana ni jedna stavka!", "Greška");
+            }
+
             using (var db = new greymatterpiEntities())
             {
                 var klijent = from p in db.klijent
@@ -117,15 +128,24 @@ namespace ProdajaGreyMatter
                     stavkeNar.Add(unosStavke.stavkaNarudzbenice);
                 }
             }
-
+            else
+            {
+                MessageBox.Show("Ne postoje stavke za izmjenu", "Greška");
+            }
         }
 
         private void btnIzbrisi_Click(object sender, EventArgs e)
         {
             stavkenarudzbenice selektiranaStavka = stavkenarudzbeniceBindingSource.Current as stavkenarudzbenice;
-            
-            stavkenarudzbeniceBindingSource.RemoveCurrent();
-            stavkeNar.Remove(selektiranaStavka);
+            if (selektiranaStavka != null)
+            {
+                stavkenarudzbeniceBindingSource.RemoveCurrent();
+                stavkeNar.Remove(selektiranaStavka);
+            }
+            else
+            {
+                MessageBox.Show("Ne postoje stavke za brisanje", "Greška");
+            }
         }
     }
 }

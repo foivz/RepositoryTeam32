@@ -150,7 +150,7 @@ namespace ProdajaGreyMatter
                     }
                     else if (txtIdLijeka.Text != "" && txtKolicina.Text == "")
                     {
-                        MessageBox.Show("Niste unijeli kolicinu!", "Greška");
+                        MessageBox.Show("Niste unijeli količinu!", "Greška");
                     }
                     else
                     {
