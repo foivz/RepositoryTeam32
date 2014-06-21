@@ -109,6 +109,7 @@
             this.Controls.Add(this.btnLijekovi);
             this.Name = "frmIzbornik";
             this.Text = "Prodaja Grey Matter d.o.o";
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.hlpPokazi);
             this.ResumeLayout(false);
             this.PerformLayout();
 

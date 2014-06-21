@@ -157,3 +157,4 @@ C:\Users\Josip\Documents\GitHub\RepositoryTeam32\Aplikacija\ProdajaGreyMatter\Pr
 C:\Users\Josip\Documents\GitHub\RepositoryTeam32\Aplikacija\ProdajaGreyMatter\ProdajaGreyMatter\obj\Debug\ProdajaGreyMatter.frmUnosStavke.resources
 C:\Users\Josip\Documents\GitHub\RepositoryTeam32\Aplikacija\ProdajaGreyMatter\ProdajaGreyMatter\obj\Debug\ProdajaGreyMatter.Properties.Resources.resources
 C:\Users\Josip\Documents\GitHub\RepositoryTeam32\Aplikacija\ProdajaGreyMatter\ProdajaGreyMatter\obj\Debug\ProdajaGreyMatter.csproj.GenerateResource.Cache
+C:\Users\Josip\Documents\GitHub\RepositoryTeam32\Aplikacija\ProdajaGreyMatter\ProdajaGreyMatter\obj\Debug\ProdajaGreyMatter.frmHelp.resources
