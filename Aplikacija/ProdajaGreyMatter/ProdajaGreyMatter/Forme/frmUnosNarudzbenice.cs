@@ -104,8 +104,17 @@ namespace ProdajaGreyMatter
             if (unosStavke.odustani != true)
             {
                 stavkenarudzbeniceBindingSource.Add(unosStavke.stavkaNarudzbenice);
+                BindingList<lijek> listaLijekova = null;
+                using (var db = new greymatterpiEntities())
+                {
 
+                    listaLijekova = new BindingList<lijek>(db.lijek.ToList());
+                }
+                lijekBindingSource.DataSource = listaLijekova;
                 stavkeNar.Add(unosStavke.stavkaNarudzbenice);
+
+                ukupnoStavkaIzracun();
+                ukupniIznosNarudzbe();
             }
        
         }
@@ -126,6 +135,9 @@ namespace ProdajaGreyMatter
 
                     stavkeNar.Remove(selektiranaStavka);
                     stavkeNar.Add(unosStavke.stavkaNarudzbenice);
+                    int brojRedova = dtvStavkeNarudzbenice.Rows.Count;
+                    ukupnoStavkaIzracun();
+                    ukupniIznosNarudzbe();
                 }
             }
             else
@@ -141,11 +153,43 @@ namespace ProdajaGreyMatter
             {
                 stavkenarudzbeniceBindingSource.RemoveCurrent();
                 stavkeNar.Remove(selektiranaStavka);
+                ukupniIznosNarudzbe();
             }
             else
             {
                 MessageBox.Show("Ne postoje stavke za brisanje", "Greška");
             }
+        }
+        private void ukupnoStavkaIzracun()
+        {
+            int brojRedova = dtvStavkeNarudzbenice.Rows.Count;
+            using (var db = new greymatterpiEntities())
+            {
+                for (int j = 0; j < brojRedova; j++)
+                {
+                    int kolicina = 0;
+                    kolicina = int.Parse(dtvStavkeNarudzbenice.Rows[j].Cells["kolicina"].Value.ToString());
+                    int id = int.Parse(dtvStavkeNarudzbenice.Rows[j].Cells[0].Value.ToString());
+                    double rezultat = (from k in db.lijek
+                                       where k.idLijek == id
+                                       select k.cijena).First();
+                    double cijena = double.Parse(rezultat.ToString());
+                    dtvStavkeNarudzbenice.Rows[j].Cells["Ukupno"].Value = kolicina * cijena;
+
+                }
+            }
+        }
+
+        private void ukupniIznosNarudzbe()
+        {
+            int brojRedova = dtvStavkeNarudzbenice.Rows.Count;
+            double ukupno = 0.0d;
+            for (int j = 0; j < brojRedova; j++)
+            {
+                double ukupniIznosStavke = double.Parse(dtvStavkeNarudzbenice.Rows[j].Cells["Ukupno"].Value.ToString());
+                ukupno += ukupniIznosStavke;
+            }
+            txtUkupniIznosNarudzbe.Text = ukupno.ToString("C");
         }
     }
 }

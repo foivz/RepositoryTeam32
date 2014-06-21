@@ -32,8 +32,23 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dgPopisNarudžbenica = new System.Windows.Forms.DataGridView();
-            this.idNarudzbeniceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.status = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnUnosNarudzbenice = new System.Windows.Forms.Button();
+            this.btnNatrag = new System.Windows.Forms.Button();
+            this.lblPretragaPremaKlijentu = new System.Windows.Forms.Label();
+            this.txtPretragaKlijenta = new System.Windows.Forms.TextBox();
+            this.dtvStavkeNarudzbenice = new System.Windows.Forms.DataGridView();
+            this.Cijena = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.Ukupno = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnStorno = new System.Windows.Forms.Button();
+            this.idNarudzbeniceDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.idLijekDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.lijekBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.kolicinaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.lijekDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.narudzbenicaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.stavkenarudzbeniceBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.idNarudzbeniceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.oibKlijentaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.klijentBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.datumIzdavanjaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -44,28 +59,15 @@
             this.zaposlenikDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.stavkenarudzbeniceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.narudzbenicaBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.btnUnosNarudzbenice = new System.Windows.Forms.Button();
-            this.btnNatrag = new System.Windows.Forms.Button();
-            this.lblPretragaPremaKlijentu = new System.Windows.Forms.Label();
-            this.txtPretragaKlijenta = new System.Windows.Forms.TextBox();
-            this.dtvStavkeNarudzbenice = new System.Windows.Forms.DataGridView();
-            this.idNarudzbeniceDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.idLijekDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.lijekBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.kolicinaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.lijekDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.narudzbenicaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Cijena = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.Ukupno = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.stavkenarudzbeniceBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.btnStorno = new System.Windows.Forms.Button();
+            this.lblUkupniIznosNarudzbe = new System.Windows.Forms.Label();
+            this.txtUkupniIznosNarudžbe = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgPopisNarudžbenica)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.klijentBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.zaposlenikBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.narudzbenicaBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtvStavkeNarudzbenice)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lijekBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.stavkenarudzbeniceBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.klijentBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.zaposlenikBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.narudzbenicaBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // dgPopisNarudžbenica
@@ -94,19 +96,165 @@
             this.dgPopisNarudžbenica.TabIndex = 0;
             this.dgPopisNarudžbenica.SelectionChanged += new System.EventHandler(this.dgPopisNarudžbenica_SelectionChanged);
             // 
-            // idNarudzbeniceDataGridViewTextBoxColumn
-            // 
-            this.idNarudzbeniceDataGridViewTextBoxColumn.DataPropertyName = "idNarudzbenice";
-            this.idNarudzbeniceDataGridViewTextBoxColumn.HeaderText = "ID narudžbenice";
-            this.idNarudzbeniceDataGridViewTextBoxColumn.Name = "idNarudzbeniceDataGridViewTextBoxColumn";
-            this.idNarudzbeniceDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
             // status
             // 
             this.status.DataPropertyName = "status";
             this.status.HeaderText = "Status";
             this.status.Name = "status";
             this.status.ReadOnly = true;
+            // 
+            // btnUnosNarudzbenice
+            // 
+            this.btnUnosNarudzbenice.Location = new System.Drawing.Point(673, 31);
+            this.btnUnosNarudzbenice.Name = "btnUnosNarudzbenice";
+            this.btnUnosNarudzbenice.Size = new System.Drawing.Size(105, 69);
+            this.btnUnosNarudzbenice.TabIndex = 1;
+            this.btnUnosNarudzbenice.Text = "Unos nove narudžbenice";
+            this.btnUnosNarudzbenice.UseVisualStyleBackColor = true;
+            this.btnUnosNarudzbenice.Click += new System.EventHandler(this.btnUnosNarudzbenice_Click);
+            // 
+            // btnNatrag
+            // 
+            this.btnNatrag.Location = new System.Drawing.Point(673, 312);
+            this.btnNatrag.Name = "btnNatrag";
+            this.btnNatrag.Size = new System.Drawing.Size(105, 53);
+            this.btnNatrag.TabIndex = 2;
+            this.btnNatrag.Text = "Natrag";
+            this.btnNatrag.UseVisualStyleBackColor = true;
+            this.btnNatrag.Click += new System.EventHandler(this.btnNatrag_Click);
+            // 
+            // lblPretragaPremaKlijentu
+            // 
+            this.lblPretragaPremaKlijentu.AutoSize = true;
+            this.lblPretragaPremaKlijentu.Location = new System.Drawing.Point(12, 19);
+            this.lblPretragaPremaKlijentu.Name = "lblPretragaPremaKlijentu";
+            this.lblPretragaPremaKlijentu.Size = new System.Drawing.Size(152, 13);
+            this.lblPretragaPremaKlijentu.TabIndex = 3;
+            this.lblPretragaPremaKlijentu.Text = "Pretraga prema nazivu klijenta:";
+            // 
+            // txtPretragaKlijenta
+            // 
+            this.txtPretragaKlijenta.Location = new System.Drawing.Point(170, 16);
+            this.txtPretragaKlijenta.Name = "txtPretragaKlijenta";
+            this.txtPretragaKlijenta.Size = new System.Drawing.Size(119, 20);
+            this.txtPretragaKlijenta.TabIndex = 4;
+            this.txtPretragaKlijenta.TextChanged += new System.EventHandler(this.txtPretragaKlijenta_TextChanged);
+            // 
+            // dtvStavkeNarudzbenice
+            // 
+            this.dtvStavkeNarudzbenice.AllowUserToAddRows = false;
+            this.dtvStavkeNarudzbenice.AllowUserToDeleteRows = false;
+            this.dtvStavkeNarudzbenice.AutoGenerateColumns = false;
+            this.dtvStavkeNarudzbenice.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dtvStavkeNarudzbenice.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.idNarudzbeniceDataGridViewTextBoxColumn1,
+            this.idLijekDataGridViewTextBoxColumn,
+            this.kolicinaDataGridViewTextBoxColumn,
+            this.lijekDataGridViewTextBoxColumn,
+            this.narudzbenicaDataGridViewTextBoxColumn,
+            this.Cijena,
+            this.Ukupno});
+            this.dtvStavkeNarudzbenice.DataSource = this.stavkenarudzbeniceBindingSource;
+            this.dtvStavkeNarudzbenice.Location = new System.Drawing.Point(0, 272);
+            this.dtvStavkeNarudzbenice.MultiSelect = false;
+            this.dtvStavkeNarudzbenice.Name = "dtvStavkeNarudzbenice";
+            this.dtvStavkeNarudzbenice.ReadOnly = true;
+            this.dtvStavkeNarudzbenice.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dtvStavkeNarudzbenice.Size = new System.Drawing.Size(544, 166);
+            this.dtvStavkeNarudzbenice.TabIndex = 5;
+            // 
+            // Cijena
+            // 
+            this.Cijena.DataPropertyName = "idLijek";
+            this.Cijena.DataSource = this.lijekBindingSource;
+            dataGridViewCellStyle1.Format = "C2";
+            dataGridViewCellStyle1.NullValue = null;
+            this.Cijena.DefaultCellStyle = dataGridViewCellStyle1;
+            this.Cijena.DisplayMember = "cijena";
+            this.Cijena.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.Nothing;
+            this.Cijena.HeaderText = "Cijena";
+            this.Cijena.Name = "Cijena";
+            this.Cijena.ReadOnly = true;
+            this.Cijena.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.Cijena.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.Cijena.ValueMember = "idLijek";
+            // 
+            // Ukupno
+            // 
+            dataGridViewCellStyle2.Format = "C2";
+            dataGridViewCellStyle2.NullValue = null;
+            this.Ukupno.DefaultCellStyle = dataGridViewCellStyle2;
+            this.Ukupno.HeaderText = "Ukupno";
+            this.Ukupno.Name = "Ukupno";
+            this.Ukupno.ReadOnly = true;
+            // 
+            // btnStorno
+            // 
+            this.btnStorno.Location = new System.Drawing.Point(673, 253);
+            this.btnStorno.Name = "btnStorno";
+            this.btnStorno.Size = new System.Drawing.Size(105, 45);
+            this.btnStorno.TabIndex = 6;
+            this.btnStorno.Text = "Storno";
+            this.btnStorno.UseVisualStyleBackColor = true;
+            this.btnStorno.Click += new System.EventHandler(this.btnStorno_Click);
+            // 
+            // idNarudzbeniceDataGridViewTextBoxColumn1
+            // 
+            this.idNarudzbeniceDataGridViewTextBoxColumn1.DataPropertyName = "idNarudzbenice";
+            this.idNarudzbeniceDataGridViewTextBoxColumn1.HeaderText = "ID narudžbenice";
+            this.idNarudzbeniceDataGridViewTextBoxColumn1.Name = "idNarudzbeniceDataGridViewTextBoxColumn1";
+            this.idNarudzbeniceDataGridViewTextBoxColumn1.ReadOnly = true;
+            // 
+            // idLijekDataGridViewTextBoxColumn
+            // 
+            this.idLijekDataGridViewTextBoxColumn.DataPropertyName = "idLijek";
+            this.idLijekDataGridViewTextBoxColumn.DataSource = this.lijekBindingSource;
+            this.idLijekDataGridViewTextBoxColumn.DisplayMember = "naziv";
+            this.idLijekDataGridViewTextBoxColumn.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.Nothing;
+            this.idLijekDataGridViewTextBoxColumn.HeaderText = "Naziv lijeka";
+            this.idLijekDataGridViewTextBoxColumn.Name = "idLijekDataGridViewTextBoxColumn";
+            this.idLijekDataGridViewTextBoxColumn.ReadOnly = true;
+            this.idLijekDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.idLijekDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.idLijekDataGridViewTextBoxColumn.ValueMember = "idLijek";
+            // 
+            // lijekBindingSource
+            // 
+            this.lijekBindingSource.DataSource = typeof(ProdajaGreyMatter.lijek);
+            // 
+            // kolicinaDataGridViewTextBoxColumn
+            // 
+            this.kolicinaDataGridViewTextBoxColumn.DataPropertyName = "kolicina";
+            this.kolicinaDataGridViewTextBoxColumn.HeaderText = "Količina";
+            this.kolicinaDataGridViewTextBoxColumn.Name = "kolicinaDataGridViewTextBoxColumn";
+            this.kolicinaDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // lijekDataGridViewTextBoxColumn
+            // 
+            this.lijekDataGridViewTextBoxColumn.DataPropertyName = "lijek";
+            this.lijekDataGridViewTextBoxColumn.HeaderText = "Lijek";
+            this.lijekDataGridViewTextBoxColumn.Name = "lijekDataGridViewTextBoxColumn";
+            this.lijekDataGridViewTextBoxColumn.ReadOnly = true;
+            this.lijekDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // narudzbenicaDataGridViewTextBoxColumn
+            // 
+            this.narudzbenicaDataGridViewTextBoxColumn.DataPropertyName = "narudzbenica";
+            this.narudzbenicaDataGridViewTextBoxColumn.HeaderText = "Narudžbenica";
+            this.narudzbenicaDataGridViewTextBoxColumn.Name = "narudzbenicaDataGridViewTextBoxColumn";
+            this.narudzbenicaDataGridViewTextBoxColumn.ReadOnly = true;
+            this.narudzbenicaDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // stavkenarudzbeniceBindingSource
+            // 
+            this.stavkenarudzbeniceBindingSource.DataSource = typeof(ProdajaGreyMatter.stavkenarudzbenice);
+            // 
+            // idNarudzbeniceDataGridViewTextBoxColumn
+            // 
+            this.idNarudzbeniceDataGridViewTextBoxColumn.DataPropertyName = "idNarudzbenice";
+            this.idNarudzbeniceDataGridViewTextBoxColumn.HeaderText = "ID narudžbenice";
+            this.idNarudzbeniceDataGridViewTextBoxColumn.Name = "idNarudzbeniceDataGridViewTextBoxColumn";
+            this.idNarudzbeniceDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // oibKlijentaDataGridViewTextBoxColumn
             // 
@@ -184,157 +332,30 @@
             // 
             this.narudzbenicaBindingSource.DataSource = typeof(ProdajaGreyMatter.narudzbenica);
             // 
-            // btnUnosNarudzbenice
+            // lblUkupniIznosNarudzbe
             // 
-            this.btnUnosNarudzbenice.Location = new System.Drawing.Point(673, 31);
-            this.btnUnosNarudzbenice.Name = "btnUnosNarudzbenice";
-            this.btnUnosNarudzbenice.Size = new System.Drawing.Size(105, 69);
-            this.btnUnosNarudzbenice.TabIndex = 1;
-            this.btnUnosNarudzbenice.Text = "Unos nove narudžbenice";
-            this.btnUnosNarudzbenice.UseVisualStyleBackColor = true;
-            this.btnUnosNarudzbenice.Click += new System.EventHandler(this.btnUnosNarudzbenice_Click);
+            this.lblUkupniIznosNarudzbe.AutoSize = true;
+            this.lblUkupniIznosNarudzbe.Location = new System.Drawing.Point(308, 459);
+            this.lblUkupniIznosNarudzbe.Name = "lblUkupniIznosNarudzbe";
+            this.lblUkupniIznosNarudzbe.Size = new System.Drawing.Size(118, 13);
+            this.lblUkupniIznosNarudzbe.TabIndex = 7;
+            this.lblUkupniIznosNarudzbe.Text = "Ukupni iznos narudžbe:";
             // 
-            // btnNatrag
+            // txtUkupniIznosNarudžbe
             // 
-            this.btnNatrag.Location = new System.Drawing.Point(673, 312);
-            this.btnNatrag.Name = "btnNatrag";
-            this.btnNatrag.Size = new System.Drawing.Size(105, 53);
-            this.btnNatrag.TabIndex = 2;
-            this.btnNatrag.Text = "Natrag";
-            this.btnNatrag.UseVisualStyleBackColor = true;
-            this.btnNatrag.Click += new System.EventHandler(this.btnNatrag_Click);
-            // 
-            // lblPretragaPremaKlijentu
-            // 
-            this.lblPretragaPremaKlijentu.AutoSize = true;
-            this.lblPretragaPremaKlijentu.Location = new System.Drawing.Point(12, 19);
-            this.lblPretragaPremaKlijentu.Name = "lblPretragaPremaKlijentu";
-            this.lblPretragaPremaKlijentu.Size = new System.Drawing.Size(152, 13);
-            this.lblPretragaPremaKlijentu.TabIndex = 3;
-            this.lblPretragaPremaKlijentu.Text = "Pretraga prema nazivu klijenta:";
-            // 
-            // txtPretragaKlijenta
-            // 
-            this.txtPretragaKlijenta.Location = new System.Drawing.Point(170, 16);
-            this.txtPretragaKlijenta.Name = "txtPretragaKlijenta";
-            this.txtPretragaKlijenta.Size = new System.Drawing.Size(119, 20);
-            this.txtPretragaKlijenta.TabIndex = 4;
-            this.txtPretragaKlijenta.TextChanged += new System.EventHandler(this.txtPretragaKlijenta_TextChanged);
-            // 
-            // dtvStavkeNarudzbenice
-            // 
-            this.dtvStavkeNarudzbenice.AllowUserToAddRows = false;
-            this.dtvStavkeNarudzbenice.AllowUserToDeleteRows = false;
-            this.dtvStavkeNarudzbenice.AutoGenerateColumns = false;
-            this.dtvStavkeNarudzbenice.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dtvStavkeNarudzbenice.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.idNarudzbeniceDataGridViewTextBoxColumn1,
-            this.idLijekDataGridViewTextBoxColumn,
-            this.kolicinaDataGridViewTextBoxColumn,
-            this.lijekDataGridViewTextBoxColumn,
-            this.narudzbenicaDataGridViewTextBoxColumn,
-            this.Cijena,
-            this.Ukupno});
-            this.dtvStavkeNarudzbenice.DataSource = this.stavkenarudzbeniceBindingSource;
-            this.dtvStavkeNarudzbenice.Location = new System.Drawing.Point(0, 272);
-            this.dtvStavkeNarudzbenice.MultiSelect = false;
-            this.dtvStavkeNarudzbenice.Name = "dtvStavkeNarudzbenice";
-            this.dtvStavkeNarudzbenice.ReadOnly = true;
-            this.dtvStavkeNarudzbenice.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dtvStavkeNarudzbenice.Size = new System.Drawing.Size(544, 166);
-            this.dtvStavkeNarudzbenice.TabIndex = 5;
-            // 
-            // idNarudzbeniceDataGridViewTextBoxColumn1
-            // 
-            this.idNarudzbeniceDataGridViewTextBoxColumn1.DataPropertyName = "idNarudzbenice";
-            this.idNarudzbeniceDataGridViewTextBoxColumn1.HeaderText = "ID narudžbenice";
-            this.idNarudzbeniceDataGridViewTextBoxColumn1.Name = "idNarudzbeniceDataGridViewTextBoxColumn1";
-            this.idNarudzbeniceDataGridViewTextBoxColumn1.ReadOnly = true;
-            // 
-            // idLijekDataGridViewTextBoxColumn
-            // 
-            this.idLijekDataGridViewTextBoxColumn.DataPropertyName = "idLijek";
-            this.idLijekDataGridViewTextBoxColumn.DataSource = this.lijekBindingSource;
-            this.idLijekDataGridViewTextBoxColumn.DisplayMember = "naziv";
-            this.idLijekDataGridViewTextBoxColumn.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.Nothing;
-            this.idLijekDataGridViewTextBoxColumn.HeaderText = "Naziv lijeka";
-            this.idLijekDataGridViewTextBoxColumn.Name = "idLijekDataGridViewTextBoxColumn";
-            this.idLijekDataGridViewTextBoxColumn.ReadOnly = true;
-            this.idLijekDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.idLijekDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.idLijekDataGridViewTextBoxColumn.ValueMember = "idLijek";
-            // 
-            // lijekBindingSource
-            // 
-            this.lijekBindingSource.DataSource = typeof(ProdajaGreyMatter.lijek);
-            // 
-            // kolicinaDataGridViewTextBoxColumn
-            // 
-            this.kolicinaDataGridViewTextBoxColumn.DataPropertyName = "kolicina";
-            this.kolicinaDataGridViewTextBoxColumn.HeaderText = "Količina";
-            this.kolicinaDataGridViewTextBoxColumn.Name = "kolicinaDataGridViewTextBoxColumn";
-            this.kolicinaDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // lijekDataGridViewTextBoxColumn
-            // 
-            this.lijekDataGridViewTextBoxColumn.DataPropertyName = "lijek";
-            this.lijekDataGridViewTextBoxColumn.HeaderText = "Lijek";
-            this.lijekDataGridViewTextBoxColumn.Name = "lijekDataGridViewTextBoxColumn";
-            this.lijekDataGridViewTextBoxColumn.ReadOnly = true;
-            this.lijekDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // narudzbenicaDataGridViewTextBoxColumn
-            // 
-            this.narudzbenicaDataGridViewTextBoxColumn.DataPropertyName = "narudzbenica";
-            this.narudzbenicaDataGridViewTextBoxColumn.HeaderText = "Narudžbenica";
-            this.narudzbenicaDataGridViewTextBoxColumn.Name = "narudzbenicaDataGridViewTextBoxColumn";
-            this.narudzbenicaDataGridViewTextBoxColumn.ReadOnly = true;
-            this.narudzbenicaDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // Cijena
-            // 
-            this.Cijena.DataPropertyName = "idLijek";
-            this.Cijena.DataSource = this.lijekBindingSource;
-            dataGridViewCellStyle1.Format = "C2";
-            dataGridViewCellStyle1.NullValue = null;
-            this.Cijena.DefaultCellStyle = dataGridViewCellStyle1;
-            this.Cijena.DisplayMember = "cijena";
-            this.Cijena.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.Nothing;
-            this.Cijena.HeaderText = "Cijena";
-            this.Cijena.Name = "Cijena";
-            this.Cijena.ReadOnly = true;
-            this.Cijena.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.Cijena.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.Cijena.ValueMember = "idLijek";
-            // 
-            // Ukupno
-            // 
-            dataGridViewCellStyle2.Format = "C2";
-            dataGridViewCellStyle2.NullValue = null;
-            this.Ukupno.DefaultCellStyle = dataGridViewCellStyle2;
-            this.Ukupno.HeaderText = "Ukupno";
-            this.Ukupno.Name = "Ukupno";
-            this.Ukupno.ReadOnly = true;
-            // 
-            // stavkenarudzbeniceBindingSource
-            // 
-            this.stavkenarudzbeniceBindingSource.DataSource = typeof(ProdajaGreyMatter.stavkenarudzbenice);
-            // 
-            // btnStorno
-            // 
-            this.btnStorno.Location = new System.Drawing.Point(673, 253);
-            this.btnStorno.Name = "btnStorno";
-            this.btnStorno.Size = new System.Drawing.Size(105, 45);
-            this.btnStorno.TabIndex = 6;
-            this.btnStorno.Text = "Storno";
-            this.btnStorno.UseVisualStyleBackColor = true;
-            this.btnStorno.Click += new System.EventHandler(this.btnStorno_Click);
+            this.txtUkupniIznosNarudžbe.Location = new System.Drawing.Point(444, 456);
+            this.txtUkupniIznosNarudžbe.Name = "txtUkupniIznosNarudžbe";
+            this.txtUkupniIznosNarudžbe.ReadOnly = true;
+            this.txtUkupniIznosNarudžbe.Size = new System.Drawing.Size(100, 20);
+            this.txtUkupniIznosNarudžbe.TabIndex = 8;
             // 
             // frmNarudzbenica
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(814, 470);
+            this.ClientSize = new System.Drawing.Size(814, 492);
+            this.Controls.Add(this.txtUkupniIznosNarudžbe);
+            this.Controls.Add(this.lblUkupniIznosNarudzbe);
             this.Controls.Add(this.btnStorno);
             this.Controls.Add(this.dtvStavkeNarudzbenice);
             this.Controls.Add(this.txtPretragaKlijenta);
@@ -346,12 +367,12 @@
             this.Text = "Narudžbenice";
             this.Load += new System.EventHandler(this.frmNarudzbenica_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgPopisNarudžbenica)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.klijentBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.zaposlenikBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.narudzbenicaBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtvStavkeNarudzbenice)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.lijekBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.stavkenarudzbeniceBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.klijentBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.zaposlenikBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.narudzbenicaBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -387,5 +408,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn narudzbenicaDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewComboBoxColumn Cijena;
         private System.Windows.Forms.DataGridViewTextBoxColumn Ukupno;
+        private System.Windows.Forms.Label lblUkupniIznosNarudzbe;
+        private System.Windows.Forms.TextBox txtUkupniIznosNarudžbe;
     }
 }

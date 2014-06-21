@@ -62,19 +62,19 @@ namespace ProdajaGreyMatter
                 db.narudzbenica.Attach(narudzbenica);
                 listaStavakaNarudzbenica = new BindingList<stavkenarudzbenice>(narudzbenica.stavkenarudzbenice.ToList());
                 listaLijekova = new BindingList<lijek>(db.lijek.ToList());
-                int i = 0;
+                
                 int brojRedova = dtvStavkeNarudzbenice.Rows.Count;
-                for (int j = 0; j < brojRedova - 1; j++)
+                for (int j = 0; j < brojRedova; j++)
                 {
                     int kolicina = 0;
-                    kolicina = int.Parse(dtvStavkeNarudzbenice.Rows[i].Cells[2].Value.ToString());
-                    int id = int.Parse(dtvStavkeNarudzbenice.Rows[i].Cells[1].Value.ToString());
+                    kolicina = int.Parse(dtvStavkeNarudzbenice.Rows[j].Cells[2].Value.ToString());
+                    int id = int.Parse(dtvStavkeNarudzbenice.Rows[j].Cells[1].Value.ToString());
                     var rezultat = (from k in db.lijek
                                     where k.idLijek == id
                                     select k.cijena).First();
                     double cijena = double.Parse(rezultat.ToString());
-                    dtvStavkeNarudzbenice.Rows[i].Cells["Ukupno"].Value = kolicina * cijena;
-                    i++;
+                    dtvStavkeNarudzbenice.Rows[j].Cells["Ukupno"].Value = kolicina * cijena;
+                   
                 }
             }
         }
@@ -126,6 +126,14 @@ namespace ProdajaGreyMatter
             if (selektiranaNarudzbenica != null)
             {
                 prikaziStavkeNarudzbenice(selektiranaNarudzbenica);
+                int brojRedova = dtvStavkeNarudzbenice.Rows.Count;
+                double ukupno = 0.0d;
+                for (int j = 0; j < brojRedova; j++)
+                {
+                    double ukupniIznosStavke = double.Parse(dtvStavkeNarudzbenice.Rows[j].Cells["Ukupno"].Value.ToString());
+                    ukupno += ukupniIznosStavke;
+                }
+                txtUkupniIznosNarudžbe.Text = ukupno.ToString("C");
             }
         }
 
