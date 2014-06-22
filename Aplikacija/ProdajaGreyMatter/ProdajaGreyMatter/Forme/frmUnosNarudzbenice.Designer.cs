@@ -40,11 +40,9 @@
             this.lijekBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.Ukupno = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.stavkenarudzbeniceBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.txtIdNarudzbenice = new System.Windows.Forms.TextBox();
             this.btnOdustani = new System.Windows.Forms.Button();
             this.btnSpremi = new System.Windows.Forms.Button();
             this.btnDodajStavku = new System.Windows.Forms.Button();
-            this.lblIdNarudzbenice = new System.Windows.Forms.Label();
             this.lblNazivKlijenta = new System.Windows.Forms.Label();
             this.lblRokPlacanja = new System.Windows.Forms.Label();
             this.lblReferent = new System.Windows.Forms.Label();
@@ -84,7 +82,7 @@
             this.dtvStavkeNarudzbenice.Name = "dtvStavkeNarudzbenice";
             this.dtvStavkeNarudzbenice.ReadOnly = true;
             this.dtvStavkeNarudzbenice.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dtvStavkeNarudzbenice.Size = new System.Drawing.Size(511, 180);
+            this.dtvStavkeNarudzbenice.Size = new System.Drawing.Size(444, 180);
             this.dtvStavkeNarudzbenice.TabIndex = 0;
             // 
             // idLijekDataGridViewTextBoxColumn
@@ -156,15 +154,6 @@
             // 
             this.stavkenarudzbeniceBindingSource.DataSource = typeof(ProdajaGreyMatter.stavkenarudzbenice);
             // 
-            // txtIdNarudzbenice
-            // 
-            this.txtIdNarudzbenice.Location = new System.Drawing.Point(136, 25);
-            this.txtIdNarudzbenice.Name = "txtIdNarudzbenice";
-            this.txtIdNarudzbenice.ReadOnly = true;
-            this.txtIdNarudzbenice.Size = new System.Drawing.Size(50, 20);
-            this.txtIdNarudzbenice.TabIndex = 3;
-            this.txtIdNarudzbenice.TextChanged += new System.EventHandler(this.txtIdNarudzbenice_TextChanged);
-            // 
             // btnOdustani
             // 
             this.btnOdustani.Location = new System.Drawing.Point(354, 372);
@@ -195,19 +184,10 @@
             this.btnDodajStavku.UseVisualStyleBackColor = true;
             this.btnDodajStavku.Click += new System.EventHandler(this.btnDodajStavku_Click);
             // 
-            // lblIdNarudzbenice
-            // 
-            this.lblIdNarudzbenice.AutoSize = true;
-            this.lblIdNarudzbenice.Location = new System.Drawing.Point(21, 28);
-            this.lblIdNarudzbenice.Name = "lblIdNarudzbenice";
-            this.lblIdNarudzbenice.Size = new System.Drawing.Size(88, 13);
-            this.lblIdNarudzbenice.TabIndex = 7;
-            this.lblIdNarudzbenice.Text = "ID narudžbenice:";
-            // 
             // lblNazivKlijenta
             // 
             this.lblNazivKlijenta.AutoSize = true;
-            this.lblNazivKlijenta.Location = new System.Drawing.Point(21, 62);
+            this.lblNazivKlijenta.Location = new System.Drawing.Point(21, 32);
             this.lblNazivKlijenta.Name = "lblNazivKlijenta";
             this.lblNazivKlijenta.Size = new System.Drawing.Size(73, 13);
             this.lblNazivKlijenta.TabIndex = 8;
@@ -216,7 +196,7 @@
             // lblRokPlacanja
             // 
             this.lblRokPlacanja.AutoSize = true;
-            this.lblRokPlacanja.Location = new System.Drawing.Point(21, 100);
+            this.lblRokPlacanja.Location = new System.Drawing.Point(21, 70);
             this.lblRokPlacanja.Name = "lblRokPlacanja";
             this.lblRokPlacanja.Size = new System.Drawing.Size(73, 13);
             this.lblRokPlacanja.TabIndex = 9;
@@ -225,7 +205,7 @@
             // lblReferent
             // 
             this.lblReferent.AutoSize = true;
-            this.lblReferent.Location = new System.Drawing.Point(335, 57);
+            this.lblReferent.Location = new System.Drawing.Point(403, 74);
             this.lblReferent.Name = "lblReferent";
             this.lblReferent.Size = new System.Drawing.Size(51, 13);
             this.lblReferent.TabIndex = 10;
@@ -234,7 +214,7 @@
             // dtpDatumIzdavanjaNarudzbenice
             // 
             this.dtpDatumIzdavanjaNarudzbenice.Enabled = false;
-            this.dtpDatumIzdavanjaNarudzbenice.Location = new System.Drawing.Point(334, 12);
+            this.dtpDatumIzdavanjaNarudzbenice.Location = new System.Drawing.Point(402, 29);
             this.dtpDatumIzdavanjaNarudzbenice.Name = "dtpDatumIzdavanjaNarudzbenice";
             this.dtpDatumIzdavanjaNarudzbenice.Size = new System.Drawing.Size(200, 20);
             this.dtpDatumIzdavanjaNarudzbenice.TabIndex = 12;
@@ -242,14 +222,14 @@
             // cmbNazivKlijenta
             // 
             this.cmbNazivKlijenta.FormattingEnabled = true;
-            this.cmbNazivKlijenta.Location = new System.Drawing.Point(136, 59);
+            this.cmbNazivKlijenta.Location = new System.Drawing.Point(109, 29);
             this.cmbNazivKlijenta.Name = "cmbNazivKlijenta";
             this.cmbNazivKlijenta.Size = new System.Drawing.Size(124, 21);
             this.cmbNazivKlijenta.TabIndex = 13;
             // 
             // dtpRokPlacanja
             // 
-            this.dtpRokPlacanja.Location = new System.Drawing.Point(136, 100);
+            this.dtpRokPlacanja.Location = new System.Drawing.Point(109, 70);
             this.dtpRokPlacanja.Name = "dtpRokPlacanja";
             this.dtpRokPlacanja.Size = new System.Drawing.Size(200, 20);
             this.dtpRokPlacanja.TabIndex = 15;
@@ -260,7 +240,7 @@
             this.cmbReferent.DisplayMember = "prezime";
             this.cmbReferent.Enabled = false;
             this.cmbReferent.FormattingEnabled = true;
-            this.cmbReferent.Location = new System.Drawing.Point(413, 54);
+            this.cmbReferent.Location = new System.Drawing.Point(481, 71);
             this.cmbReferent.Name = "cmbReferent";
             this.cmbReferent.Size = new System.Drawing.Size(121, 21);
             this.cmbReferent.TabIndex = 16;
@@ -293,7 +273,7 @@
             // lblUkupniIznosNarudzbe
             // 
             this.lblUkupniIznosNarudzbe.AutoSize = true;
-            this.lblUkupniIznosNarudzbe.Location = new System.Drawing.Point(299, 331);
+            this.lblUkupniIznosNarudzbe.Location = new System.Drawing.Point(218, 337);
             this.lblUkupniIznosNarudzbe.Name = "lblUkupniIznosNarudzbe";
             this.lblUkupniIznosNarudzbe.Size = new System.Drawing.Size(118, 13);
             this.lblUkupniIznosNarudzbe.TabIndex = 19;
@@ -301,7 +281,7 @@
             // 
             // txtUkupniIznosNarudzbe
             // 
-            this.txtUkupniIznosNarudzbe.Location = new System.Drawing.Point(451, 328);
+            this.txtUkupniIznosNarudzbe.Location = new System.Drawing.Point(370, 334);
             this.txtUkupniIznosNarudzbe.Name = "txtUkupniIznosNarudzbe";
             this.txtUkupniIznosNarudzbe.ReadOnly = true;
             this.txtUkupniIznosNarudzbe.Size = new System.Drawing.Size(100, 20);
@@ -335,11 +315,9 @@
             this.Controls.Add(this.lblReferent);
             this.Controls.Add(this.lblRokPlacanja);
             this.Controls.Add(this.lblNazivKlijenta);
-            this.Controls.Add(this.lblIdNarudzbenice);
             this.Controls.Add(this.btnDodajStavku);
             this.Controls.Add(this.btnSpremi);
             this.Controls.Add(this.btnOdustani);
-            this.Controls.Add(this.txtIdNarudzbenice);
             this.Controls.Add(this.dtvStavkeNarudzbenice);
             this.Name = "frmUnosNarudzbenice";
             this.Text = "Unos Narudžbenice";
@@ -357,11 +335,9 @@
         #endregion
 
         private System.Windows.Forms.DataGridView dtvStavkeNarudzbenice;
-        private System.Windows.Forms.TextBox txtIdNarudzbenice;
         private System.Windows.Forms.Button btnOdustani;
         private System.Windows.Forms.Button btnSpremi;
         private System.Windows.Forms.Button btnDodajStavku;
-        private System.Windows.Forms.Label lblIdNarudzbenice;
         private System.Windows.Forms.Label lblNazivKlijenta;
         private System.Windows.Forms.Label lblRokPlacanja;
         private System.Windows.Forms.Label lblReferent;

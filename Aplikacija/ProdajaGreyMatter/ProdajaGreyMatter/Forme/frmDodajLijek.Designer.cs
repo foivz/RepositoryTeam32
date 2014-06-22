@@ -85,7 +85,7 @@
             this.dgvPopisLijekova.Name = "dgvPopisLijekova";
             this.dgvPopisLijekova.ReadOnly = true;
             this.dgvPopisLijekova.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvPopisLijekova.Size = new System.Drawing.Size(799, 169);
+            this.dgvPopisLijekova.Size = new System.Drawing.Size(1143, 169);
             this.dgvPopisLijekova.TabIndex = 0;
             // 
             // idLijekDataGridViewTextBoxColumn
@@ -215,7 +215,7 @@
             // 
             // btnDodajLijek
             // 
-            this.btnDodajLijek.Location = new System.Drawing.Point(672, 227);
+            this.btnDodajLijek.Location = new System.Drawing.Point(1000, 230);
             this.btnDodajLijek.Name = "btnDodajLijek";
             this.btnDodajLijek.Size = new System.Drawing.Size(109, 37);
             this.btnDodajLijek.TabIndex = 1;
@@ -225,7 +225,7 @@
             // 
             // btnNatrag
             // 
-            this.btnNatrag.Location = new System.Drawing.Point(550, 227);
+            this.btnNatrag.Location = new System.Drawing.Point(820, 230);
             this.btnNatrag.Name = "btnNatrag";
             this.btnNatrag.Size = new System.Drawing.Size(95, 37);
             this.btnNatrag.TabIndex = 2;
@@ -265,7 +265,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(803, 290);
+            this.ClientSize = new System.Drawing.Size(1145, 290);
             this.Controls.Add(this.lblPomoc);
             this.Controls.Add(this.txtPretragaPremaNazivu);
             this.Controls.Add(this.lblPretragaPremaNazivuLijeka);

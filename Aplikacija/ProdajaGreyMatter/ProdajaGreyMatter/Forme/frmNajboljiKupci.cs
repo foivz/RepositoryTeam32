@@ -128,8 +128,9 @@ namespace ProdajaGreyMatter
                 graf.Series["podaci"].Points[j].Color = Color.FromArgb(220, 65, 140, 255);
                 graf.Series["podaci"].Points[j].BorderColor = Color.FromArgb(180, 26, 59, 105);
             }
-            graf.SaveImage("najboljiKupci.png", ChartImageFormat.Png);
-            pictureBox1.ImageLocation = @"najboljiKupci.png";
+            string putanja = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
+            graf.SaveImage(putanja+@"\najboljiKupci.png", ChartImageFormat.Png);
+            pictureBox1.ImageLocation = putanja+@"\najboljiKupci.png";
         }
 
         private void rb3Mjeseca_CheckedChanged(object sender, EventArgs e)

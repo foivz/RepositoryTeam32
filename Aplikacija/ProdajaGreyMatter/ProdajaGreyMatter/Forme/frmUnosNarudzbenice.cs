@@ -53,8 +53,6 @@ namespace ProdajaGreyMatter
             btnSpremi.FlatAppearance.BorderColor = Color.FromArgb(255, 50, 241);
             btnSpremi.FlatAppearance.BorderSize = 3;
 
-            lblIdNarudzbenice.Font = new Font(lblIdNarudzbenice.Font, FontStyle.Bold);
-
             lblNazivKlijenta.Font = new Font(lblNazivKlijenta.Font, FontStyle.Bold);
 
             lblReferent.Font = new Font(lblReferent.Font, FontStyle.Bold);

@@ -72,7 +72,7 @@
             this.dgPopisKlijenata.Name = "dgPopisKlijenata";
             this.dgPopisKlijenata.ReadOnly = true;
             this.dgPopisKlijenata.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgPopisKlijenata.Size = new System.Drawing.Size(641, 244);
+            this.dgPopisKlijenata.Size = new System.Drawing.Size(643, 244);
             this.dgPopisKlijenata.TabIndex = 0;
             // 
             // oibDataGridViewTextBoxColumn

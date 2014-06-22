@@ -110,8 +110,10 @@ namespace ProdajaGreyMatter
             graf.Series.Add(podaci);
             for (int j = 0; j < 5; j++)
                 graf.Series[0].Points[j].AxisLabel = lijekNaziv[j].ToString();
-            graf.SaveImage("najprodavanijiLijekovi.png", ChartImageFormat.Png);
-            pictureBox1.ImageLocation = @"najprodavanijiLijekovi.png";  
+            string putanja = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
+            graf.SaveImage(putanja + @"\najboljiKupci.png", ChartImageFormat.Png);
+            graf.SaveImage(putanja+@"\najprodavanijiLijekovi.png", ChartImageFormat.Png);
+            pictureBox1.ImageLocation = putanja+@"\najprodavanijiLijekovi.png";  
         }
 
         private void btnNatrag_Click(object sender, EventArgs e)
