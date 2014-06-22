@@ -35,6 +35,7 @@
             this.btnOdjava = new System.Windows.Forms.Button();
             this.lblZaposlenik = new System.Windows.Forms.Label();
             this.logo = new System.Windows.Forms.PictureBox();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.logo)).BeginInit();
             this.SuspendLayout();
             // 
@@ -107,11 +108,23 @@
             this.logo.TabIndex = 6;
             this.logo.TabStop = false;
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label1.Location = new System.Drawing.Point(12, 607);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(132, 15);
+            this.label1.TabIndex = 8;
+            this.label1.Text = "Za pomoć pritisnite f1";
+            // 
             // frmIzbornik
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(861, 631);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.logo);
             this.Controls.Add(this.lblZaposlenik);
             this.Controls.Add(this.btnOdjava);
@@ -137,6 +150,7 @@
         private System.Windows.Forms.Button btnOdjava;
         private System.Windows.Forms.Label lblZaposlenik;
         private System.Windows.Forms.PictureBox logo;
+        private System.Windows.Forms.Label label1;
 
     }
 }

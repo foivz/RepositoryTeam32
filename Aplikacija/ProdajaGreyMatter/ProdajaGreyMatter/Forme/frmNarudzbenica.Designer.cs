@@ -62,6 +62,7 @@
             this.lblUkupniIznosNarudzbe = new System.Windows.Forms.Label();
             this.txtUkupniIznosNarudžbe = new System.Windows.Forms.TextBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgPopisNarudžbenica)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.klijentBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.zaposlenikBindingSource)).BeginInit();
@@ -361,11 +362,23 @@
             this.pictureBox1.TabIndex = 9;
             this.pictureBox1.TabStop = false;
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label1.Location = new System.Drawing.Point(12, 521);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(132, 15);
+            this.label1.TabIndex = 11;
+            this.label1.Text = "Za pomoć pritisnite f1";
+            // 
             // frmNarudzbenica
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(814, 545);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.txtUkupniIznosNarudžbe);
             this.Controls.Add(this.lblUkupniIznosNarudzbe);
@@ -426,5 +439,6 @@
         private System.Windows.Forms.Label lblUkupniIznosNarudzbe;
         private System.Windows.Forms.TextBox txtUkupniIznosNarudžbe;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Label label1;
     }
 }

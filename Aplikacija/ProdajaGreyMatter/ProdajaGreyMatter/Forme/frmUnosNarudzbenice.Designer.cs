@@ -57,6 +57,7 @@
             this.btnIzbrisi = new System.Windows.Forms.Button();
             this.lblUkupniIznosNarudzbe = new System.Windows.Forms.Label();
             this.txtUkupniIznosNarudzbe = new System.Windows.Forms.TextBox();
+            this.lblHelp = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dtvStavkeNarudzbenice)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lijekBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.stavkenarudzbeniceBindingSource)).BeginInit();
@@ -306,11 +307,23 @@
             this.txtUkupniIznosNarudzbe.Size = new System.Drawing.Size(100, 20);
             this.txtUkupniIznosNarudzbe.TabIndex = 20;
             // 
+            // lblHelp
+            // 
+            this.lblHelp.AutoSize = true;
+            this.lblHelp.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.lblHelp.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.lblHelp.Location = new System.Drawing.Point(12, 458);
+            this.lblHelp.Name = "lblHelp";
+            this.lblHelp.Size = new System.Drawing.Size(132, 15);
+            this.lblHelp.TabIndex = 21;
+            this.lblHelp.Text = "Za pomoć pritisnite f1";
+            // 
             // frmUnosNarudzbenice
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(637, 482);
+            this.Controls.Add(this.lblHelp);
             this.Controls.Add(this.txtUkupniIznosNarudzbe);
             this.Controls.Add(this.lblUkupniIznosNarudzbe);
             this.Controls.Add(this.btnIzbrisi);
@@ -370,5 +383,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Ukupno;
         private System.Windows.Forms.Label lblUkupniIznosNarudzbe;
         private System.Windows.Forms.TextBox txtUkupniIznosNarudzbe;
+        private System.Windows.Forms.Label lblHelp;
     }
 }
