@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dgPopisNarudžbenica = new System.Windows.Forms.DataGridView();
             this.idNarudzbeniceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.status = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -62,7 +62,7 @@
             this.lblUkupniIznosNarudzbe = new System.Windows.Forms.Label();
             this.txtUkupniIznosNarudžbe = new System.Windows.Forms.TextBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.label1 = new System.Windows.Forms.Label();
+            this.btnIzvjestaj = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgPopisNarudžbenica)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.klijentBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.zaposlenikBindingSource)).BeginInit();
@@ -300,9 +300,9 @@
             // 
             this.Cijena.DataPropertyName = "idLijek";
             this.Cijena.DataSource = this.lijekBindingSource;
-            dataGridViewCellStyle1.Format = "C2";
-            dataGridViewCellStyle1.NullValue = null;
-            this.Cijena.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle3.Format = "C2";
+            dataGridViewCellStyle3.NullValue = null;
+            this.Cijena.DefaultCellStyle = dataGridViewCellStyle3;
             this.Cijena.DisplayMember = "cijena";
             this.Cijena.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.Nothing;
             this.Cijena.HeaderText = "Cijena";
@@ -314,9 +314,9 @@
             // 
             // Ukupno
             // 
-            dataGridViewCellStyle2.Format = "C2";
-            dataGridViewCellStyle2.NullValue = null;
-            this.Ukupno.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle4.Format = "C2";
+            dataGridViewCellStyle4.NullValue = null;
+            this.Ukupno.DefaultCellStyle = dataGridViewCellStyle4;
             this.Ukupno.HeaderText = "Ukupno";
             this.Ukupno.Name = "Ukupno";
             this.Ukupno.ReadOnly = true;
@@ -362,23 +362,22 @@
             this.pictureBox1.TabIndex = 9;
             this.pictureBox1.TabStop = false;
             // 
-            // label1
+            // btnIzvjestaj
             // 
-            this.label1.AutoSize = true;
-            this.label1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label1.Location = new System.Drawing.Point(12, 521);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(132, 15);
-            this.label1.TabIndex = 11;
-            this.label1.Text = "Za pomoć pritisnite f1";
+            this.btnIzvjestaj.Location = new System.Drawing.Point(56, 520);
+            this.btnIzvjestaj.Name = "btnIzvjestaj";
+            this.btnIzvjestaj.Size = new System.Drawing.Size(105, 65);
+            this.btnIzvjestaj.TabIndex = 10;
+            this.btnIzvjestaj.Text = "Izvještaj";
+            this.btnIzvjestaj.UseVisualStyleBackColor = true;
+            this.btnIzvjestaj.Click += new System.EventHandler(this.btnIzvjestaj_Click);
             // 
             // frmNarudzbenica
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(814, 545);
-            this.Controls.Add(this.label1);
+            this.ClientSize = new System.Drawing.Size(814, 597);
+            this.Controls.Add(this.btnIzvjestaj);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.txtUkupniIznosNarudžbe);
             this.Controls.Add(this.lblUkupniIznosNarudzbe);
@@ -439,6 +438,6 @@
         private System.Windows.Forms.Label lblUkupniIznosNarudzbe;
         private System.Windows.Forms.TextBox txtUkupniIznosNarudžbe;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button btnIzvjestaj;
     }
 }

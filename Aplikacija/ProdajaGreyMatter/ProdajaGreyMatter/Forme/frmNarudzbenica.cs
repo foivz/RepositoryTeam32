@@ -232,5 +232,11 @@ namespace ProdajaGreyMatter
         {
 
         }
+
+        private void btnIzvjestaj_Click(object sender, EventArgs e)
+        {
+            frmNarudzbenicaReport forma = new frmNarudzbenicaReport();
+            forma.ShowDialog();
+        }
     }
 }

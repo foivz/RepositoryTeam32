@@ -51,7 +51,6 @@
             this.btnNatrag = new System.Windows.Forms.Button();
             this.lblPretragaPremaNazivuLijeka = new System.Windows.Forms.Label();
             this.txtPretragaPremaNazivu = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPopisLijekova)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.jedinicnamjeraBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tiplijekaBindingSource)).BeginInit();
@@ -250,23 +249,11 @@
             this.txtPretragaPremaNazivu.TabIndex = 5;
             this.txtPretragaPremaNazivu.TextChanged += new System.EventHandler(this.txtPretragaPremaNazivu_TextChanged);
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label1.Location = new System.Drawing.Point(12, 266);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(132, 15);
-            this.label1.TabIndex = 8;
-            this.label1.Text = "Za pomoć pritisnite f1";
-            // 
             // frmDodajLijek
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(803, 290);
-            this.Controls.Add(this.label1);
             this.Controls.Add(this.txtPretragaPremaNazivu);
             this.Controls.Add(this.lblPretragaPremaNazivuLijeka);
             this.Controls.Add(this.btnNatrag);
@@ -309,6 +296,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn tiplijekaDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn stavkenarudzbeniceDataGridViewTextBoxColumn;
         private System.Windows.Forms.BindingSource lijekBindingSource;
-        private System.Windows.Forms.Label label1;
     }
 }

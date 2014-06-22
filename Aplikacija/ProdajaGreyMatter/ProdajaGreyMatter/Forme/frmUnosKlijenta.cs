@@ -132,73 +132,77 @@ namespace ProdajaGreyMatter
                         formatZiroRacuna = false;
                     }
                 }
-
-                if (oib.Length != 11 || oibZnamenkast == false)
+                if (txtOib.Text != "" && txtNaziv.Text != "" && txtEmail.Text != "" && txtAdresa.Text != "" && txtZiroRacun.Text != "" && txtTelefon.Text != "")
                 {
-                    greska = "OIB se mora sastojati od 11 znamenki!";
-                }
-                else if (Char.IsUpper(naziv[0]) == false)
-                {
-                    greska = "Naziv mora početi velikim slovom";
-                }
-                else if (e_mail.Contains("@") == false)
-                {
-                    greska = "email adresa nije ispravnog formata";
-                }
-                else if (telefon.Length < 6 || telefonZnamenkast == false)
-                {
-                    greska = "Broj telefona se mora sastojati od barem 6 znamenki";
-                }
-                else if (Char.IsUpper(adresa[0]) == false)
-                {
-                    greska = "Adresa mora početi velikim slovom";
-                }
-                else if (formatZiroRacuna == false || ziroRacun.Contains("-") == false)
-                {
-                    greska = "Žiro račun mora sadržavati znamenke i znak -!";
-                }
-                else
-                {
-                    try
+                    if (oib.Length != 11 || oibZnamenkast == false)
                     {
-                        using (var db = new greymatterpiEntities())
+                        greska = "OIB se mora sastojati od 11 znamenki!";
+                    }
+                    else if (Char.IsUpper(naziv[0]) == false)
+                    {
+                        greska = "Naziv mora početi velikim slovom";
+                    }
+                    else if (e_mail.Contains("@") == false)
+                    {
+                        greska = "email adresa nije ispravnog formata";
+                    }
+                    else if (telefon.Length < 6 || telefonZnamenkast == false)
+                    {
+                        greska = "Broj telefona se mora sastojati od barem 6 znamenki";
+                    }
+                    else if (Char.IsUpper(adresa[0]) == false)
+                    {
+                        greska = "Adresa mora početi velikim slovom";
+                    }
+                    else if (formatZiroRacuna == false || ziroRacun.Contains("-") == false)
+                    {
+                        greska = "Žiro račun mora sadržavati znamenke i znak -!";
+                    }
+                    else
+                    {
+                        try
                         {
-                            if (klijentZaIzmjenu == null)
+                            using (var db = new greymatterpiEntities())
                             {
-                                klijent noviKlijent = new klijent
+                                if (klijentZaIzmjenu == null)
                                 {
-                                    oib = txtOib.Text,
-                                    naziv = txtNaziv.Text,
-                                    adresa = txtAdresa.Text,
-                                    telefon = txtTelefon.Text,
-                                    e_mail = txtEmail.Text,
-                                    ziroRacun = txtZiroRacun.Text
-                                };
-                                db.klijent.Add(noviKlijent);
-                                db.SaveChanges();
+                                    klijent noviKlijent = new klijent
+                                    {
+                                        oib = txtOib.Text,
+                                        naziv = txtNaziv.Text,
+                                        adresa = txtAdresa.Text,
+                                        telefon = txtTelefon.Text,
+                                        e_mail = txtEmail.Text,
+                                        ziroRacun = txtZiroRacun.Text
+                                    };
+                                    db.klijent.Add(noviKlijent);
+                                    db.SaveChanges();
 
+                                }
+                                else
+                                {
+                                    db.klijent.Attach(klijentZaIzmjenu);
+                                    klijentZaIzmjenu.oib = txtOib.Text;
+                                    klijentZaIzmjenu.naziv = txtNaziv.Text;
+                                    klijentZaIzmjenu.telefon = txtTelefon.Text;
+                                    klijentZaIzmjenu.ziroRacun = txtZiroRacun.Text;
+                                    klijentZaIzmjenu.e_mail = txtEmail.Text;
+                                    klijentZaIzmjenu.adresa = txtAdresa.Text;
+                                    db.SaveChanges();
+                                }
                             }
-                            else
-                            {
-                                db.klijent.Attach(klijentZaIzmjenu);
-                                klijentZaIzmjenu.oib = txtOib.Text;
-                                klijentZaIzmjenu.naziv = txtNaziv.Text;
-                                klijentZaIzmjenu.telefon = txtTelefon.Text;
-                                klijentZaIzmjenu.ziroRacun = txtZiroRacun.Text;
-                                klijentZaIzmjenu.e_mail = txtEmail.Text;
-                                klijentZaIzmjenu.adresa = txtAdresa.Text;
-                                db.SaveChanges();
-                            }
+
+                            Close();
                         }
+                        catch
+                        {
+                            greska = "Problem u vezi sa bazom podataka ili su uneseni postojeći OIB i/ili žiro račun!";
+                        }
+                    }
 
-                        Close();
-                    }
-                    catch
-                    {
-                        greska = "Problem u vezi sa bazom podataka ili su uneseni postojeći OIB i/ili žiro račun!";
-                    }
-                    
                 }
+                else { MessageBox.Show("Morate popuniti sva polja!", "Upozorenje"); }
+                
 
                 /// Ispisuje se greška ako je do nje došlo prilikom validacije podataka forme
                 /// Ako postoji više greški one će se, jedna po jedna, javljati svaki put nakon klika na gumb Spremi
@@ -206,6 +210,7 @@ namespace ProdajaGreyMatter
                 {
                     MessageBox.Show(greska, "Greška");
                 }
+        
                 
         }
 
