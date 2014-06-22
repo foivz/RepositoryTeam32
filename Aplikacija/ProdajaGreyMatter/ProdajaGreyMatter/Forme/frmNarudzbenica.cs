@@ -19,6 +19,37 @@ namespace ProdajaGreyMatter
             this.KeyPreview = true;
             this.CenterToParent();
             referent = zaposlenik;
+
+            this.BackColor = Color.FromArgb(228, 231, 236);
+            foreach (Control gumb in this.Controls)
+            {
+                if (gumb.GetType() == typeof(Button))
+                {
+                    gumb.BackColor = Color.FromArgb(253, 160, 247);
+                    gumb.ForeColor = Color.FromArgb(64, 64, 64);
+                    gumb.Font = new Font(gumb.Font, FontStyle.Bold);
+                    gumb.Font = new Font("Sans", 14);
+                }
+            }
+
+            btnNatrag.FlatStyle = FlatStyle.Flat;
+            btnNatrag.FlatAppearance.BorderColor = Color.FromArgb(255, 50, 241);
+            btnNatrag.FlatAppearance.BorderSize = 3;
+
+            btnNatrag.FlatStyle = FlatStyle.Flat;
+            btnNatrag.FlatAppearance.BorderColor = Color.FromArgb(255, 50, 241);
+            btnNatrag.FlatAppearance.BorderSize = 3;
+
+            btnStorno.FlatStyle = FlatStyle.Flat;
+            btnStorno.FlatAppearance.BorderColor = Color.FromArgb(255, 50, 241);
+            btnStorno.FlatAppearance.BorderSize = 3;
+
+            btnUnosNarudzbenice.FlatStyle = FlatStyle.Flat;
+            btnUnosNarudzbenice.FlatAppearance.BorderColor = Color.FromArgb(255, 50, 241);
+            btnUnosNarudzbenice.FlatAppearance.BorderSize = 3;
+
+            lblPretragaPremaKlijentu.Font = new Font(lblPretragaPremaKlijentu.Font, FontStyle.Bold);
+            lblUkupniIznosNarudzbe.Font = new Font(lblUkupniIznosNarudzbe.Font, FontStyle.Bold);
         }
         private void prikaziNarudzbe()
         {
@@ -195,6 +226,11 @@ namespace ProdajaGreyMatter
                 frmHelp formaHelp = new frmHelp(naslov, poruka);
                 formaHelp.ShowDialog();
             }
+        }
+
+        private void txtUkupniIznosNarudžbe_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

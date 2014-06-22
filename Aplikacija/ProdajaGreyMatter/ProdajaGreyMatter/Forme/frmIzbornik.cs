@@ -22,6 +22,41 @@ namespace ProdajaGreyMatter
             lblZaposlenik.Text = referent.ime + " " + referent.prezime;
             this.KeyPreview = true;
             this.CenterToParent();
+
+            this.BackColor = Color.FromArgb(228, 231, 236);
+            foreach (Control gumb in this.Controls)
+            {
+                if (gumb.GetType() == typeof(Button))
+                {
+                    gumb.BackColor = Color.FromArgb(253, 160, 247);
+                    gumb.ForeColor = Color.FromArgb(64, 64, 64);
+                    gumb.Font = new Font(gumb.Font, FontStyle.Bold);
+                    gumb.Font = new Font("Sans", 14);
+                }
+            }
+
+            btnKlijenti.FlatStyle = FlatStyle.Flat;
+            btnKlijenti.FlatAppearance.BorderColor = Color.FromArgb(255, 50, 241);
+            btnKlijenti.FlatAppearance.BorderSize = 3;
+
+            btnLijekovi.FlatStyle = FlatStyle.Flat;
+            btnLijekovi.FlatAppearance.BorderColor = Color.FromArgb(255, 50, 241);
+            btnLijekovi.FlatAppearance.BorderSize = 3;
+
+            btnNarudzbenica.FlatStyle = FlatStyle.Flat;
+            btnNarudzbenica.FlatAppearance.BorderColor = Color.FromArgb(255, 50, 241);
+            btnNarudzbenica.FlatAppearance.BorderSize = 3;
+
+            btnStatistika.FlatStyle = FlatStyle.Flat;
+            btnStatistika.FlatAppearance.BorderColor = Color.FromArgb(255, 50, 241);
+            btnStatistika.FlatAppearance.BorderSize = 3;
+
+            btnOdjava.FlatStyle = FlatStyle.Flat;
+            btnOdjava.FlatAppearance.BorderColor = Color.FromArgb(255, 50, 241);
+            btnOdjava.FlatAppearance.BorderSize = 3;
+
+            lblZaposlenik.Font = new Font(lblZaposlenik.Font, FontStyle.Bold);
+            lblZaposlenik.Font = new Font("Arial", 14);
         }
 
         private void hlpPokazi(object sender, KeyEventArgs e)

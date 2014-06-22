@@ -216,7 +216,7 @@
             // 
             this.btnDodajLijek.Location = new System.Drawing.Point(672, 227);
             this.btnDodajLijek.Name = "btnDodajLijek";
-            this.btnDodajLijek.Size = new System.Drawing.Size(109, 31);
+            this.btnDodajLijek.Size = new System.Drawing.Size(109, 37);
             this.btnDodajLijek.TabIndex = 1;
             this.btnDodajLijek.Text = "Dodaj";
             this.btnDodajLijek.UseVisualStyleBackColor = true;
@@ -226,7 +226,7 @@
             // 
             this.btnNatrag.Location = new System.Drawing.Point(550, 227);
             this.btnNatrag.Name = "btnNatrag";
-            this.btnNatrag.Size = new System.Drawing.Size(95, 31);
+            this.btnNatrag.Size = new System.Drawing.Size(95, 37);
             this.btnNatrag.TabIndex = 2;
             this.btnNatrag.Text = "Natrag";
             this.btnNatrag.UseVisualStyleBackColor = true;
@@ -253,7 +253,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(803, 270);
+            this.ClientSize = new System.Drawing.Size(803, 290);
             this.Controls.Add(this.txtPretragaPremaNazivu);
             this.Controls.Add(this.lblPretragaPremaNazivuLijeka);
             this.Controls.Add(this.btnNatrag);

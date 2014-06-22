@@ -17,12 +17,67 @@ namespace ProdajaGreyMatter
         {
             InitializeComponent();
             this.KeyPreview = true;
+
+            this.BackColor = Color.FromArgb(228, 231, 236);
+            foreach (Control gumb in this.Controls)
+            {
+                if (gumb.GetType() == typeof(Button))
+                {
+                    gumb.BackColor = Color.FromArgb(253, 160, 247);
+                    gumb.ForeColor = Color.FromArgb(64, 64, 64);
+                    gumb.Font = new Font(gumb.Font, FontStyle.Bold);
+                    gumb.Font = new Font("Sans", 14);
+                }
+            }
+
+            btnOdustani.FlatStyle = FlatStyle.Flat;
+            btnOdustani.FlatAppearance.BorderColor = Color.FromArgb(255, 50, 241);
+            btnOdustani.FlatAppearance.BorderSize = 3;
+
+            btnSpremiKlijent.FlatStyle = FlatStyle.Flat;
+            btnSpremiKlijent.FlatAppearance.BorderColor = Color.FromArgb(255, 50, 241);
+            btnSpremiKlijent.FlatAppearance.BorderSize = 3;
+
+            lblAdresa.Font = new Font(lblAdresa.Font, FontStyle.Bold);
+            lblEmail.Font = new Font(lblEmail.Font, FontStyle.Bold);
+            lblNaziv.Font = new Font(lblNaziv.Font, FontStyle.Bold);
+            lblOib.Font = new Font(lblOib.Font, FontStyle.Bold);
+            lblTelefon.Font = new Font(lblTelefon.Font, FontStyle.Bold);
+            lblZiroRacun.Font = new Font(lblZiroRacun.Font, FontStyle.Bold);
         }
         public frmUnosKlijenta(klijent klijent)
         {
             InitializeComponent();
             klijentZaIzmjenu = klijent;
             this.KeyPreview = true;
+
+            this.BackColor = Color.FromArgb(228, 231, 236);
+            foreach (Control gumb in this.Controls)
+            {
+                if (gumb.GetType() == typeof(Button))
+                {
+                    gumb.BackColor = Color.FromArgb(253, 160, 247);
+                    gumb.ForeColor = Color.FromArgb(64, 64, 64);
+                    gumb.Font = new Font(gumb.Font, FontStyle.Bold);
+                    gumb.Font = new Font("Sans", 14);
+                }
+            }
+
+            btnOdustani.FlatStyle = FlatStyle.Flat;
+            btnOdustani.FlatAppearance.BorderColor = Color.FromArgb(255, 50, 241);
+            btnOdustani.FlatAppearance.BorderSize = 3;
+
+            btnSpremiKlijent.FlatStyle = FlatStyle.Flat;
+            btnSpremiKlijent.FlatAppearance.BorderColor = Color.FromArgb(255, 50, 241);
+            btnSpremiKlijent.FlatAppearance.BorderSize = 3;
+
+            lblAdresa.Font = new Font(lblAdresa.Font, FontStyle.Bold);
+            lblEmail.Font = new Font(lblEmail.Font, FontStyle.Bold);
+            lblNaziv.Font = new Font(lblNaziv.Font, FontStyle.Bold);
+            lblOib.Font = new Font(lblOib.Font, FontStyle.Bold);
+            lblTelefon.Font = new Font(lblTelefon.Font, FontStyle.Bold);
+            lblZiroRacun.Font = new Font(lblZiroRacun.Font, FontStyle.Bold);
+
         }
 
         private void btnOdustani_Click(object sender, EventArgs e)

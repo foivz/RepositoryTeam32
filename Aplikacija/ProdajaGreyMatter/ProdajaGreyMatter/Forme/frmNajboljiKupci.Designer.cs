@@ -40,15 +40,15 @@
             // 
             this.pictureBox1.Location = new System.Drawing.Point(35, 35);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(800, 600);
+            this.pictureBox1.Size = new System.Drawing.Size(800, 579);
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
             // btnNatrag
             // 
-            this.btnNatrag.Location = new System.Drawing.Point(719, 652);
+            this.btnNatrag.Location = new System.Drawing.Point(719, 637);
             this.btnNatrag.Name = "btnNatrag";
-            this.btnNatrag.Size = new System.Drawing.Size(116, 38);
+            this.btnNatrag.Size = new System.Drawing.Size(116, 53);
             this.btnNatrag.TabIndex = 1;
             this.btnNatrag.Text = "Natrag";
             this.btnNatrag.UseVisualStyleBackColor = true;

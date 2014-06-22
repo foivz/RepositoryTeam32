@@ -26,6 +26,38 @@ namespace ProdajaGreyMatter
             this.KeyPreview = true;
 
             trenutniPopisStavki = stavke;
+
+            this.BackColor = Color.FromArgb(228, 231, 236);
+            foreach (Control gumb in this.Controls)
+            {
+                if (gumb.GetType() == typeof(Button))
+                {
+                    gumb.BackColor = Color.FromArgb(253, 160, 247);
+                    gumb.ForeColor = Color.FromArgb(64, 64, 64);
+                    gumb.Font = new Font(gumb.Font, FontStyle.Bold);
+                    gumb.Font = new Font("Sans", 14);
+                }
+            }
+
+            btnOdustani.FlatStyle = FlatStyle.Flat;
+            btnOdustani.FlatAppearance.BorderColor = Color.FromArgb(255, 50, 241);
+            btnOdustani.FlatAppearance.BorderSize = 3;
+
+            btnDodajLijek.FlatStyle = FlatStyle.Flat;
+            btnDodajLijek.FlatAppearance.BorderColor = Color.FromArgb(255, 50, 241);
+            btnDodajLijek.FlatAppearance.BorderSize = 3;
+
+            btnSpremi.FlatStyle = FlatStyle.Flat;
+            btnSpremi.FlatAppearance.BorderColor = Color.FromArgb(255, 50, 241);
+            btnSpremi.FlatAppearance.BorderSize = 3;
+
+            lblDoza.Font = new Font(lblDoza.Font, FontStyle.Bold);
+            lblJedinicnaCijena.Font = new Font(lblJedinicnaCijena.Font, FontStyle.Bold);
+            lblKolicina.Font = new Font(lblKolicina.Font, FontStyle.Bold);
+            lblNazivLijeka.Font = new Font(lblNazivLijeka.Font, FontStyle.Bold);
+            lblPakiranje.Font = new Font(lblPakiranje.Font, FontStyle.Bold);
+            lblTipLijeka.Font = new Font(lblTipLijeka.Font, FontStyle.Bold);
+            idLijeka.Font = new Font(idLijeka.Font, FontStyle.Bold);
         }
 
         public frmUnosStavke(stavkenarudzbenice stavka)

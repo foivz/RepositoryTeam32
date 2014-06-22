@@ -78,7 +78,7 @@
             this.Cijena,
             this.Ukupno});
             this.dtvStavkeNarudzbenice.DataSource = this.stavkenarudzbeniceBindingSource;
-            this.dtvStavkeNarudzbenice.Location = new System.Drawing.Point(12, 136);
+            this.dtvStavkeNarudzbenice.Location = new System.Drawing.Point(52, 142);
             this.dtvStavkeNarudzbenice.MultiSelect = false;
             this.dtvStavkeNarudzbenice.Name = "dtvStavkeNarudzbenice";
             this.dtvStavkeNarudzbenice.ReadOnly = true;
@@ -157,17 +157,18 @@
             // 
             // txtIdNarudzbenice
             // 
-            this.txtIdNarudzbenice.Location = new System.Drawing.Point(115, 25);
+            this.txtIdNarudzbenice.Location = new System.Drawing.Point(136, 25);
             this.txtIdNarudzbenice.Name = "txtIdNarudzbenice";
             this.txtIdNarudzbenice.ReadOnly = true;
             this.txtIdNarudzbenice.Size = new System.Drawing.Size(50, 20);
             this.txtIdNarudzbenice.TabIndex = 3;
+            this.txtIdNarudzbenice.TextChanged += new System.EventHandler(this.txtIdNarudzbenice_TextChanged);
             // 
             // btnOdustani
             // 
-            this.btnOdustani.Location = new System.Drawing.Point(338, 374);
+            this.btnOdustani.Location = new System.Drawing.Point(354, 372);
             this.btnOdustani.Name = "btnOdustani";
-            this.btnOdustani.Size = new System.Drawing.Size(75, 37);
+            this.btnOdustani.Size = new System.Drawing.Size(103, 57);
             this.btnOdustani.TabIndex = 4;
             this.btnOdustani.Text = "Odustani";
             this.btnOdustani.UseVisualStyleBackColor = true;
@@ -175,9 +176,9 @@
             // 
             // btnSpremi
             // 
-            this.btnSpremi.Location = new System.Drawing.Point(446, 374);
+            this.btnSpremi.Location = new System.Drawing.Point(473, 372);
             this.btnSpremi.Name = "btnSpremi";
-            this.btnSpremi.Size = new System.Drawing.Size(75, 37);
+            this.btnSpremi.Size = new System.Drawing.Size(129, 57);
             this.btnSpremi.TabIndex = 5;
             this.btnSpremi.Text = "Spremi";
             this.btnSpremi.UseVisualStyleBackColor = true;
@@ -185,9 +186,9 @@
             // 
             // btnDodajStavku
             // 
-            this.btnDodajStavku.Location = new System.Drawing.Point(22, 374);
+            this.btnDodajStavku.Location = new System.Drawing.Point(24, 364);
             this.btnDodajStavku.Name = "btnDodajStavku";
-            this.btnDodajStavku.Size = new System.Drawing.Size(97, 37);
+            this.btnDodajStavku.Size = new System.Drawing.Size(97, 65);
             this.btnDodajStavku.TabIndex = 6;
             this.btnDodajStavku.Text = "Dodaj stavku";
             this.btnDodajStavku.UseVisualStyleBackColor = true;
@@ -240,14 +241,14 @@
             // cmbNazivKlijenta
             // 
             this.cmbNazivKlijenta.FormattingEnabled = true;
-            this.cmbNazivKlijenta.Location = new System.Drawing.Point(115, 59);
+            this.cmbNazivKlijenta.Location = new System.Drawing.Point(136, 59);
             this.cmbNazivKlijenta.Name = "cmbNazivKlijenta";
             this.cmbNazivKlijenta.Size = new System.Drawing.Size(124, 21);
             this.cmbNazivKlijenta.TabIndex = 13;
             // 
             // dtpRokPlacanja
             // 
-            this.dtpRokPlacanja.Location = new System.Drawing.Point(100, 100);
+            this.dtpRokPlacanja.Location = new System.Drawing.Point(136, 100);
             this.dtpRokPlacanja.Name = "dtpRokPlacanja";
             this.dtpRokPlacanja.Size = new System.Drawing.Size(200, 20);
             this.dtpRokPlacanja.TabIndex = 15;
@@ -258,7 +259,7 @@
             this.cmbReferent.DisplayMember = "prezime";
             this.cmbReferent.Enabled = false;
             this.cmbReferent.FormattingEnabled = true;
-            this.cmbReferent.Location = new System.Drawing.Point(392, 54);
+            this.cmbReferent.Location = new System.Drawing.Point(413, 54);
             this.cmbReferent.Name = "cmbReferent";
             this.cmbReferent.Size = new System.Drawing.Size(121, 21);
             this.cmbReferent.TabIndex = 16;
@@ -270,9 +271,9 @@
             // 
             // btnIzmjeni
             // 
-            this.btnIzmjeni.Location = new System.Drawing.Point(226, 374);
+            this.btnIzmjeni.Location = new System.Drawing.Point(242, 372);
             this.btnIzmjeni.Name = "btnIzmjeni";
-            this.btnIzmjeni.Size = new System.Drawing.Size(75, 37);
+            this.btnIzmjeni.Size = new System.Drawing.Size(94, 57);
             this.btnIzmjeni.TabIndex = 17;
             this.btnIzmjeni.Text = "Izmjeni";
             this.btnIzmjeni.UseVisualStyleBackColor = true;
@@ -280,9 +281,9 @@
             // 
             // btnIzbrisi
             // 
-            this.btnIzbrisi.Location = new System.Drawing.Point(136, 374);
+            this.btnIzbrisi.Location = new System.Drawing.Point(136, 372);
             this.btnIzbrisi.Name = "btnIzbrisi";
-            this.btnIzbrisi.Size = new System.Drawing.Size(75, 37);
+            this.btnIzbrisi.Size = new System.Drawing.Size(86, 57);
             this.btnIzbrisi.TabIndex = 18;
             this.btnIzbrisi.Text = "Izbriši";
             this.btnIzbrisi.UseVisualStyleBackColor = true;
@@ -299,7 +300,7 @@
             // 
             // txtUkupniIznosNarudzbe
             // 
-            this.txtUkupniIznosNarudzbe.Location = new System.Drawing.Point(423, 328);
+            this.txtUkupniIznosNarudzbe.Location = new System.Drawing.Point(451, 328);
             this.txtUkupniIznosNarudzbe.Name = "txtUkupniIznosNarudzbe";
             this.txtUkupniIznosNarudzbe.ReadOnly = true;
             this.txtUkupniIznosNarudzbe.Size = new System.Drawing.Size(100, 20);
@@ -309,7 +310,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(561, 423);
+            this.ClientSize = new System.Drawing.Size(637, 482);
             this.Controls.Add(this.txtUkupniIznosNarudzbe);
             this.Controls.Add(this.lblUkupniIznosNarudzbe);
             this.Controls.Add(this.btnIzbrisi);

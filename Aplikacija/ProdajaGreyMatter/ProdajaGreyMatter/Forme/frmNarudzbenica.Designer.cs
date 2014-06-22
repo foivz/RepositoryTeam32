@@ -61,6 +61,7 @@
             this.btnStorno = new System.Windows.Forms.Button();
             this.lblUkupniIznosNarudzbe = new System.Windows.Forms.Label();
             this.txtUkupniIznosNarudžbe = new System.Windows.Forms.TextBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgPopisNarudžbenica)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.klijentBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.zaposlenikBindingSource)).BeginInit();
@@ -68,6 +69,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dtvStavkeNarudzbenice)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lijekBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.stavkenarudzbeniceBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // dgPopisNarudžbenica
@@ -87,7 +89,7 @@
             this.zaposlenikDataGridViewTextBoxColumn,
             this.stavkenarudzbeniceDataGridViewTextBoxColumn});
             this.dgPopisNarudžbenica.DataSource = this.narudzbenicaBindingSource;
-            this.dgPopisNarudžbenica.Location = new System.Drawing.Point(0, 63);
+            this.dgPopisNarudžbenica.Location = new System.Drawing.Point(2, 115);
             this.dgPopisNarudžbenica.MultiSelect = false;
             this.dgPopisNarudžbenica.Name = "dgPopisNarudžbenica";
             this.dgPopisNarudžbenica.ReadOnly = true;
@@ -188,9 +190,9 @@
             // 
             // btnUnosNarudzbenice
             // 
-            this.btnUnosNarudzbenice.Location = new System.Drawing.Point(673, 31);
+            this.btnUnosNarudzbenice.Location = new System.Drawing.Point(675, 83);
             this.btnUnosNarudzbenice.Name = "btnUnosNarudzbenice";
-            this.btnUnosNarudzbenice.Size = new System.Drawing.Size(105, 69);
+            this.btnUnosNarudzbenice.Size = new System.Drawing.Size(105, 103);
             this.btnUnosNarudzbenice.TabIndex = 1;
             this.btnUnosNarudzbenice.Text = "Unos nove narudžbenice";
             this.btnUnosNarudzbenice.UseVisualStyleBackColor = true;
@@ -198,9 +200,9 @@
             // 
             // btnNatrag
             // 
-            this.btnNatrag.Location = new System.Drawing.Point(673, 312);
+            this.btnNatrag.Location = new System.Drawing.Point(675, 400);
             this.btnNatrag.Name = "btnNatrag";
-            this.btnNatrag.Size = new System.Drawing.Size(105, 53);
+            this.btnNatrag.Size = new System.Drawing.Size(105, 65);
             this.btnNatrag.TabIndex = 2;
             this.btnNatrag.Text = "Natrag";
             this.btnNatrag.UseVisualStyleBackColor = true;
@@ -209,7 +211,7 @@
             // lblPretragaPremaKlijentu
             // 
             this.lblPretragaPremaKlijentu.AutoSize = true;
-            this.lblPretragaPremaKlijentu.Location = new System.Drawing.Point(12, 19);
+            this.lblPretragaPremaKlijentu.Location = new System.Drawing.Point(204, 22);
             this.lblPretragaPremaKlijentu.Name = "lblPretragaPremaKlijentu";
             this.lblPretragaPremaKlijentu.Size = new System.Drawing.Size(152, 13);
             this.lblPretragaPremaKlijentu.TabIndex = 3;
@@ -217,7 +219,7 @@
             // 
             // txtPretragaKlijenta
             // 
-            this.txtPretragaKlijenta.Location = new System.Drawing.Point(170, 16);
+            this.txtPretragaKlijenta.Location = new System.Drawing.Point(395, 19);
             this.txtPretragaKlijenta.Name = "txtPretragaKlijenta";
             this.txtPretragaKlijenta.Size = new System.Drawing.Size(119, 20);
             this.txtPretragaKlijenta.TabIndex = 4;
@@ -238,7 +240,7 @@
             this.Cijena,
             this.Ukupno});
             this.dtvStavkeNarudzbenice.DataSource = this.stavkenarudzbeniceBindingSource;
-            this.dtvStavkeNarudzbenice.Location = new System.Drawing.Point(0, 272);
+            this.dtvStavkeNarudzbenice.Location = new System.Drawing.Point(2, 324);
             this.dtvStavkeNarudzbenice.MultiSelect = false;
             this.dtvStavkeNarudzbenice.Name = "dtvStavkeNarudzbenice";
             this.dtvStavkeNarudzbenice.ReadOnly = true;
@@ -324,9 +326,9 @@
             // 
             // btnStorno
             // 
-            this.btnStorno.Location = new System.Drawing.Point(673, 253);
+            this.btnStorno.Location = new System.Drawing.Point(675, 304);
             this.btnStorno.Name = "btnStorno";
-            this.btnStorno.Size = new System.Drawing.Size(105, 45);
+            this.btnStorno.Size = new System.Drawing.Size(105, 65);
             this.btnStorno.TabIndex = 6;
             this.btnStorno.Text = "Storno";
             this.btnStorno.UseVisualStyleBackColor = true;
@@ -335,7 +337,7 @@
             // lblUkupniIznosNarudzbe
             // 
             this.lblUkupniIznosNarudzbe.AutoSize = true;
-            this.lblUkupniIznosNarudzbe.Location = new System.Drawing.Point(308, 459);
+            this.lblUkupniIznosNarudzbe.Location = new System.Drawing.Point(310, 511);
             this.lblUkupniIznosNarudzbe.Name = "lblUkupniIznosNarudzbe";
             this.lblUkupniIznosNarudzbe.Size = new System.Drawing.Size(118, 13);
             this.lblUkupniIznosNarudzbe.TabIndex = 7;
@@ -343,17 +345,28 @@
             // 
             // txtUkupniIznosNarudžbe
             // 
-            this.txtUkupniIznosNarudžbe.Location = new System.Drawing.Point(444, 456);
+            this.txtUkupniIznosNarudžbe.Location = new System.Drawing.Point(480, 508);
             this.txtUkupniIznosNarudžbe.Name = "txtUkupniIznosNarudžbe";
             this.txtUkupniIznosNarudžbe.ReadOnly = true;
             this.txtUkupniIznosNarudžbe.Size = new System.Drawing.Size(100, 20);
             this.txtUkupniIznosNarudžbe.TabIndex = 8;
+            this.txtUkupniIznosNarudžbe.TextChanged += new System.EventHandler(this.txtUkupniIznosNarudžbe_TextChanged);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::ProdajaGreyMatter.Properties.Resources.samo_logo_fin;
+            this.pictureBox1.Location = new System.Drawing.Point(2, 2);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(100, 74);
+            this.pictureBox1.TabIndex = 9;
+            this.pictureBox1.TabStop = false;
             // 
             // frmNarudzbenica
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(814, 492);
+            this.ClientSize = new System.Drawing.Size(814, 545);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.txtUkupniIznosNarudžbe);
             this.Controls.Add(this.lblUkupniIznosNarudzbe);
             this.Controls.Add(this.btnStorno);
@@ -374,6 +387,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dtvStavkeNarudzbenice)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.lijekBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.stavkenarudzbeniceBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -411,5 +425,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Ukupno;
         private System.Windows.Forms.Label lblUkupniIznosNarudzbe;
         private System.Windows.Forms.TextBox txtUkupniIznosNarudžbe;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

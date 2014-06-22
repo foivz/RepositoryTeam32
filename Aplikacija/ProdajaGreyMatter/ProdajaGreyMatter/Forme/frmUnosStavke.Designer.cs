@@ -49,9 +49,9 @@
             // 
             // btnOdustani
             // 
-            this.btnOdustani.Location = new System.Drawing.Point(104, 256);
+            this.btnOdustani.Location = new System.Drawing.Point(84, 271);
             this.btnOdustani.Name = "btnOdustani";
-            this.btnOdustani.Size = new System.Drawing.Size(75, 23);
+            this.btnOdustani.Size = new System.Drawing.Size(102, 36);
             this.btnOdustani.TabIndex = 0;
             this.btnOdustani.Text = "Odustani";
             this.btnOdustani.UseVisualStyleBackColor = true;
@@ -59,9 +59,9 @@
             // 
             // btnSpremi
             // 
-            this.btnSpremi.Location = new System.Drawing.Point(197, 256);
+            this.btnSpremi.Location = new System.Drawing.Point(213, 271);
             this.btnSpremi.Name = "btnSpremi";
-            this.btnSpremi.Size = new System.Drawing.Size(75, 23);
+            this.btnSpremi.Size = new System.Drawing.Size(106, 36);
             this.btnSpremi.TabIndex = 1;
             this.btnSpremi.Text = "Spremi";
             this.btnSpremi.UseVisualStyleBackColor = true;
@@ -105,7 +105,7 @@
             // 
             // txtTipLijeka
             // 
-            this.txtTipLijeka.Location = new System.Drawing.Point(104, 81);
+            this.txtTipLijeka.Location = new System.Drawing.Point(124, 81);
             this.txtTipLijeka.Name = "txtTipLijeka";
             this.txtTipLijeka.ReadOnly = true;
             this.txtTipLijeka.Size = new System.Drawing.Size(121, 20);
@@ -113,14 +113,14 @@
             // 
             // txtKolicina
             // 
-            this.txtKolicina.Location = new System.Drawing.Point(104, 227);
+            this.txtKolicina.Location = new System.Drawing.Point(126, 227);
             this.txtKolicina.Name = "txtKolicina";
             this.txtKolicina.Size = new System.Drawing.Size(121, 20);
             this.txtKolicina.TabIndex = 8;
             // 
             // txtCijenaLijeka
             // 
-            this.txtCijenaLijeka.Location = new System.Drawing.Point(104, 189);
+            this.txtCijenaLijeka.Location = new System.Drawing.Point(126, 192);
             this.txtCijenaLijeka.Name = "txtCijenaLijeka";
             this.txtCijenaLijeka.ReadOnly = true;
             this.txtCijenaLijeka.Size = new System.Drawing.Size(121, 20);
@@ -146,7 +146,7 @@
             // 
             // txtDozaLijeka
             // 
-            this.txtDozaLijeka.Location = new System.Drawing.Point(104, 121);
+            this.txtDozaLijeka.Location = new System.Drawing.Point(124, 121);
             this.txtDozaLijeka.Name = "txtDozaLijeka";
             this.txtDozaLijeka.ReadOnly = true;
             this.txtDozaLijeka.Size = new System.Drawing.Size(121, 20);
@@ -154,7 +154,7 @@
             // 
             // txtNazivLijeka
             // 
-            this.txtNazivLijeka.Location = new System.Drawing.Point(104, 47);
+            this.txtNazivLijeka.Location = new System.Drawing.Point(124, 47);
             this.txtNazivLijeka.Name = "txtNazivLijeka";
             this.txtNazivLijeka.ReadOnly = true;
             this.txtNazivLijeka.Size = new System.Drawing.Size(121, 20);
@@ -162,7 +162,7 @@
             // 
             // txtPakiranjeLijeka
             // 
-            this.txtPakiranjeLijeka.Location = new System.Drawing.Point(106, 156);
+            this.txtPakiranjeLijeka.Location = new System.Drawing.Point(126, 156);
             this.txtPakiranjeLijeka.Name = "txtPakiranjeLijeka";
             this.txtPakiranjeLijeka.ReadOnly = true;
             this.txtPakiranjeLijeka.Size = new System.Drawing.Size(119, 20);
@@ -179,7 +179,7 @@
             // 
             // txtIdLijeka
             // 
-            this.txtIdLijeka.Location = new System.Drawing.Point(104, 16);
+            this.txtIdLijeka.Location = new System.Drawing.Point(124, 16);
             this.txtIdLijeka.Name = "txtIdLijeka";
             this.txtIdLijeka.ReadOnly = true;
             this.txtIdLijeka.Size = new System.Drawing.Size(121, 20);
@@ -187,11 +187,11 @@
             // 
             // btnDodajLijek
             // 
-            this.btnDodajLijek.Location = new System.Drawing.Point(240, 14);
+            this.btnDodajLijek.Location = new System.Drawing.Point(266, 12);
             this.btnDodajLijek.Name = "btnDodajLijek";
-            this.btnDodajLijek.Size = new System.Drawing.Size(53, 23);
+            this.btnDodajLijek.Size = new System.Drawing.Size(53, 38);
             this.btnDodajLijek.TabIndex = 19;
-            this.btnDodajLijek.Text = "....";
+            this.btnDodajLijek.Text = "...";
             this.btnDodajLijek.UseVisualStyleBackColor = true;
             this.btnDodajLijek.Click += new System.EventHandler(this.btnDodajLijek_Click);
             // 
@@ -199,7 +199,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(336, 297);
+            this.ClientSize = new System.Drawing.Size(352, 319);
             this.Controls.Add(this.btnDodajLijek);
             this.Controls.Add(this.txtIdLijeka);
             this.Controls.Add(this.idLijeka);

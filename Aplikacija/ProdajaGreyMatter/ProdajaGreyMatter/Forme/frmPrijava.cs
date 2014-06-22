@@ -16,6 +16,29 @@ namespace ProdajaGreyMatter
         {
             InitializeComponent();
             this.CenterToParent();
+
+            this.BackColor = Color.FromArgb(228, 231, 236);
+            foreach (Control gumb in this.Controls)
+            {
+                if (gumb.GetType() == typeof(Button))
+                {
+                    gumb.BackColor = Color.FromArgb(253, 160, 247);
+                    gumb.ForeColor = Color.FromArgb(64, 64, 64);
+                    gumb.Font = new Font(gumb.Font, FontStyle.Bold);
+                    gumb.Font = new Font("Sans", 14);
+                }
+            }
+
+            btnPrijava.FlatStyle = FlatStyle.Flat;
+            btnPrijava.FlatAppearance.BorderColor = Color.FromArgb(255, 50, 241);
+            btnPrijava.FlatAppearance.BorderSize = 3;
+
+            btnIzlaz.FlatStyle = FlatStyle.Flat;
+            btnIzlaz.FlatAppearance.BorderColor = Color.FromArgb(255, 50, 241);
+            btnIzlaz.FlatAppearance.BorderSize = 3;
+
+            lblKorisnickoIme.Font = new Font(lblKorisnickoIme.Font, FontStyle.Bold);
+            lblLozinka.Font = new Font(lblLozinka.Font, FontStyle.Bold);
         }
         zaposlenik zaposlenik;
 

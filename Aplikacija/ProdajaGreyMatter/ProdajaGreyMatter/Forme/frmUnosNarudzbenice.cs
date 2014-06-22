@@ -20,6 +20,48 @@ namespace ProdajaGreyMatter
             this.CenterToParent();
             this.KeyPreview = true;
             referent = zaposlenik;
+
+            this.BackColor = Color.FromArgb(228, 231, 236);
+            foreach (Control gumb in this.Controls)
+            {
+                if (gumb.GetType() == typeof(Button))
+                {
+                    gumb.BackColor = Color.FromArgb(253, 160, 247);
+                    gumb.ForeColor = Color.FromArgb(64, 64, 64);
+                    gumb.Font = new Font(gumb.Font, FontStyle.Bold);
+                    gumb.Font = new Font("Sans", 14);
+                }
+            }
+
+            btnDodajStavku.FlatStyle = FlatStyle.Flat;
+            btnDodajStavku.FlatAppearance.BorderColor = Color.FromArgb(255, 50, 241);
+            btnDodajStavku.FlatAppearance.BorderSize = 3;
+
+            btnIzbrisi.FlatStyle = FlatStyle.Flat;
+            btnIzbrisi.FlatAppearance.BorderColor = Color.FromArgb(255, 50, 241);
+            btnIzbrisi.FlatAppearance.BorderSize = 3;
+
+            btnIzmjeni.FlatStyle = FlatStyle.Flat;
+            btnIzmjeni.FlatAppearance.BorderColor = Color.FromArgb(255, 50, 241);
+            btnIzmjeni.FlatAppearance.BorderSize = 3;
+
+            btnOdustani.FlatStyle = FlatStyle.Flat;
+            btnOdustani.FlatAppearance.BorderColor = Color.FromArgb(255, 50, 241);
+            btnOdustani.FlatAppearance.BorderSize = 3;
+
+            btnSpremi.FlatStyle = FlatStyle.Flat;
+            btnSpremi.FlatAppearance.BorderColor = Color.FromArgb(255, 50, 241);
+            btnSpremi.FlatAppearance.BorderSize = 3;
+
+            lblIdNarudzbenice.Font = new Font(lblIdNarudzbenice.Font, FontStyle.Bold);
+
+            lblNazivKlijenta.Font = new Font(lblNazivKlijenta.Font, FontStyle.Bold);
+
+            lblReferent.Font = new Font(lblReferent.Font, FontStyle.Bold);
+
+            lblRokPlacanja.Font = new Font(lblRokPlacanja.Font, FontStyle.Bold);
+
+            lblUkupniIznosNarudzbe.Font = new Font(lblUkupniIznosNarudzbe.Font, FontStyle.Bold);
         }
 
         private void btnOdustani_Click(object sender, EventArgs e)
@@ -208,6 +250,11 @@ namespace ProdajaGreyMatter
                 frmHelp formaHelp = new frmHelp(naslov, poruka);
                 formaHelp.ShowDialog();
             }
+        }
+
+        private void txtIdNarudzbenice_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

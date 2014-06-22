@@ -17,6 +17,33 @@ namespace ProdajaGreyMatter
             InitializeComponent();
             this.KeyPreview = true;
             this.CenterToParent();
+
+            this.BackColor = Color.FromArgb(228, 231, 236);
+            foreach (Control gumb in this.Controls)
+            {
+                if (gumb.GetType() == typeof(Button))
+                {
+                    gumb.BackColor = Color.FromArgb(253, 160, 247);
+                    gumb.ForeColor = Color.FromArgb(64, 64, 64);
+                    gumb.Font = new Font(gumb.Font, FontStyle.Bold);
+                    gumb.Font = new Font("Sans", 14);
+                }
+            }
+
+            btnAzuriranjeKlijenta.FlatStyle = FlatStyle.Flat;
+            btnAzuriranjeKlijenta.FlatAppearance.BorderColor = Color.FromArgb(255, 50, 241);
+            btnAzuriranjeKlijenta.FlatAppearance.BorderSize = 3;
+
+            btnNatrag.FlatStyle = FlatStyle.Flat;
+            btnNatrag.FlatAppearance.BorderColor = Color.FromArgb(255, 50, 241);
+            btnNatrag.FlatAppearance.BorderSize = 3;
+
+            btnUnosKlijenta.FlatStyle = FlatStyle.Flat;
+            btnUnosKlijenta.FlatAppearance.BorderColor = Color.FromArgb(255, 50, 241);
+            btnUnosKlijenta.FlatAppearance.BorderSize = 3;
+
+            label1.Font = new Font(label1.Font, FontStyle.Bold);
+            label2.Font = new Font(label2.Font, FontStyle.Bold);
         }
 
         private void prikaziKlijente()

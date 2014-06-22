@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dgPopisLijekova = new System.Windows.Forms.DataGridView();
             this.idLijekDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nazivDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -51,10 +51,12 @@
             this.btnNatrag = new System.Windows.Forms.Button();
             this.lblPretraga = new System.Windows.Forms.Label();
             this.txtPretragaLijekova = new System.Windows.Forms.TextBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgPopisLijekova)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.jedinicnamjeraBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tiplijekaBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lijekBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // dgPopisLijekova
@@ -79,7 +81,7 @@
             this.tiplijekaDataGridViewTextBoxColumn,
             this.stavkenarudzbeniceDataGridViewTextBoxColumn});
             this.dgPopisLijekova.DataSource = this.lijekBindingSource;
-            this.dgPopisLijekova.Location = new System.Drawing.Point(0, 63);
+            this.dgPopisLijekova.Location = new System.Drawing.Point(0, 103);
             this.dgPopisLijekova.MultiSelect = false;
             this.dgPopisLijekova.Name = "dgPopisLijekova";
             this.dgPopisLijekova.ReadOnly = true;
@@ -126,9 +128,9 @@
             // cijenaDataGridViewTextBoxColumn
             // 
             this.cijenaDataGridViewTextBoxColumn.DataPropertyName = "cijena";
-            dataGridViewCellStyle1.Format = "C2";
-            dataGridViewCellStyle1.NullValue = null;
-            this.cijenaDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.Format = "C2";
+            dataGridViewCellStyle2.NullValue = null;
+            this.cijenaDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle2;
             this.cijenaDataGridViewTextBoxColumn.HeaderText = "Cijena";
             this.cijenaDataGridViewTextBoxColumn.Name = "cijenaDataGridViewTextBoxColumn";
             this.cijenaDataGridViewTextBoxColumn.ReadOnly = true;
@@ -218,7 +220,7 @@
             // 
             // btnNatrag
             // 
-            this.btnNatrag.Location = new System.Drawing.Point(636, 272);
+            this.btnNatrag.Location = new System.Drawing.Point(636, 325);
             this.btnNatrag.Name = "btnNatrag";
             this.btnNatrag.Size = new System.Drawing.Size(106, 39);
             this.btnNatrag.TabIndex = 1;
@@ -229,7 +231,7 @@
             // lblPretraga
             // 
             this.lblPretraga.AutoSize = true;
-            this.lblPretraga.Location = new System.Drawing.Point(46, 15);
+            this.lblPretraga.Location = new System.Drawing.Point(266, 23);
             this.lblPretraga.Name = "lblPretraga";
             this.lblPretraga.Size = new System.Drawing.Size(143, 13);
             this.lblPretraga.TabIndex = 2;
@@ -237,17 +239,27 @@
             // 
             // txtPretragaLijekova
             // 
-            this.txtPretragaLijekova.Location = new System.Drawing.Point(195, 12);
+            this.txtPretragaLijekova.Location = new System.Drawing.Point(449, 20);
             this.txtPretragaLijekova.Name = "txtPretragaLijekova";
             this.txtPretragaLijekova.Size = new System.Drawing.Size(122, 20);
             this.txtPretragaLijekova.TabIndex = 3;
             this.txtPretragaLijekova.TextChanged += new System.EventHandler(this.txtPretragaLijekova_TextChanged);
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::ProdajaGreyMatter.Properties.Resources.samo_logo_fin;
+            this.pictureBox1.Location = new System.Drawing.Point(0, -1);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(100, 74);
+            this.pictureBox1.TabIndex = 4;
+            this.pictureBox1.TabStop = false;
+            // 
             // frmLijekovi
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(881, 323);
+            this.ClientSize = new System.Drawing.Size(881, 400);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.txtPretragaLijekova);
             this.Controls.Add(this.lblPretraga);
             this.Controls.Add(this.btnNatrag);
@@ -260,6 +272,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.jedinicnamjeraBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tiplijekaBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.lijekBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -288,5 +301,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn jedinicnamjeraDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn tiplijekaDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn stavkenarudzbeniceDataGridViewTextBoxColumn;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

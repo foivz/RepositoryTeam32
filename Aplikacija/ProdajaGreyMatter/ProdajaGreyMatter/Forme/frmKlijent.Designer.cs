@@ -45,8 +45,10 @@
             this.label2 = new System.Windows.Forms.Label();
             this.txtPretragaOib = new System.Windows.Forms.TextBox();
             this.txtPretragaNaziv = new System.Windows.Forms.TextBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgPopisKlijenata)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.klijentBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // dgPopisKlijenata
@@ -130,7 +132,7 @@
             // 
             this.btnUnosKlijenta.Location = new System.Drawing.Point(414, 391);
             this.btnUnosKlijenta.Name = "btnUnosKlijenta";
-            this.btnUnosKlijenta.Size = new System.Drawing.Size(119, 52);
+            this.btnUnosKlijenta.Size = new System.Drawing.Size(119, 94);
             this.btnUnosKlijenta.TabIndex = 1;
             this.btnUnosKlijenta.Text = "Unos novog klijenta";
             this.btnUnosKlijenta.UseVisualStyleBackColor = true;
@@ -140,7 +142,7 @@
             // 
             this.btnNatrag.Location = new System.Drawing.Point(576, 391);
             this.btnNatrag.Name = "btnNatrag";
-            this.btnNatrag.Size = new System.Drawing.Size(117, 52);
+            this.btnNatrag.Size = new System.Drawing.Size(117, 94);
             this.btnNatrag.TabIndex = 2;
             this.btnNatrag.Text = "Natrag";
             this.btnNatrag.UseVisualStyleBackColor = true;
@@ -150,7 +152,7 @@
             // 
             this.btnAzuriranjeKlijenta.Location = new System.Drawing.Point(248, 391);
             this.btnAzuriranjeKlijenta.Name = "btnAzuriranjeKlijenta";
-            this.btnAzuriranjeKlijenta.Size = new System.Drawing.Size(114, 52);
+            this.btnAzuriranjeKlijenta.Size = new System.Drawing.Size(114, 94);
             this.btnAzuriranjeKlijenta.TabIndex = 3;
             this.btnAzuriranjeKlijenta.Text = "Ažuriranje Klijenta";
             this.btnAzuriranjeKlijenta.UseVisualStyleBackColor = true;
@@ -159,7 +161,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(12, 53);
+            this.label1.Location = new System.Drawing.Point(178, 41);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(112, 13);
             this.label1.TabIndex = 4;
@@ -168,7 +170,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(297, 53);
+            this.label2.Location = new System.Drawing.Point(483, 41);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(116, 13);
             this.label2.TabIndex = 5;
@@ -176,7 +178,7 @@
             // 
             // txtPretragaOib
             // 
-            this.txtPretragaOib.Location = new System.Drawing.Point(130, 50);
+            this.txtPretragaOib.Location = new System.Drawing.Point(319, 38);
             this.txtPretragaOib.Name = "txtPretragaOib";
             this.txtPretragaOib.Size = new System.Drawing.Size(100, 20);
             this.txtPretragaOib.TabIndex = 6;
@@ -184,17 +186,27 @@
             // 
             // txtPretragaNaziv
             // 
-            this.txtPretragaNaziv.Location = new System.Drawing.Point(414, 50);
+            this.txtPretragaNaziv.Location = new System.Drawing.Point(635, 38);
             this.txtPretragaNaziv.Name = "txtPretragaNaziv";
             this.txtPretragaNaziv.Size = new System.Drawing.Size(100, 20);
             this.txtPretragaNaziv.TabIndex = 7;
             this.txtPretragaNaziv.TextChanged += new System.EventHandler(this.txtPretragaNaziv_TextChanged);
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::ProdajaGreyMatter.Properties.Resources.samo_logo_fin;
+            this.pictureBox1.Location = new System.Drawing.Point(0, -1);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(100, 74);
+            this.pictureBox1.TabIndex = 8;
+            this.pictureBox1.TabStop = false;
+            // 
             // frmKlijent
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(758, 469);
+            this.ClientSize = new System.Drawing.Size(758, 523);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.txtPretragaNaziv);
             this.Controls.Add(this.txtPretragaOib);
             this.Controls.Add(this.label2);
@@ -209,6 +221,7 @@
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.hlpPokazi);
             ((System.ComponentModel.ISupportInitialize)(this.dgPopisKlijenata)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.klijentBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -232,5 +245,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn adresaDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn ziroRacunDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn narudzbenicaDataGridViewTextBoxColumn;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

@@ -34,11 +34,13 @@
             this.btnStatistika = new System.Windows.Forms.Button();
             this.btnOdjava = new System.Windows.Forms.Button();
             this.lblZaposlenik = new System.Windows.Forms.Label();
+            this.logo = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.logo)).BeginInit();
             this.SuspendLayout();
             // 
             // btnLijekovi
             // 
-            this.btnLijekovi.Location = new System.Drawing.Point(123, 161);
+            this.btnLijekovi.Location = new System.Drawing.Point(207, 225);
             this.btnLijekovi.Name = "btnLijekovi";
             this.btnLijekovi.Size = new System.Drawing.Size(182, 110);
             this.btnLijekovi.TabIndex = 0;
@@ -48,7 +50,7 @@
             // 
             // btnKlijenti
             // 
-            this.btnKlijenti.Location = new System.Drawing.Point(472, 161);
+            this.btnKlijenti.Location = new System.Drawing.Point(463, 255);
             this.btnKlijenti.Name = "btnKlijenti";
             this.btnKlijenti.Size = new System.Drawing.Size(182, 110);
             this.btnKlijenti.TabIndex = 1;
@@ -58,7 +60,7 @@
             // 
             // btnNarudzbenica
             // 
-            this.btnNarudzbenica.Location = new System.Drawing.Point(123, 366);
+            this.btnNarudzbenica.Location = new System.Drawing.Point(234, 412);
             this.btnNarudzbenica.Name = "btnNarudzbenica";
             this.btnNarudzbenica.Size = new System.Drawing.Size(182, 110);
             this.btnNarudzbenica.TabIndex = 2;
@@ -68,7 +70,7 @@
             // 
             // btnStatistika
             // 
-            this.btnStatistika.Location = new System.Drawing.Point(472, 366);
+            this.btnStatistika.Location = new System.Drawing.Point(498, 435);
             this.btnStatistika.Name = "btnStatistika";
             this.btnStatistika.Size = new System.Drawing.Size(182, 110);
             this.btnStatistika.TabIndex = 3;
@@ -79,9 +81,9 @@
             // btnOdjava
             // 
             this.btnOdjava.BackColor = System.Drawing.SystemColors.Control;
-            this.btnOdjava.Location = new System.Drawing.Point(731, 34);
+            this.btnOdjava.Location = new System.Drawing.Point(731, 24);
             this.btnOdjava.Name = "btnOdjava";
-            this.btnOdjava.Size = new System.Drawing.Size(107, 23);
+            this.btnOdjava.Size = new System.Drawing.Size(107, 45);
             this.btnOdjava.TabIndex = 4;
             this.btnOdjava.Text = "Odjava";
             this.btnOdjava.UseVisualStyleBackColor = false;
@@ -90,17 +92,27 @@
             // lblZaposlenik
             // 
             this.lblZaposlenik.AutoSize = true;
-            this.lblZaposlenik.Location = new System.Drawing.Point(635, 39);
+            this.lblZaposlenik.Location = new System.Drawing.Point(598, 40);
             this.lblZaposlenik.Name = "lblZaposlenik";
             this.lblZaposlenik.Size = new System.Drawing.Size(35, 13);
             this.lblZaposlenik.TabIndex = 5;
             this.lblZaposlenik.Text = "label1";
+            // 
+            // logo
+            // 
+            this.logo.Image = global::ProdajaGreyMatter.Properties.Resources.logo;
+            this.logo.Location = new System.Drawing.Point(2, 3);
+            this.logo.Name = "logo";
+            this.logo.Size = new System.Drawing.Size(330, 161);
+            this.logo.TabIndex = 6;
+            this.logo.TabStop = false;
             // 
             // frmIzbornik
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(861, 631);
+            this.Controls.Add(this.logo);
             this.Controls.Add(this.lblZaposlenik);
             this.Controls.Add(this.btnOdjava);
             this.Controls.Add(this.btnStatistika);
@@ -110,6 +122,7 @@
             this.Name = "frmIzbornik";
             this.Text = "Prodaja Grey Matter d.o.o";
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.hlpPokazi);
+            ((System.ComponentModel.ISupportInitialize)(this.logo)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -123,6 +136,7 @@
         private System.Windows.Forms.Button btnStatistika;
         private System.Windows.Forms.Button btnOdjava;
         private System.Windows.Forms.Label lblZaposlenik;
+        private System.Windows.Forms.PictureBox logo;
 
     }
 }

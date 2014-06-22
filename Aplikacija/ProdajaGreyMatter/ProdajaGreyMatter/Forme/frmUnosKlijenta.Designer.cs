@@ -47,7 +47,7 @@
             // lblOib
             // 
             this.lblOib.AutoSize = true;
-            this.lblOib.Location = new System.Drawing.Point(107, 52);
+            this.lblOib.Location = new System.Drawing.Point(57, 52);
             this.lblOib.Name = "lblOib";
             this.lblOib.Size = new System.Drawing.Size(28, 13);
             this.lblOib.TabIndex = 0;
@@ -56,7 +56,7 @@
             // lblNaziv
             // 
             this.lblNaziv.AutoSize = true;
-            this.lblNaziv.Location = new System.Drawing.Point(96, 96);
+            this.lblNaziv.Location = new System.Drawing.Point(57, 96);
             this.lblNaziv.Name = "lblNaziv";
             this.lblNaziv.Size = new System.Drawing.Size(37, 13);
             this.lblNaziv.TabIndex = 1;
@@ -65,7 +65,7 @@
             // lblEmail
             // 
             this.lblEmail.AutoSize = true;
-            this.lblEmail.Location = new System.Drawing.Point(96, 140);
+            this.lblEmail.Location = new System.Drawing.Point(57, 140);
             this.lblEmail.Name = "lblEmail";
             this.lblEmail.Size = new System.Drawing.Size(35, 13);
             this.lblEmail.TabIndex = 2;
@@ -74,7 +74,7 @@
             // lblAdresa
             // 
             this.lblAdresa.AutoSize = true;
-            this.lblAdresa.Location = new System.Drawing.Point(90, 226);
+            this.lblAdresa.Location = new System.Drawing.Point(60, 226);
             this.lblAdresa.Name = "lblAdresa";
             this.lblAdresa.Size = new System.Drawing.Size(43, 13);
             this.lblAdresa.TabIndex = 3;
@@ -83,7 +83,7 @@
             // lblZiroRacun
             // 
             this.lblZiroRacun.AutoSize = true;
-            this.lblZiroRacun.Location = new System.Drawing.Point(75, 267);
+            this.lblZiroRacun.Location = new System.Drawing.Point(60, 267);
             this.lblZiroRacun.Name = "lblZiroRacun";
             this.lblZiroRacun.Size = new System.Drawing.Size(58, 13);
             this.lblZiroRacun.TabIndex = 4;
@@ -92,7 +92,7 @@
             // lblTelefon
             // 
             this.lblTelefon.AutoSize = true;
-            this.lblTelefon.Location = new System.Drawing.Point(87, 186);
+            this.lblTelefon.Location = new System.Drawing.Point(57, 186);
             this.lblTelefon.Name = "lblTelefon";
             this.lblTelefon.Size = new System.Drawing.Size(46, 13);
             this.lblTelefon.TabIndex = 5;
@@ -146,7 +146,7 @@
             // 
             this.btnSpremiKlijent.Location = new System.Drawing.Point(286, 351);
             this.btnSpremiKlijent.Name = "btnSpremiKlijent";
-            this.btnSpremiKlijent.Size = new System.Drawing.Size(90, 38);
+            this.btnSpremiKlijent.Size = new System.Drawing.Size(109, 51);
             this.btnSpremiKlijent.TabIndex = 12;
             this.btnSpremiKlijent.Text = "Spremi";
             this.btnSpremiKlijent.UseVisualStyleBackColor = true;
@@ -154,9 +154,9 @@
             // 
             // btnOdustani
             // 
-            this.btnOdustani.Location = new System.Drawing.Point(170, 351);
+            this.btnOdustani.Location = new System.Drawing.Point(153, 351);
             this.btnOdustani.Name = "btnOdustani";
-            this.btnOdustani.Size = new System.Drawing.Size(88, 38);
+            this.btnOdustani.Size = new System.Drawing.Size(105, 51);
             this.btnOdustani.TabIndex = 13;
             this.btnOdustani.Text = "Odustani";
             this.btnOdustani.UseVisualStyleBackColor = true;

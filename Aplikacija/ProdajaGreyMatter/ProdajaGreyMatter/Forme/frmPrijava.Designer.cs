@@ -34,6 +34,8 @@
             this.lblLozinka = new System.Windows.Forms.Label();
             this.btnPrijava = new System.Windows.Forms.Button();
             this.btnIzlaz = new System.Windows.Forms.Button();
+            this.logo = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.logo)).BeginInit();
             this.SuspendLayout();
             // 
             // txtKorisnickoIme
@@ -54,7 +56,7 @@
             // lblKorisnickoIme
             // 
             this.lblKorisnickoIme.AutoSize = true;
-            this.lblKorisnickoIme.Location = new System.Drawing.Point(131, 97);
+            this.lblKorisnickoIme.Location = new System.Drawing.Point(118, 97);
             this.lblKorisnickoIme.Name = "lblKorisnickoIme";
             this.lblKorisnickoIme.Size = new System.Drawing.Size(84, 13);
             this.lblKorisnickoIme.TabIndex = 2;
@@ -71,6 +73,7 @@
             // 
             // btnPrijava
             // 
+            this.btnPrijava.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnPrijava.Location = new System.Drawing.Point(145, 215);
             this.btnPrijava.Name = "btnPrijava";
             this.btnPrijava.Size = new System.Drawing.Size(91, 44);
@@ -89,11 +92,21 @@
             this.btnIzlaz.UseVisualStyleBackColor = true;
             this.btnIzlaz.Click += new System.EventHandler(this.btnIzlaz_Click);
             // 
+            // logo
+            // 
+            this.logo.Image = global::ProdajaGreyMatter.Properties.Resources.lgog_fin;
+            this.logo.Location = new System.Drawing.Point(-1, 1);
+            this.logo.Name = "logo";
+            this.logo.Size = new System.Drawing.Size(265, 74);
+            this.logo.TabIndex = 6;
+            this.logo.TabStop = false;
+            // 
             // frmPrijava
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(582, 293);
+            this.Controls.Add(this.logo);
             this.Controls.Add(this.btnIzlaz);
             this.Controls.Add(this.btnPrijava);
             this.Controls.Add(this.lblLozinka);
@@ -102,6 +115,7 @@
             this.Controls.Add(this.txtKorisnickoIme);
             this.Name = "frmPrijava";
             this.Text = "Prijava";
+            ((System.ComponentModel.ISupportInitialize)(this.logo)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -115,5 +129,6 @@
         private System.Windows.Forms.Label lblLozinka;
         private System.Windows.Forms.Button btnPrijava;
         private System.Windows.Forms.Button btnIzlaz;
+        private System.Windows.Forms.PictureBox logo;
     }
 }

@@ -16,6 +16,24 @@ namespace ProdajaGreyMatter
         {
             InitializeComponent();
             this.KeyPreview = true;
+
+            this.BackColor = Color.FromArgb(228, 231, 236);
+            foreach (Control gumb in this.Controls)
+            {
+                if (gumb.GetType() == typeof(Button))
+                {
+                    gumb.BackColor = Color.FromArgb(253, 160, 247);
+                    gumb.ForeColor = Color.FromArgb(64, 64, 64);
+                    gumb.Font = new Font(gumb.Font, FontStyle.Bold);
+                    gumb.Font = new Font("Sans", 14);
+                }
+            }
+
+            btnNatrag.FlatStyle = FlatStyle.Flat;
+            btnNatrag.FlatAppearance.BorderColor = Color.FromArgb(255, 50, 241);
+            btnNatrag.FlatAppearance.BorderSize = 3;
+
+            lblPretraga.Font = new Font(lblPretraga.Font, FontStyle.Bold);
         }
         private void pregledLijekova()
         {
