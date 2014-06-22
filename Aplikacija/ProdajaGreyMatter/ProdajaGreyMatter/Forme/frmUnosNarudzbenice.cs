@@ -68,6 +68,11 @@ namespace ProdajaGreyMatter
         {
             this.Close();
         }
+        /// <summary>
+        /// Dohvaća se proslijeđeni zaposlenik te se dodaje pripadajućem BindingSourcu.
+        /// Također se i dohvaćaju svi klijentu u listuKlijenata iz kolekcije klijent te se combobox-u dodaju nazivi klijenata.
+        /// Te se postavlja da Rok plaćanja ne može biti manji od trenutnog vremena.
+        /// </summary>
         private void frmUnosNarudzbenice_Load(object sender, EventArgs e)
         {
                 zaposlenikBindingSource.DataSource = referent;
@@ -84,7 +89,11 @@ namespace ProdajaGreyMatter
                 dtpRokPlacanja.MinDate = DateTime.Now;
           
         }
-    
+
+        /// <summary>
+        /// Rukuje događajem klika na gumb Spremi.
+        /// Prvo se radi validacija unosa te ako je sve popunjeno,sprema se narudžbenica te njezine pripadajuće stavke.
+        /// </summary>
         private void btnSpremi_Click(object sender, EventArgs e)
         {
             if (cmbNazivKlijenta.Text == "")
@@ -130,7 +139,10 @@ namespace ProdajaGreyMatter
             }
             this.Close();
         }
-
+        /// <summary>
+        /// Rukuje događajem klika na gumb DodajStavku.
+        /// Najprije se dolazi do id-a zadnje narudzbenice
+        /// </summary>
         private void btnDodajStavku_Click(object sender, EventArgs e)
         {
             int ID = 0;

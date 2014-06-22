@@ -45,6 +45,9 @@ namespace ProdajaGreyMatter
 
             lblPretragaPremaNazivuLijeka.Font = new Font(lblPretragaPremaNazivuLijeka.Font, FontStyle.Bold);
         }
+        /// Dohvaća listu svih lijekova iz kolekcije lijekovi u kontekstu, te ih prikazuje u DataGridView-u.
+        /// Također dohvaća liste tipova lijeka i jedenicnih mjera iz kolekcija tiplijeka i jedinicnamjera.
+        /// To omogućuje prikazivanje naziva tipova lijekova i kratice jedinicne mjere na temelju dohvaćenog id-a tipa lijeka te id-a jedinicne mjere.
         private void pregledLijekova()
         {
             BindingList<lijek> listaLijekova = null;
@@ -66,7 +69,12 @@ namespace ProdajaGreyMatter
         {
             pregledLijekova();
         }
-
+        ///Događaj koji se pokreće prilikom unosa ili promjene teksta u txtPretragaLijekova. 
+        ///Ukoliko unesemo neki tekst u textbox txtPretragaLijekova tada se provjerava dali naziv 
+        ///lijeka koji se nalazi u tablici sadrži tekst unešeni u textbox
+        ///Ako postoje lijekovi čiji naziv sadrži uneseni tekst tada se ti lijekovi stavljaju u listu lijekova
+        ///te se prikazuju u DataGridView-u. 
+        ///U slučaju da je textbox txtPretragaLijekova prazan (prazan string) tada se poziva metoda pregledLijekova();
         private void txtPretragaPremaNazivu_TextChanged(object sender, EventArgs e)
         {
             if (txtPretragaPremaNazivu.Text != null)
@@ -92,7 +100,10 @@ namespace ProdajaGreyMatter
         {
             this.Close();
         }
-
+        /// <summary>
+        /// Rukuje događajem klika na gumb DodajLijek.
+        /// Selektirani lijek se dodaje objektu selektiraniLijek tipa lijek te se podaci označenog lijeka spremaju u atribute klase frmDodajLijek.
+        /// </summary>
         private void btnDodajLijek_Click(object sender, EventArgs e)
         {
             lijek selektiraniLijek = lijekBindingSource.Current as lijek;

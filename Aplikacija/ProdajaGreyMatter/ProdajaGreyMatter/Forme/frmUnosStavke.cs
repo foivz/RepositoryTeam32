@@ -24,7 +24,7 @@ namespace ProdajaGreyMatter
             InitializeComponent();
             this.CenterToParent();
             this.KeyPreview = true;
-
+            //proslijeđuje se trenutni popis stavaka koji su dodani narudžbenici u unosu narudzbe tako da se ne može dodati stavka istog lijeka. 
             trenutniPopisStavki = stavke;
 
             this.BackColor = Color.FromArgb(228, 231, 236);
@@ -65,7 +65,7 @@ namespace ProdajaGreyMatter
             InitializeComponent();
             this.CenterToParent();
             this.KeyPreview = true;
-
+            //proslijeđuje se selektirana stavka koju želi izmijeniti
             selektiranaStavka = stavka;
         }
 
@@ -74,22 +74,26 @@ namespace ProdajaGreyMatter
             odustani = true;
             this.Close();
         }
-
+        /// <summary>
+        /// Ako postoji selektirana stavka znači da ju se želi ažurirati te se njezini podaci prikazuju u textbox-evima.
+        /// </summary>
         private void frmUnosStavke_Load(object sender, EventArgs e)
         {
             if(selektiranaStavka != null)
             {
                 using(var db = new greymatterpiEntities())
                 {
-                    
-                    db.stavkenarudzbenice.Attach(selektiranaStavka);
 
+                    //"registrira se stavaka koja se želi ažurirati"
+                    db.stavkenarudzbenice.Attach(selektiranaStavka);
+                    //pomoću linq upita traži se lijek koji je dodan proslijeđenoj stavki
                     lijek trazeniLijek = (from r in db.lijek
-                                         where r.idLijek == selektiranaStavka.idLijek
-                                         select r).First<lijek>();
+                                          where r.idLijek == selektiranaStavka.idLijek
+                                          select r).First<lijek>();
 
                     txtIdLijeka.Text = trazeniLijek.idLijek.ToString();
                     txtNazivLijeka.Text = trazeniLijek.naziv;
+                    //traži se tiplijeka pripadajućeg lijeka pomoću linq-a
                     IEnumerable<string> tipLijeka = from p in db.tiplijeka
                                                     where p.idTipLijeka == trazeniLijek.idTipLijeka
                                                     select p.naziv;
@@ -101,7 +105,11 @@ namespace ProdajaGreyMatter
                 }
             }
         }
-
+        /// <summary>
+        /// Rukuje događajem klika na gumb DodajLijek.
+        /// Instacira i tvara se forma frmDodajLijek. 
+        /// Ako je dodan lijek tada se u textbox-eve upisuju podaci o tom lijeku.
+        /// </summary>
         private void btnDodajLijek_Click(object sender, EventArgs e)
         {
             frmDodajLijek popisLijekova = new frmDodajLijek();
@@ -139,7 +147,9 @@ namespace ProdajaGreyMatter
             }
            
         }
-        
+        /// <summary>
+        /// Rukuje događajem klika na Spremi te se najprije radi validacija unosa. Nakon toga se u objekt stavakanarudzbenice sprema stvaka te se proslijeđuje.
+        /// </summary>
         private void btnSpremi_Click(object sender, EventArgs e)
         {
             bool stavkaPostoji = false;

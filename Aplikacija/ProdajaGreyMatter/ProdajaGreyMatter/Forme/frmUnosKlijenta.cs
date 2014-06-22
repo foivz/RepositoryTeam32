@@ -48,6 +48,7 @@ namespace ProdajaGreyMatter
         public frmUnosKlijenta(klijent klijent)
         {
             InitializeComponent();
+            //proslijeđuje se klijent tipa klijenta da se zna da li se želu unositi novi klijent ili ažurirati postojeći
             klijentZaIzmjenu = klijent;
             this.KeyPreview = true;
 
@@ -84,7 +85,11 @@ namespace ProdajaGreyMatter
         {
             this.Close();
         }
-
+        /// <summary>
+        /// Rukuje događajem klika na tipku Spremi.
+        /// Najprije pravi validaciju unešenih podataka. Ako je sve dobro sprema se novi klijent u kolekciju klint te se sprema u bazu podataka.
+        /// Ako se ažurira selektirani klinet ažuriraju se njegovi podaci.
+        /// </summary>
         private void btnSpremiKlijent_Click(object sender, EventArgs e)
         { 
                 string oib = txtOib.Text;
@@ -166,6 +171,7 @@ namespace ProdajaGreyMatter
                             {
                                 if (klijentZaIzmjenu == null)
                                 {
+                                    //Kreiramo novi objekt klase klijent i popunjavamo ga podacima sa forme.
                                     klijent noviKlijent = new klijent
                                     {
                                         oib = txtOib.Text,
@@ -175,20 +181,21 @@ namespace ProdajaGreyMatter
                                         e_mail = txtEmail.Text,
                                         ziroRacun = txtZiroRacun.Text
                                     };
-                                    db.klijent.Add(noviKlijent);
-                                    db.SaveChanges();
+                                    db.klijent.Add(noviKlijent); //Dodajemo klijent u odgovarajuću kolekciju u kontekstu.
+                                    db.SaveChanges(); //Spremamo napravljene promjene u bazu podataka.
 
                                 }
                                 else
                                 {
-                                    db.klijent.Attach(klijentZaIzmjenu);
+                                    //Mijenjamo postojećeg klijenta
+                                    db.klijent.Attach(klijentZaIzmjenu); //registriramo prosljeđenog klijenta.
                                     klijentZaIzmjenu.oib = txtOib.Text;
                                     klijentZaIzmjenu.naziv = txtNaziv.Text;
                                     klijentZaIzmjenu.telefon = txtTelefon.Text;
                                     klijentZaIzmjenu.ziroRacun = txtZiroRacun.Text;
                                     klijentZaIzmjenu.e_mail = txtEmail.Text;
                                     klijentZaIzmjenu.adresa = txtAdresa.Text;
-                                    db.SaveChanges();
+                                    db.SaveChanges(); //Spremamo promjene u bazu.
                                 }
                             }
 
@@ -213,9 +220,12 @@ namespace ProdajaGreyMatter
         
                 
         }
-
+        /// <summary>
+        /// Ako postoji klijent kojeg želimo ažurirati njegovi podaci se prikazaju u textboxevima.
+        /// </summary>
         private void frmUnosKlijenta_Load(object sender, EventArgs e)
         {
+
             if (klijentZaIzmjenu != null)
             {
                 txtOib.Text = klijentZaIzmjenu.oib;

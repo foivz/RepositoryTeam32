@@ -55,6 +55,12 @@ namespace ProdajaGreyMatter
             lblPretragaPremaKlijentu.Font = new Font(lblPretragaPremaKlijentu.Font, FontStyle.Bold);
             lblUkupniIznosNarudzbe.Font = new Font(lblUkupniIznosNarudzbe.Font, FontStyle.Bold);
         }
+        /// <summary>
+        /// Metoda prikaziNarudzbe dohvaća listu svih narudžbenica iz kolekcije lijekovi u kontekstu te ih prikazuje i DataGrid-u.
+        /// Također dohvaća listu zaposlenika i klijenata iz kolekcija zaposlenik i klijent.
+        /// To omogućuje prikazivanje naziva zaposlenika i klijenata na temelju dohvaćenog id-a zapsolenika te klijenta.
+        /// Nakon toga provjerava za svaku narudzbenicu kakav joj je status te ako je narudzbenica stornirana pozadinu toga reda postavlja na crveno.
+        /// </summary>
         private void prikaziNarudzbe()
         {
             BindingList<narudzbenica> listaNarudzbenica = null;
@@ -81,6 +87,13 @@ namespace ProdajaGreyMatter
                 }
 			}
         }
+        /// <summary>
+        /// Metoda prikaziStavkeNarudzbenice dohvaća listu stavaka narudbenice proslijeđene narudzbenice iz kolekcije stavkenarudzbenice u kontekstu te ih prikazuje u DataGrid-u.
+        /// Također dohvaća listu lijekova iz kolekcije lijekova.
+        /// To omogućuje prikazivanje naziva i cijene lijeka na temelju dohvaćenog id-a lijeka.
+        /// Računa se i ukupan iznos svih stavaka narudžbenice koja je "registrirana" te ako je narudzbenica stornirana pozadinska boja stavaka se postavlja na crveno.
+        /// </summary>
+        /// <param name="narudzbenica">Narudzbenica čije stavke želimo prikazati</param>
         private void prikaziStavkeNarudzbenice(narudzbenica narudzbenica)
         {
             BindingList<stavkenarudzbenice> listaStavakaNarudzbenica = null;
@@ -141,7 +154,11 @@ namespace ProdajaGreyMatter
             novaNarudzbenica.ShowDialog();
             prikaziNarudzbe();
         }
-
+        /// <summary>
+        /// Rukuje događajem promjene teksta,tj. upisa teksta u textbox txtPretragaKlijenta.
+        /// Prilikom svakog upisa se provjerava pomoću linq upita da li postoji narudzbenica koja pripada unešenom nazivu klijenta.
+        /// Pretražuju se narudžbenice prema nazovu klijenta. Ako postoje takve narudzbenice one se dodaju u Bindinglistu tipa narudzbenice te se prikazuju na DataGridu.
+        /// </summary>
         private void txtPretragaKlijenta_TextChanged(object sender, EventArgs e)
         {
             if (txtPretragaKlijenta.Text != null)
@@ -172,7 +189,12 @@ namespace ProdajaGreyMatter
                 prikaziNarudzbe();
             }
         }
-
+        /// <summary>
+        /// Metoda dgPopisNarudžbenica_SelectionChanged se pokreće na događaj promjene selektirane narudžbenice na DataGrid-u.
+        /// Trenutno označena narudžbenica se sprema objekt selektiranaNarudzbenica tipa narudzbenica te se poziva metoda koja prikazuje stavke narudžbenice proslijeđenom narudzbenicom.
+        /// Također se izračunava ukupni iznos selektirane narudžbenice.
+        /// Ako je selektirana narudžbenica stornirana textboxu txtUkupniIznosStavke se mijenja pozadina u crveno
+        /// </summary>
         private void dgPopisNarudžbenica_SelectionChanged(object sender, EventArgs e)
         {
             narudzbenica selektiranaNarudzbenica = narudzbenicaBindingSource.Current as narudzbenica;
@@ -195,7 +217,12 @@ namespace ProdajaGreyMatter
                 txtUkupniIznosNarudžbe.Text = ukupno.ToString("C");
             }
         }
-
+        /// <summary>
+        /// Metoda btnStorno_Click se pokreće na klik gumba btnStorno i njezina funkcija je da označenu narudžbenicu stornira
+        /// U objekt oznaceNarudzbenica tipa narudzbenica se sprema označena narudžbenica te se provjerava da li je status 
+        /// narudžbenice jednak 1,ako referent odabere da želi stornirati narudžbenicu njezin status se stavlja na 0.
+        /// Također ne mogu se stornirati narudžbenice napravljene više od tjedan dana od današnjeg datuma.
+        /// </summary>
         private void btnStorno_Click(object sender, EventArgs e)
         {
             DateTime datum = DateTime.Now.AddDays(-7);

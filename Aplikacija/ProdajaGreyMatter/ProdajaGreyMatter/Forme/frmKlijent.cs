@@ -45,7 +45,9 @@ namespace ProdajaGreyMatter
             label1.Font = new Font(label1.Font, FontStyle.Bold);
             label2.Font = new Font(label2.Font, FontStyle.Bold);
         }
-
+        /// <summary>
+        /// Dohvaća listu svih klijenata iz kolekcije klijent u kontekstu, te ih prikazuje u DataGridView-u.
+        /// </summary>
         private void prikaziKlijente()
         {
             BindingList<klijent> listaKlijenta = null;
@@ -65,7 +67,9 @@ namespace ProdajaGreyMatter
         {
             this.Close();
         }
-
+        /// <summary>
+        /// Rukuje događajem promjene teksta,tj. pretražuju se klijenti na temelju oib-a.
+        /// </summary>
         private void txtPretragaOib_TextChanged_1(object sender, EventArgs e)
         {
             if (txtPretragaOib.Text != null)
@@ -85,7 +89,9 @@ namespace ProdajaGreyMatter
                 prikaziKlijente();
             }
         }
-
+        /// <summary>
+        /// Rukuje događajem promjene teksta,tj. pretražuju se klijenti na temelju nazivu klijenta.
+        /// </summary>
         private void txtPretragaNaziv_TextChanged(object sender, EventArgs e)
         {
             if (txtPretragaNaziv.Text != null)
