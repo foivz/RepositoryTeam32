@@ -142,6 +142,11 @@ namespace ProdajaGreyMatter
         /// <summary>
         /// Rukuje događajem klika na gumb DodajStavku.
         /// Najprije se dolazi do id-a zadnje narudzbenice
+        /// Poziva se forma za unos stavke i ako u njoj nije klinut gumb Odustani podaci o kreiranoj stavci spremaju se za
+        /// prikaz u DataGridView-u
+        /// U stavkeNar spremaju se podaci o stavkama koje se trenutno nalaze u DataGridView-u što će se kasnije iskoristiti za
+        /// onemogućavanje unosa lijeka koji je već unesen, ako se za taj lijek žele povećati ili smanjiti količine to će 
+        /// se raditi ažuriranjem ili brisanjem stavke
         /// </summary>
         private void btnDodajStavku_Click(object sender, EventArgs e)
         {
@@ -174,6 +179,14 @@ namespace ProdajaGreyMatter
        
         }
 
+        /// <summary>
+        /// Poziva se forma za unos stavke i ako u njoj nije klinut gumb Odustani ažurirani podaci o odabranoj stavci spremaju se za
+        /// prikaz u DataGridView-u
+        /// Svrha stavkeNar je iznad opisana
+        /// Za prikaz rezultata ažuriranja u DataGridView-u najprije je potrebno obrisati podatke o odabranoj stavci unutar 
+        /// BindingSource-a te ih kasnije opet dodati, posljedica toga je da će se podaci o ažuriranoj stavci uvijek javljati
+        /// kao zadnja stavka u popisu stavki
+        /// </summary>
         private void btnIzmjeni_Click(object sender, EventArgs e)
         {
             stavkenarudzbenice selektiranaStavka = stavkenarudzbeniceBindingSource.Current as stavkenarudzbenice;
@@ -201,6 +214,9 @@ namespace ProdajaGreyMatter
             }
         }
 
+        /// <summary>
+        /// Brisanje podataka o odabranoj stavci iz BindingSource-a i stavkeNar čija ja svrha iznad već opisana
+        /// </summary>
         private void btnIzbrisi_Click(object sender, EventArgs e)
         {
             stavkenarudzbenice selektiranaStavka = stavkenarudzbeniceBindingSource.Current as stavkenarudzbenice;

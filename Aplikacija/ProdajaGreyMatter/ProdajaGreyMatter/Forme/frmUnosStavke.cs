@@ -107,7 +107,7 @@ namespace ProdajaGreyMatter
         }
         /// <summary>
         /// Rukuje događajem klika na gumb DodajLijek.
-        /// Instacira i tvara se forma frmDodajLijek. 
+        /// Instacira i stvara se forma frmDodajLijek. 
         /// Ako je dodan lijek tada se u textbox-eve upisuju podaci o tom lijeku.
         /// </summary>
         private void btnDodajLijek_Click(object sender, EventArgs e)
@@ -148,14 +148,17 @@ namespace ProdajaGreyMatter
            
         }
         /// <summary>
-        /// Rukuje događajem klika na Spremi te se najprije radi validacija unosa. Nakon toga se u objekt stavakanarudzbenice sprema stvaka te se proslijeđuje.
+        /// Rukuje događajem klika na Spremi te se najprije radi validacija unosa. 
+        /// Nakon toga se u objekt stavakanarudzbenice sprema stvaka te se proslijeđuje.
         /// </summary>
         private void btnSpremi_Click(object sender, EventArgs e)
         {
             bool stavkaPostoji = false;
             
-            //to tak da bi bilo moguće ažuriranje, inače ovaj foreach nebi bil u elseu i 
-            //prikazal bi poruku da je taj lijek unesen pa nebi bilo moguće promijeniti količinu
+            ///if-else omogućuje ažuriranje, bez toga bi foreach bio izvan else-a i nebi bilo moguće 
+            ///ažurirati stavke jer bi forma na temelju proslijeđenih podataka o lijeku zaključila da se javlja id lijeka koji
+            ///već postoji u DataGridView-u, a složeno je da se svi podaci o nekom lijeku u formi frmUnosNarudžbenice
+            ///prikazuju u jednom retku DataGridView-a
             if (selektiranaStavka != null)
             {
                 stavkaPostoji = false;
