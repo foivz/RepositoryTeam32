@@ -34,6 +34,10 @@ namespace ProdajaGreyMatter
             btnNatrag.FlatAppearance.BorderColor = Color.FromArgb(255, 50, 241);
             btnNatrag.FlatAppearance.BorderSize = 3;
         }
+        /// <summary>
+        /// Dohvaća listu svih lijekova iz kolekcije lijek u kontekstu te zbraja količinu prodanih lijekova.
+        /// Sortira lijekove i količinu prema najvećoj količini i prikazuje samo top 5 najprodavanijih lijekova na grafu.
+        /// </summary>
         private void prikaziNajprodavanijeLijekove()
         {
             if (rb3Mjeseca.Checked)
@@ -42,15 +46,11 @@ namespace ProdajaGreyMatter
                 this.razdoblje = 6;
             else
                 this.razdoblje = 12;
-            BindingList<narudzbenica> listaNarudzbenica = null;
-            BindingList<zaposlenik> listaZaposlenika = null;
             BindingList<lijek> listaLijekova = null;
             List<string> lijekNaziv = new List<string>();
             List<int> lijekKolicina = new List<int>(); ;
             using (var db = new greymatterpiEntities())
             {
-                listaNarudzbenica = new BindingList<narudzbenica>(db.narudzbenica.ToList());
-                listaZaposlenika = new BindingList<zaposlenik>(db.zaposlenik.ToList());
                 listaLijekova = new BindingList<lijek>(db.lijek.ToList());
                 DateTime od = DateTime.Now.AddMonths(-(razdoblje));
                 DateTime sada = DateTime.Now;
@@ -67,7 +67,22 @@ namespace ProdajaGreyMatter
                     else
                         lijekKolicina.Add(0);
                 }
-            } 
+            }
+            for (int i = 0; i < lijekNaziv.Count(); i++)
+            {
+                for (int j = 0; j < lijekNaziv.Count() - 1; j++)
+                {
+                    if (lijekKolicina[j] < lijekKolicina[j + 1])
+                    {
+                        int temp = lijekKolicina[j];
+                        lijekKolicina[j] = lijekKolicina[j + 1];
+                        lijekKolicina[j + 1] = temp;
+                        string temp2 = lijekNaziv[j];
+                        lijekNaziv[j] = lijekNaziv[j + 1];
+                        lijekNaziv[j + 1] = temp2;
+                    }
+                }
+            }
             var graf = new Chart();
             graf.Size = new Size(800, 400);
             var naslov = new Title();
@@ -80,21 +95,21 @@ namespace ProdajaGreyMatter
             grafPodrucje.AxisY.LabelStyle.Font = new Font("Consolas", 8);
             graf.ChartAreas.Add(grafPodrucje);
             graf.Titles.Add(naslov);
+            graf.Legends.Add(new Legend("legenda"));
             var podaci = new Series();
             podaci.Name = "podaci";
+            podaci.LegendText = "Količina(kom)";
             podaci.ChartType = SeriesChartType.Column;
-            podaci.Points.DataBindY(lijekKolicina);
+            List<int> lijekKolicinaNova = new List<int>();
+            for (int j = 0; j < 5; j++)
+                lijekKolicinaNova.Add(lijekKolicina[j]); 
+            podaci.Points.DataBindY(lijekKolicinaNova);
             podaci.IsValueShownAsLabel = true;  
-            graf.Series.Add(podaci);    
-            int j = 0;
-            foreach (var c in lijekNaziv)
-            {
+            graf.Series.Add(podaci);
+            for (int j = 0; j < 5; j++)
                 graf.Series[0].Points[j].AxisLabel = lijekNaziv[j].ToString();
-                j++;
-            }                
-            graf.Invalidate();
-            graf.SaveImage("chart1.png", ChartImageFormat.Png);
-            pictureBox1.ImageLocation = @"chart1.png";      
+            graf.SaveImage("najprodavanijiLijekovi.png", ChartImageFormat.Png);
+            pictureBox1.ImageLocation = @"najprodavanijiLijekovi.png";  
         }
 
         private void btnNatrag_Click(object sender, EventArgs e)

@@ -38,6 +38,10 @@ namespace ProdajaGreyMatter
         {
             this.razdoblje = razdoblje;
         }
+        /// <summary>
+        /// Dohvaća listu svih klijenata iz kolekcije klijent u kontekstu te zbraja količinu lijekova za svakog klijenta.
+        /// Sortira klijente i količinu prema najvećoj količini i prikazuje samo top 5 najboljih kupaca na grafu.
+        /// </summary>
         private void prikaziNajboljeKupce()
         {
             if (rb3Mjeseca.Checked)
@@ -46,15 +50,11 @@ namespace ProdajaGreyMatter
                 this.razdoblje = 6;
             else
                 this.razdoblje = 12;
-            BindingList<narudzbenica> listaNarudzbenica = null;
-            BindingList<zaposlenik> listaZaposlenika = null;
             BindingList<klijent> listaKlijenata = null;
             List<string> klijentNaziv = new List<string>();
             List<int> klijentKolicina = new List<int>();
             using (var db = new greymatterpiEntities())
             {
-                listaNarudzbenica = new BindingList<narudzbenica>(db.narudzbenica.ToList());
-                listaZaposlenika = new BindingList<zaposlenik>(db.zaposlenik.ToList());
                 listaKlijenata = new BindingList<klijent>(db.klijent.ToList());
                 DateTime od = DateTime.Now.AddMonths(-(razdoblje));
                 DateTime sada = DateTime.Now;
@@ -72,6 +72,21 @@ namespace ProdajaGreyMatter
                         klijentKolicina.Add(rezultat.Sum());
                     else
                         klijentKolicina.Add(0);
+                }
+            }
+            for (int i = 0; i < klijentNaziv.Count(); i++)
+            {
+                for (int j = 0; j < klijentNaziv.Count() - 1; j++)
+                {
+                    if (klijentKolicina[j] < klijentKolicina[j + 1])
+                    {
+                        int temp = klijentKolicina[j];
+                        klijentKolicina[j] = klijentKolicina[j + 1];
+                        klijentKolicina[j + 1] = temp;
+                        string temp2 = klijentNaziv[j];
+                        klijentNaziv[j] = klijentNaziv[j + 1];
+                        klijentNaziv[j + 1] = temp2;
+                    }
                 }
             }
             var graf = new Chart();
@@ -92,25 +107,27 @@ namespace ProdajaGreyMatter
             grafPodrucje.BorderColor = Color.LightGray;
             graf.ChartAreas.Add(grafPodrucje);
             graf.Titles.Add(naslov);
+            graf.Legends.Add(new Legend("legenda"));
             var podaci = new Series();
             podaci.Name = "podaci";
+            podaci.LegendText = "Količina(kom)";
             graf.Series.Add(podaci);
-            graf.Series["podaci"].Points.DataBindY(klijentKolicina);
+            List<int> klijentKolicinaNova = new List<int>();
+            for (int j = 0; j < 5; j++)
+                klijentKolicinaNova.Add(klijentKolicina[j]); 
+            graf.Series["podaci"].Points.DataBindY(klijentKolicinaNova);
             graf.Series["podaci"].Points[0].Color = Color.FromArgb(220, 65, 140, 255);
             graf.Series["podaci"].Points[0].BorderColor = Color.FromArgb(180, 26, 59, 105);
             graf.Series["podaci"].ChartType = SeriesChartType.Column;
             graf.Series["podaci"].IsValueShownAsLabel = true;
-            int j = 0;
-            foreach (var c in klijentNaziv)
+            for (int j = 0; j < 5; j++)
             {
                 graf.Series[0].Points[j].AxisLabel = klijentNaziv[j].ToString();
                 graf.Series["podaci"].Points[j].Color = Color.FromArgb(220, 65, 140, 255);
                 graf.Series["podaci"].Points[j].BorderColor = Color.FromArgb(180, 26, 59, 105);
-                j++;
             }
-            graf.Invalidate();
-            graf.SaveImage("chart1.png", ChartImageFormat.Png);
-            pictureBox1.ImageLocation = @"chart1.png";
+            graf.SaveImage("najboljiKupci.png", ChartImageFormat.Png);
+            pictureBox1.ImageLocation = @"najboljiKupci.png";
         }
 
         private void rb3Mjeseca_CheckedChanged(object sender, EventArgs e)

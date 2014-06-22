@@ -35,10 +35,11 @@ namespace ProdajaGreyMatter
             btnNatrag.FlatAppearance.BorderSize = 3;
 
         }
-
+        /// <summary>
+        /// Popunjavanje dataseta prema zadanoj vrijednosti idNarudzbenice
+        /// </summary>
         private void frmNarudzbenicaReport_Load(object sender, EventArgs e)
         {
-            this.narudzbenicaTableAdapter.Fill(this.greymatterpiDataSet.narudzbenica);
             this.reportTablicaTableAdapter.FillByIdNarudzbenice(this.greymatterpiDataSet.reportTablica, idNarudzbenice);
             this.reportViewer1.RefreshReport();
         }
