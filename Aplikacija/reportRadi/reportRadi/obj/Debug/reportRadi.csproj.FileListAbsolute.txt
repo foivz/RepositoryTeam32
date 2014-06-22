@@ -20,3 +20,14 @@ C:\Users\Josip\Documents\GitHub\RepositoryTeam32\Aplikacija\reportRadi\reportRad
 C:\Users\Josip\Documents\GitHub\RepositoryTeam32\Aplikacija\reportRadi\reportRadi\obj\Debug\reportRadi.csproj.GenerateResource.Cache
 C:\Users\Josip\Documents\GitHub\RepositoryTeam32\Aplikacija\reportRadi\reportRadi\obj\Debug\RdlCompile.cache
 C:\Users\Josip\Documents\GitHub\RepositoryTeam32\Aplikacija\reportRadi\reportRadi\obj\Debug\RdlCompile.compiled
+C:\Users\Andrija\Documents\GitHub\RepositoryTeam32\Aplikacija\reportRadi\reportRadi\bin\Debug\reportRadi.exe.config
+C:\Users\Andrija\Documents\GitHub\RepositoryTeam32\Aplikacija\reportRadi\reportRadi\obj\Debug\reportRadi.exe
+C:\Users\Andrija\Documents\GitHub\RepositoryTeam32\Aplikacija\reportRadi\reportRadi\obj\Debug\reportRadi.pdb
+C:\Users\Andrija\Documents\GitHub\RepositoryTeam32\Aplikacija\reportRadi\reportRadi\bin\Debug\reportRadi.exe
+C:\Users\Andrija\Documents\GitHub\RepositoryTeam32\Aplikacija\reportRadi\reportRadi\bin\Debug\reportRadi.pdb
+C:\Users\Andrija\Documents\GitHub\RepositoryTeam32\Aplikacija\reportRadi\reportRadi\obj\Debug\reportRadi.csprojResolveAssemblyReference.cache
+C:\Users\Andrija\Documents\GitHub\RepositoryTeam32\Aplikacija\reportRadi\reportRadi\obj\Debug\reportRadi.Form1.resources
+C:\Users\Andrija\Documents\GitHub\RepositoryTeam32\Aplikacija\reportRadi\reportRadi\obj\Debug\reportRadi.Properties.Resources.resources
+C:\Users\Andrija\Documents\GitHub\RepositoryTeam32\Aplikacija\reportRadi\reportRadi\obj\Debug\reportRadi.csproj.GenerateResource.Cache
+C:\Users\Andrija\Documents\GitHub\RepositoryTeam32\Aplikacija\reportRadi\reportRadi\obj\Debug\RdlCompile.cache
+C:\Users\Andrija\Documents\GitHub\RepositoryTeam32\Aplikacija\reportRadi\reportRadi\obj\Debug\RdlCompile.compiled
