@@ -16,6 +16,8 @@ namespace ProdajaGreyMatter
         public frmUnosKlijenta()
         {
             InitializeComponent();
+            this.CenterToParent();
+
             this.KeyPreview = true;
 
             this.BackColor = Color.FromArgb(228, 231, 236);
@@ -48,6 +50,8 @@ namespace ProdajaGreyMatter
         public frmUnosKlijenta(klijent klijent)
         {
             InitializeComponent();
+            this.CenterToParent();
+
             //proslijeđuje se klijent tipa klijenta da se zna da li se želu unositi novi klijent ili ažurirati postojeći
             klijentZaIzmjenu = klijent;
             this.KeyPreview = true;

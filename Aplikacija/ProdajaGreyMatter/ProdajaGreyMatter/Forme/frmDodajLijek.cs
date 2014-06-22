@@ -21,6 +21,8 @@ namespace ProdajaGreyMatter
         public frmDodajLijek()
         {
             InitializeComponent();
+            this.CenterToParent();
+
             this.KeyPreview = true;
 
             this.BackColor = Color.FromArgb(228, 231, 236);

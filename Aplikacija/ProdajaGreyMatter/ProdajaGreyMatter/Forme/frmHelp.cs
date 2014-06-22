@@ -15,6 +15,7 @@ namespace ProdajaGreyMatter
         public frmHelp(string naslov, string opis)
         {
             InitializeComponent();
+            this.CenterToParent();
 
             txtNaslov.Text = naslov;
             txtOpis.Text = opis;

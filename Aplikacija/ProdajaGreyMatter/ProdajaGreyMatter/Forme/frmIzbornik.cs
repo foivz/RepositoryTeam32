@@ -18,6 +18,7 @@ namespace ProdajaGreyMatter
         public frmIzbornik(zaposlenik zaposlenik)
         {
             InitializeComponent();
+
             referent = zaposlenik;
             lblZaposlenik.Text = referent.ime + " " + referent.prezime;
             this.KeyPreview = true;

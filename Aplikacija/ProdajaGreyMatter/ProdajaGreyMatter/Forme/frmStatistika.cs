@@ -15,6 +15,8 @@ namespace ProdajaGreyMatter
         public frmStatistika()
         {
             InitializeComponent();
+            this.CenterToParent();
+
             this.KeyPreview = true;
 
             this.BackColor = Color.FromArgb(228, 231, 236);

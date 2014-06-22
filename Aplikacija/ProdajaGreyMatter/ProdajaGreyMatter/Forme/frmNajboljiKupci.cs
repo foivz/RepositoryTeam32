@@ -17,6 +17,8 @@ namespace ProdajaGreyMatter
         public frmNajboljiKupci()
         {
             InitializeComponent();
+            this.CenterToParent();
+
             prikaziNajboljeKupce();
             this.BackColor = Color.FromArgb(228, 231, 236);
             foreach (Control gumb in this.Controls)
