@@ -12,8 +12,10 @@ namespace ProdajaGreyMatter
 {
     public partial class frmNarudzbenicaReport : Form
     {
-        public frmNarudzbenicaReport()
+        private int idNarudzbenice = 0;
+        public frmNarudzbenicaReport(int id)
         {
+            idNarudzbenice = id;
             InitializeComponent();
 
             this.BackColor = Color.FromArgb(228, 231, 236);
@@ -32,22 +34,12 @@ namespace ProdajaGreyMatter
             btnNatrag.FlatAppearance.BorderColor = Color.FromArgb(255, 50, 241);
             btnNatrag.FlatAppearance.BorderSize = 3;
 
-            label1.Font = new Font(label1.Font, FontStyle.Bold);
         }
 
         private void frmNarudzbenicaReport_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'greymatterpiDataSet.narudzbenica' table. You can move, or remove it, as needed.
-            this.narudzbenicaTableAdapter.Fill(this.greymatterpiDataSet.narudzbenica); 
-        }
-
-        private void comboBox1_SelectedValueChanged(object sender, EventArgs e)
-        {
-            int id = 0;
-            if (comboBox1.SelectedValue != null)
-                id = int.Parse(comboBox1.SelectedValue.ToString());
-            if (id != 0)
-                this.reportTablicaTableAdapter.FillByIdNarudzbenice(this.greymatterpiDataSet.reportTablica, id);
+            this.narudzbenicaTableAdapter.Fill(this.greymatterpiDataSet.narudzbenica);
+            this.reportTablicaTableAdapter.FillByIdNarudzbenice(this.greymatterpiDataSet.reportTablica, idNarudzbenice);
             this.reportViewer1.RefreshReport();
         }
 

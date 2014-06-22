@@ -61,14 +61,17 @@ namespace ProdajaGreyMatter
                 foreach (var klijentN in listaKlijenata)
                 {
                     klijentNaziv.Add(klijentN.naziv);
-                    var rezultat = (from k in db.klijent
-                                    join n in db.narudzbenica
-                                    on k.oib equals n.oibKlijenta
-                                    join sn in db.stavkenarudzbenice
-                                    on n.idNarudzbenice equals sn.idNarudzbenice
-                                    where k.naziv == klijentN.naziv && n.status == 1 && (n.datumIzdavanja >= od && n.datumIzdavanja <= sada)
-                                    select sn.kolicina).Sum();
-                    klijentKolicina.Add(rezultat);
+                    var rezultat = from k in db.klijent
+                                   join n in db.narudzbenica
+                                   on k.oib equals n.oibKlijenta
+                                   join sn in db.stavkenarudzbenice
+                                   on n.idNarudzbenice equals sn.idNarudzbenice
+                                   where k.naziv == klijentN.naziv && n.status == 1 && (n.datumIzdavanja >= od && n.datumIzdavanja <= sada)
+                                   select sn.kolicina;
+                    if (rezultat.Any())
+                        klijentKolicina.Add(rezultat.Sum());
+                    else
+                        klijentKolicina.Add(0);
                 }
             }
             var graf = new Chart();

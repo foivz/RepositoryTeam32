@@ -93,7 +93,7 @@
             // lblZaposlenik
             // 
             this.lblZaposlenik.AutoSize = true;
-            this.lblZaposlenik.Location = new System.Drawing.Point(598, 40);
+            this.lblZaposlenik.Location = new System.Drawing.Point(543, 40);
             this.lblZaposlenik.Name = "lblZaposlenik";
             this.lblZaposlenik.Size = new System.Drawing.Size(35, 13);
             this.lblZaposlenik.TabIndex = 5;

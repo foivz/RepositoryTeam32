@@ -57,12 +57,15 @@ namespace ProdajaGreyMatter
                 foreach (var lijekN in listaLijekova)
                 {
                     lijekNaziv.Add(lijekN.naziv);
-                    var rezultat = (from l in db.lijek
+                    var rezultat = from l in db.lijek
                                    join sn in db.stavkenarudzbenice on l.idLijek equals sn.idLijek
                                    join n in db.narudzbenica on sn.idNarudzbenice equals n.idNarudzbenice
                                    where l.naziv == lijekN.naziv && n.status == 1 && (n.datumIzdavanja >= od && n.datumIzdavanja <= sada)
-                                   select sn.kolicina).Sum();
-                    lijekKolicina.Add(rezultat);
+                                   select sn.kolicina;
+                    if (rezultat.Any())
+                        lijekKolicina.Add(rezultat.Sum());
+                    else
+                        lijekKolicina.Add(0);
                 }
             } 
             var graf = new Chart();

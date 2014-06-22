@@ -282,8 +282,10 @@ namespace ProdajaGreyMatter
 
         private void btnIzvjestaj_Click(object sender, EventArgs e)
         {
-            frmNarudzbenicaReport forma = new frmNarudzbenicaReport();
-            forma.ShowDialog();
+            narudzbenica selektiranaNarudzbenica = narudzbenicaBindingSource.Current as narudzbenica;
+            int id = selektiranaNarudzbenica.idNarudzbenice;
+            frmNarudzbenicaReport formaReport = new frmNarudzbenicaReport(id);
+            formaReport.ShowDialog();
         }
     }
 }
