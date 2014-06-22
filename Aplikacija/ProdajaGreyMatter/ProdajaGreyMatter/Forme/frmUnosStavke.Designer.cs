@@ -45,6 +45,7 @@
             this.idLijeka = new System.Windows.Forms.Label();
             this.txtIdLijeka = new System.Windows.Forms.TextBox();
             this.btnDodajLijek = new System.Windows.Forms.Button();
+            this.lblPomoc = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // btnOdustani
@@ -195,11 +196,23 @@
             this.btnDodajLijek.UseVisualStyleBackColor = true;
             this.btnDodajLijek.Click += new System.EventHandler(this.btnDodajLijek_Click);
             // 
+            // lblPomoc
+            // 
+            this.lblPomoc.AutoSize = true;
+            this.lblPomoc.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.lblPomoc.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.lblPomoc.Location = new System.Drawing.Point(12, 328);
+            this.lblPomoc.Name = "lblPomoc";
+            this.lblPomoc.Size = new System.Drawing.Size(132, 15);
+            this.lblPomoc.TabIndex = 20;
+            this.lblPomoc.Text = "Za pomoć pritisnite f1";
+            // 
             // frmUnosStavke
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(352, 319);
+            this.ClientSize = new System.Drawing.Size(352, 352);
+            this.Controls.Add(this.lblPomoc);
             this.Controls.Add(this.btnDodajLijek);
             this.Controls.Add(this.txtIdLijeka);
             this.Controls.Add(this.idLijeka);
@@ -245,5 +258,6 @@
         private System.Windows.Forms.Label idLijeka;
         private System.Windows.Forms.TextBox txtIdLijeka;
         private System.Windows.Forms.Button btnDodajLijek;
+        private System.Windows.Forms.Label lblPomoc;
     }
 }

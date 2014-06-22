@@ -208,3 +208,5 @@ C:\Users\Nikola\Desktop\nova2\ProdajaGreyMatter\ProdajaGreyMatter\obj\Debug\Prod
 C:\Users\Nikola\Desktop\nova2\ProdajaGreyMatter\ProdajaGreyMatter\obj\Debug\ProdajaGreyMatter.csproj.GenerateResource.Cache
 C:\Users\Nikola\Desktop\nova2\ProdajaGreyMatter\ProdajaGreyMatter\obj\Debug\RdlCompile.cache
 C:\Users\Nikola\Desktop\nova2\ProdajaGreyMatter\ProdajaGreyMatter\obj\Debug\RdlCompile.compiled
+C:\Users\Josip\Documents\GitHub\RepositoryTeam32\Aplikacija\ProdajaGreyMatter\ProdajaGreyMatter\obj\Debug\RdlCompile.cache
+C:\Users\Josip\Documents\GitHub\RepositoryTeam32\Aplikacija\ProdajaGreyMatter\ProdajaGreyMatter\obj\Debug\RdlCompile.compiled

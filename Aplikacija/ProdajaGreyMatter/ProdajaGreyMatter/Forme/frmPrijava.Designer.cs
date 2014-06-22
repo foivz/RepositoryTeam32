@@ -35,6 +35,7 @@
             this.btnPrijava = new System.Windows.Forms.Button();
             this.btnIzlaz = new System.Windows.Forms.Button();
             this.logo = new System.Windows.Forms.PictureBox();
+            this.lblPomoc = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.logo)).BeginInit();
             this.SuspendLayout();
             // 
@@ -101,11 +102,23 @@
             this.logo.TabIndex = 6;
             this.logo.TabStop = false;
             // 
+            // lblPomoc
+            // 
+            this.lblPomoc.AutoSize = true;
+            this.lblPomoc.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.lblPomoc.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.lblPomoc.Location = new System.Drawing.Point(13, 268);
+            this.lblPomoc.Name = "lblPomoc";
+            this.lblPomoc.Size = new System.Drawing.Size(132, 15);
+            this.lblPomoc.TabIndex = 7;
+            this.lblPomoc.Text = "Za pomoć pritisnite f1";
+            // 
             // frmPrijava
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(582, 293);
+            this.Controls.Add(this.lblPomoc);
             this.Controls.Add(this.logo);
             this.Controls.Add(this.btnIzlaz);
             this.Controls.Add(this.btnPrijava);
@@ -130,5 +143,6 @@
         private System.Windows.Forms.Button btnPrijava;
         private System.Windows.Forms.Button btnIzlaz;
         private System.Windows.Forms.PictureBox logo;
+        private System.Windows.Forms.Label lblPomoc;
     }
 }

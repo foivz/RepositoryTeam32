@@ -42,6 +42,7 @@
             this.txtTelefon = new System.Windows.Forms.TextBox();
             this.btnSpremiKlijent = new System.Windows.Forms.Button();
             this.btnOdustani = new System.Windows.Forms.Button();
+            this.lblPomoc = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // lblOib
@@ -162,11 +163,23 @@
             this.btnOdustani.UseVisualStyleBackColor = true;
             this.btnOdustani.Click += new System.EventHandler(this.btnOdustani_Click);
             // 
+            // lblPomoc
+            // 
+            this.lblPomoc.AutoSize = true;
+            this.lblPomoc.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.lblPomoc.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.lblPomoc.Location = new System.Drawing.Point(12, 387);
+            this.lblPomoc.Name = "lblPomoc";
+            this.lblPomoc.Size = new System.Drawing.Size(132, 15);
+            this.lblPomoc.TabIndex = 14;
+            this.lblPomoc.Text = "Za pomoć pritisnite f1";
+            // 
             // frmUnosKlijenta
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(407, 414);
+            this.Controls.Add(this.lblPomoc);
             this.Controls.Add(this.btnOdustani);
             this.Controls.Add(this.btnSpremiKlijent);
             this.Controls.Add(this.txtTelefon);
@@ -206,5 +219,6 @@
         private System.Windows.Forms.TextBox txtTelefon;
         private System.Windows.Forms.Button btnSpremiKlijent;
         private System.Windows.Forms.Button btnOdustani;
+        private System.Windows.Forms.Label lblPomoc;
     }
 }

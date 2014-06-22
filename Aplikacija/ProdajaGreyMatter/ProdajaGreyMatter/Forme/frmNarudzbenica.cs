@@ -48,6 +48,10 @@ namespace ProdajaGreyMatter
             btnUnosNarudzbenice.FlatAppearance.BorderColor = Color.FromArgb(255, 50, 241);
             btnUnosNarudzbenice.FlatAppearance.BorderSize = 3;
 
+            btnIzvjestaj.FlatStyle = FlatStyle.Flat;
+            btnIzvjestaj.FlatAppearance.BorderColor = Color.FromArgb(255, 50, 241);
+            btnIzvjestaj.FlatAppearance.BorderSize = 3;
+
             lblPretragaPremaKlijentu.Font = new Font(lblPretragaPremaKlijentu.Font, FontStyle.Bold);
             lblUkupniIznosNarudzbe.Font = new Font(lblUkupniIznosNarudzbe.Font, FontStyle.Bold);
         }
@@ -222,7 +226,7 @@ namespace ProdajaGreyMatter
                 poruka += " narudžbu te će se ispod tog obrasca  prikazati ukupan iznos narudžbe.\n\n Novu narudžbu unosimo ";
                 poruka += " popunjavanjem narudžbenice klikom na tipku Unos nove narudžbenice.\n\n Ukoliko unesete narudžbu i ";
                 poruka += " spremite je, a klijent odustane od narudžbe ili ste unesli krivu narudžbu možete je stonirati klikom na ";
-                poruka += " tipku Storno. Na glavnu formu vraćate se tipkom Natrag.";
+                poruka += " tipku Storno.\n\n Za ispis računa pritisnite tipku Izvještaj.\n\n Na glavnu formu vraćate se tipkom Natrag.";
                 frmHelp formaHelp = new frmHelp(naslov, poruka);
                 formaHelp.ShowDialog();
             }
