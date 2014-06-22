@@ -210,3 +210,6 @@ C:\Users\Nikola\Desktop\nova2\ProdajaGreyMatter\ProdajaGreyMatter\obj\Debug\RdlC
 C:\Users\Nikola\Desktop\nova2\ProdajaGreyMatter\ProdajaGreyMatter\obj\Debug\RdlCompile.compiled
 C:\Users\Josip\Documents\GitHub\RepositoryTeam32\Aplikacija\ProdajaGreyMatter\ProdajaGreyMatter\obj\Debug\RdlCompile.cache
 C:\Users\Josip\Documents\GitHub\RepositoryTeam32\Aplikacija\ProdajaGreyMatter\ProdajaGreyMatter\obj\Debug\RdlCompile.compiled
+C:\Users\Neno\Documents\GitHub\RepositoryTeam32\Aplikacija\ProdajaGreyMatter\ProdajaGreyMatter\obj\Debug\ProdajaGreyMatter.frmHelp.resources
+C:\Users\Neno\Documents\GitHub\RepositoryTeam32\Aplikacija\ProdajaGreyMatter\ProdajaGreyMatter\obj\Debug\RdlCompile.cache
+C:\Users\Neno\Documents\GitHub\RepositoryTeam32\Aplikacija\ProdajaGreyMatter\ProdajaGreyMatter\obj\Debug\RdlCompile.compiled

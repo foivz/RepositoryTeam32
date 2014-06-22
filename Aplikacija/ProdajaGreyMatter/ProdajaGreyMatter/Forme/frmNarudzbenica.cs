@@ -198,21 +198,64 @@ namespace ProdajaGreyMatter
 
         private void btnStorno_Click(object sender, EventArgs e)
         {
+            DateTime datum = DateTime.Now.AddDays(-7);
             narudzbenica oznacenaNarudzbenica = narudzbenicaBindingSource.Current as narudzbenica;
-            if (oznacenaNarudzbenica.status == 1)
+            if (oznacenaNarudzbenica.datumIzdavanja > datum)
             {
-                if (MessageBox.Show("Da li ste sigurni?", "Upozorenje!", MessageBoxButtons.YesNo) == System.Windows.Forms.DialogResult.Yes)
+                if (oznacenaNarudzbenica.status == 1)
                 {
-                    using (var db = new greymatterpiEntities())
+                    if (MessageBox.Show("Da li ste sigurni?", "Upozorenje!", MessageBoxButtons.YesNo) == System.Windows.Forms.DialogResult.Yes)
                     {
-                        db.narudzbenica.Attach(oznacenaNarudzbenica);
-                        oznacenaNarudzbenica.status = 0;
-                        db.SaveChanges();
+                        using (var db = new greymatterpiEntities())
+                        {
+                            db.narudzbenica.Attach(oznacenaNarudzbenica);
+                            oznacenaNarudzbenica.status = 0;
+                            db.SaveChanges();
+
+                            /// Dohvaćanje stavki koje se odnose na narudžbenicu koja se stornira
+                            IEnumerable<stavkenarudzbenice> stavkeNarudzbenice = from s in db.stavkenarudzbenice
+                                                                                 join n in db.narudzbenica
+                                                                                 on s.idNarudzbenice equals n.idNarudzbenice
+                                                                                 where s.idNarudzbenice == oznacenaNarudzbenica.idNarudzbenice
+                                                                                 select s;
+
+                            List<stavkenarudzbenice> stavkeNarudzbeniceLista = stavkeNarudzbenice.ToList();
+
+                            /// Dohvaćanje lijekova koji čine stavke narudžbenice koja se stornira kako bi se količina 
+                            /// odgovarajućih lijekova vratila na stanje prije kreiranja narudžbenice koja se stornira
+                            IEnumerable<lijek> lijekovi = from l in db.lijek
+                                                          join s in db.stavkenarudzbenice
+                                                          on l.idLijek equals s.idLijek
+                                                          where s.idNarudzbenice == oznacenaNarudzbenica.idNarudzbenice
+                                                          select l;
+
+                            /// Potrebna pretvorba kako bi se podaci o lijeku mogli upisivati u BP
+                            List<lijek> lijekoviLista = lijekovi.ToList();
+
+                            /// Vraćanje količina lijekova na stanje prije kreiranja narudžbenice koja se stornira
+                            foreach (lijek lijekic in lijekoviLista)
+                            {
+                                foreach (stavkenarudzbenice stavka in stavkeNarudzbeniceLista)
+                                {
+                                    if (lijekic.idLijek == stavka.idLijek)
+                                    {
+                                        lijekic.kolicina += stavka.kolicina;
+                                        db.SaveChanges();
+                                    }
+                                }
+                            }
+                        }
+
+                        prikaziNarudzbe();
                     }
-                    prikaziNarudzbe();
+                }
+
+                else
+                {
+                    MessageBox.Show("Ova narudžbenica je već stornirana!", "Upozorenje");
                 }
             }
-            else { MessageBox.Show("Ova narudžbenica je već stornirana!","Upozorenje"); }
+            else { MessageBox.Show("Mogu se stornirati narudžbenice napravljene samo zadnjih tjedan dana", "Upozorenje!"); }
 
         }
 
